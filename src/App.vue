@@ -1,29 +1,69 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <main id="app">
+    <!-- header -->
+    <Header />
+    <!-- app content -->
     <router-view/>
-  </div>
+    <!-- footer -->
+    <Footer />
+    <BackToTop />
+  </main>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+  import Header from './components/Header.vue'
+  import Footer from './components/Footer.vue'
+  import BackToTop from './components/BackToTop.vue'
+  export default {
+    name: 'App',
+    components: {
+      Header,
+      Footer,
+      BackToTop
     }
   }
-}
+</script>
+
+<style lang="scss">
+  // geral css
+  html,
+  body {
+    margin: auto;
+    padding: 0;
+    max-width: 2000px;
+    font-family: "Centuma", Roboto, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Centuma", Roboto, sans-serif;
+  }
+
+  p {
+    font-family: "Centuma", Roboto, sans-serif;
+    font-weight: 300;
+  }
+
+  ::selection {
+    color: #fff;
+    background: #00734A;
+    text-shadow: none;
+  }
+
+  .section {
+    position: relative;
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  .section-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @import "./assets/loading";
 </style>
