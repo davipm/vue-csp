@@ -41,6 +41,19 @@
           <div class="page-content"
                v-html="page.content.rendered"
           ></div>
+          <!-- contact form loading example -->
+          <div id="spinner"
+               :class="{'d-none': formLoading}">
+            <img src="http://www.ajaxload.info/images/exemples/25.gif" />
+          </div>
+          <!-- /contact form loading example -->
+          <!-- contact form example -->
+          <iframe src="http://wpstudy.local/contato/"
+                  class="w-100"
+                  style="height: 500px; border: none;"
+                  @load="removeFormLoading"
+          ></iframe>
+          <!-- /contact form example -->
           <div class="share-buttons">
             <ul class="share-list">
               <li class="share-item">
@@ -69,7 +82,8 @@
     name: "Page",
     data() {
       return {
-        loading: true,
+        loading: true, // show loading page
+        formLoading: false, // show form loading
         page: {}
       }
     },
@@ -83,11 +97,14 @@
           this.loading = false;
         })
       },
+      removeFormLoading() {
+        this.formLoading = this.formLoading = true; // remove form loading on load
+      }
     },
     watch: {
       '$route' (to, from) {
         this.getPage(to.params.id);
-        this.loading = true;
+        this.loading = true; // reset loading page when change routes
       }
     },
     created() {

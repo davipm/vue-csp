@@ -1,17 +1,19 @@
 <template>
-  <div class="vue-back-to-top" id="BackToTop"
-       :style="`bottom:${this.bottom};right:${this.right};`"
-       v-show="visible"
-       @click="backToTop"
-  >
-    <slot>
-      <div class="default">
+  <transition name="back-to-top-fade">
+    <div class="vue-back-to-top" id="BackToTop"
+         :style="`bottom:${this.bottom};right:${this.right};`"
+         v-show="visible"
+         @click="backToTop"
+    >
+      <slot>
+        <div class="default">
           <span>
             <i class="fas fa-chevron-up"></i>
           </span>
-      </div>
-    </slot>
-  </div>
+        </div>
+      </slot>
+    </div>
+  </transition>
 </template>
 
 <script>
