@@ -87,5 +87,9 @@
     font-weight: 300;
     font-size: 14px;
     margin-right: 15px;
+
+    &:hover {
+      color: #34343c;
+    }
   }
 </style>

@@ -53,14 +53,14 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
                     Misão, Visão e Valores
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
                     Nossa História
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
                   <a href="#" class="submenu-link">

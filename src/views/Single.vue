@@ -114,6 +114,7 @@
     watch: {
       '$route' (to, from) {
         this.getPost(to.params.slug);
+        this.loading = true;
       }
     },
     created() {

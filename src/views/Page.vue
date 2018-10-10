@@ -86,7 +86,8 @@
     },
     watch: {
       '$route' (to, from) {
-        this.getPage(to.params.id)
+        this.getPage(to.params.id);
+        this.loading = true;
       }
     },
     created() {
