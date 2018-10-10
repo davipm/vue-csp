@@ -85,7 +85,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .footer {
     background-color: #65666A;
   }
@@ -139,6 +139,11 @@
     border-radius: 6px;
     background: #D8D9DA;
     color: #808184;
+
+    &:focus {
+      background: #D8D9DA;
+      color: #808184;
+    }
   }
 
   .btn-search-footer {

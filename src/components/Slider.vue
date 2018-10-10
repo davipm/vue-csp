@@ -4,14 +4,7 @@
       <div class="carousel-item active"
            style="background: url('http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png') no-repeat center/cover;
            height: 550px;">
-        <!--<img class="d-block w-100" src="http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png" alt="First slide">-->
       </div>
-      <!--<div class="carousel-item">-->
-        <!--<img class="d-block w-100" src="https://via.placeholder.com/1920x800" alt="Second slide">-->
-      <!--</div>-->
-      <!--<div class="carousel-item">-->
-        <!--<img class="d-block w-100" src="https://via.placeholder.com/1920x800" alt="Third slide">-->
-      <!--</div>-->
     </div>
     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

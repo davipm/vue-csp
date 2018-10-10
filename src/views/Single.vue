@@ -1,6 +1,7 @@
 <template>
   <section class="section single">
     <div class="container">
+      <!-- grid loading -->
       <div v-if="loading" class="row">
         <div class="col-md-9 section-content">
           <div class="mb-4">
@@ -45,15 +46,35 @@
           </div>
         </div>
       </div>
+      <!-- grid -->
       <div v-else class="row">
-        <div class="col-md-9 section-content" v-for="(item, index) in post" :key="index">
+        <div class="section-content col-md-9 " v-for="(item, index) in post" :key="index">
           <!-- category -->
           <h5 class="category" v-if="item.categories[0] === 4">Notícias</h5>
           <h5 class="category" v-else>Sem categoria</h5>
-
           <!-- title -->
-          <h3 class="single-title">{{ item.title.rendered }}</h3>
-          <div class="single-content" v-html="item.content.rendered"></div>
+          <h3 class="single-title">
+            {{ item.title.rendered }}
+          </h3>
+          <div class="single-content"
+               v-html="item.content.rendered"
+          ></div>
+          <div class="share-buttons">
+            <ul class="share-list">
+              <li class="share-item">
+                <a href="#" class="share-link">
+                  <i class="fas fa-print"></i>
+                  Imprimir
+                </a>
+              </li>
+              <li class="share-item">
+                <a href="#" class="share-link">
+                  <i class="fas fa-share-alt"></i>
+                  Compartilhar
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="col-md-3">
 
@@ -111,4 +132,6 @@
     margin-bottom: 1rem;
     color: #00734A;
   }
+
+
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section class="section page">
     <div class="container">
-      <!-- grid -->
+      <!-- grid loading -->
       <div v-if="loading" class="row">
         <div class="col-md-9">
           <div class="mb-4">
@@ -30,12 +30,33 @@
           </div>
         </div>
       </div>
+      <!-- grid -->
       <div v-else class="row">
-        <div class="col-md-9">
+        <div class="section-page col-md-9">
           <!-- page title -->
-          <h2 class="page-title">{{ page.title.rendered }}</h2>
+          <h2 class="page-title">
+            {{ page.title.rendered }}
+          </h2>
           <!-- page content -->
-          <div class="page-content" v-html="page.content.rendered"></div>
+          <div class="page-content"
+               v-html="page.content.rendered"
+          ></div>
+          <div class="share-buttons">
+            <ul class="share-list">
+              <li class="share-item">
+                <a href="#" class="share-link">
+                  <i class="fas fa-print"></i>
+                  Imprimir
+                </a>
+              </li>
+              <li class="share-item">
+                <a href="#" class="share-link">
+                  <i class="fas fa-share-alt"></i>
+                  Compartilhar
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -61,7 +82,7 @@
         }).finally(() => {
           this.loading = false;
         })
-      }
+      },
     },
     watch: {
       '$route' (to, from) {
@@ -75,5 +96,8 @@
 </script>
 
 <style scoped>
-
+  .page-title {
+    font-family: "Centuma", Roboto, sans-serif;
+    color: #65666A;
+  }
 </style>

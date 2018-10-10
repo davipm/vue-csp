@@ -41,21 +41,32 @@
           <div class="card">
             <router-link :to="`/post/${post.slug}`">
               <div class="img-content">
-                <img class="img-fluid" v-if="post.acf.featured_image" :src="post.acf.featured_image" alt="Card image cap">
-                <img class="img-fluid" v-else src="https://via.placeholder.com/300x220" alt="Card image cap">
+                <img class="img-fluid"
+                     v-if="post.acf.featured_image"
+                     :src="post.acf.featured_image"
+                     alt="Card image cap"
+                >
+                <img class="img-fluid"
+                     v-else src="https://via.placeholder.com/300x220"
+                     alt="Card image cap"
+                >
               </div>
             </router-link>
             <div class="card-body">
-              <time class="post-time">{{ post.date }}</time>
+              <time class="post-time">
+                {{ post.date }}
+              </time>
               <router-link to="#">
                 <h5 class="card-title">
                   {{ post.title.rendered }}
                 </h5>
               </router-link>
-              <p class="card-text" :maxlength="30" v-html="post.excerpt.rendered"></p>
+              <p class="card-text"
+                 v-html="post.excerpt.rendered"
+              ></p>
             </div>
             <div class="card-footer">
-              <router-link :to="`/noticia/${post.slug}`" class="btn btn-primary">
+              <router-link :to="`/post/${post.slug}`" class="btn btn-primary">
                 <i class="fas fa-plus"></i>
               </router-link>
             </div>
