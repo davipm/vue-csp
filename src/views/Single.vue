@@ -46,6 +46,13 @@
           </div>
         </div>
       </div>
+      <!-- alert error -->
+      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>OPS!</strong> Algo errado aconteceu, por favor tente mais tarde.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <!-- grid -->
       <div v-else class="row">
         <div class="section-content col-md-9 " v-for="(item, index) in post" :key="index">
@@ -91,6 +98,7 @@
     data() {
       return {
         loading: true,
+        error: false,
         post: {}
       }
     },

@@ -3,7 +3,6 @@
     <div class="container">
       <!-- Heading -->
       <h3 class="blog-title">Notícias</h3>
-
       <!-- Loading Grid -->
       <div v-if="loading" class="row">
         <div class="col-md-4">
@@ -34,7 +33,13 @@
           </div>
         </div>
       </div>
-
+      <!-- alert error -->
+      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>OPS!</strong> Algo errado aconteceu, por favor tente mais tarde.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <!-- Blog Grid -->
       <div v-else class="row">
         <div class="col-md-4" v-for="(post, index) in posts" :key="index">
@@ -141,6 +146,7 @@
     data() {
       return {
         loading: true,
+        error: false,
         posts: {}
       }
     },
@@ -155,6 +161,7 @@
           console.log(res.data)
         })
         .catch((res) => {
+          this.error = true;
           console.log(res);
         })
         .finally( () => {
