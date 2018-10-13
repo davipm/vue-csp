@@ -32,7 +32,7 @@
       </div>
       <!-- alert error -->
       <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>OPS!</strong> Algo errado aconteceu, por favor tente mais tarde.
+        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -79,6 +79,10 @@
     },
     data() {
       return {
+        message: {
+          alert1: 'OPS!',
+          alert2: 'Algo errado aconteceu, por favor tente mais tarde.'
+        },
         loading: true, // show loading page
         formLoading: false, // show form loading
         error: false,
