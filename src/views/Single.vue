@@ -66,25 +66,48 @@
           <div class="single-content"
                v-html="item.content.rendered"
           ></div>
-          <div class="share-buttons">
-            <ul class="share-list">
-              <li class="share-item">
-                <a href="#" class="share-link">
-                  <i class="fas fa-print"></i>
-                  Imprimir
-                </a>
-              </li>
-              <li class="share-item">
-                <a href="#" class="share-link">
-                  <i class="fas fa-share-alt"></i>
-                  Compartilhar
-                </a>
-              </li>
-            </ul>
-          </div>
+          <!-- share buttons -->
+          <ShareContent />
         </div>
         <div class="col-md-3">
-
+          <aside class="aside-posts">
+            <h3 class="single-title">
+              {{ asideMessage.toUpperCase() }}
+            </h3>
+            <div class="card" v-for="(post, index) in posts" v-bind:key="index">
+              <router-link :to="`/post/${post.slug}`">
+                <div class="img-content">
+                  <img class="img-fluid"
+                       v-if="post.acf.featured_image"
+                       :src="post.acf.featured_image"
+                       alt="Card image cap"
+                  >
+                  <img class="img-fluid"
+                       v-else src="https://via.placeholder.com/300x220"
+                       alt="Card image cap"
+                  >
+                </div>
+              </router-link>
+              <div class="card-body">
+                <time class="post-time">
+                  {{ post.date }}
+                </time>
+                <router-link to="#">
+                  <h5 class="card-title">
+                    {{ post.title.rendered }}
+                  </h5>
+                </router-link>
+                <p class="card-text"
+                   v-html="post.excerpt.rendered"
+                ></p>
+              </div>
+              <div class="card-footer">
+                <router-link :to="`/post/${post.slug}`" class="btn btn-primary">
+                  <i class="fas fa-plus"></i>
+                </router-link>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -93,13 +116,19 @@
 
 <script>
   import axios from 'axios'
+  import ShareContent from '../components/ShareContent.vue'
   export default {
     name: "Single",
+    components: {
+      ShareContent
+    },
     data() {
       return {
+        asideMessage: 'Saiba Mais',
         loading: true,
         error: false,
-        post: {}
+        post: {},
+        posts: {},
       }
     },
     methods: {
@@ -118,15 +147,29 @@
           this.loading = false;
         })
       },
+      getPosts() {
+        axios.get('http://wpstudy.local/wp-json/wp/v2/posts', {
+          params: {
+            per_page: 2
+          }
+        }).then((res) => {
+          this.posts = res.data;
+          // console.log(res.data)
+        }).catch((res) => {
+          // console.log(res);
+        })
+      },
     },
     watch: {
       '$route' (to, from) {
         this.getPost(to.params.slug);
+        this.getPosts(to.params.slug);
         this.loading = true;
       }
     },
     created() {
       this.getPost(this.$route.params.slug);
+      this.getPosts(this.$route.params.slug);
     }
   }
 </script>
@@ -141,6 +184,4 @@
     margin-bottom: 1rem;
     color: #00734A;
   }
-
-
 </style>

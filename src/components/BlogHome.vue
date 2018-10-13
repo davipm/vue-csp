@@ -77,63 +77,6 @@
             </div>
           </div>
         </div>
-        <!--
-        <div class="col-md-4">
-          <div class="card">
-            <router-link :to="'/noticia/'">
-              <div class="img-content">
-                <img class="img-fluid" src="http://www.cspecem.com/wp-content/uploads/2018/09/211018.png" alt="Card image cap">
-              </div>
-            </router-link>
-              <div class="card-body">
-                <time>10/12/18</time>
-                <router-link :to="'/noticia/'">
-                  <h5 class="card-title">
-                    Card title
-                  </h5>
-                </router-link>
-                <p class="card-text">
-                  Some quick example text to build
-                  on the card title and make up the
-                  bulk of the card's content.
-                </p>
-              </div>
-
-            <div class="card-footer">
-              <router-link :to="'/noticia/'" class="btn btn-primary">
-                <i class="fas fa-plus"></i>
-              </router-link>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <router-link to="#">
-              <div class="img-content">
-                <img class="img-fluid" src="http://www.cspecem.com/wp-content/uploads/2018/09/CSP-na-midia.jpg" alt="Card image cap">
-              </div>
-            </router-link>
-            <div class="card-body">
-              <time>10/12/18</time>
-              <router-link :to="'#'">
-                <h5 class="card-title">
-                  Card title
-                </h5>
-              </router-link>
-              <p class="card-text">
-                Some quick example text to build on
-                the card title and make up the bulk of
-                the card's content.
-              </p>
-            </div>
-            <div class="card-footer">
-              <router-link :to="'/noticia/'" class="btn btn-primary">
-                <i class="fas fa-plus"></i>
-              </router-link>
-            </div>
-          </div>
-        </div>
-        -->
       </div>
     </div>
   </section>

@@ -61,22 +61,8 @@
                   @load="removeFormLoading"
           ></iframe>
           <!-- /contact form example -->
-          <div class="share-buttons">
-            <ul class="share-list">
-              <li class="share-item">
-                <a href="#" class="share-link">
-                  <i class="fas fa-print"></i>
-                  Imprimir
-                </a>
-              </li>
-              <li class="share-item">
-                <a href="#" class="share-link">
-                  <i class="fas fa-share-alt"></i>
-                  Compartilhar
-                </a>
-              </li>
-            </ul>
-          </div>
+          <!-- share buttons -->
+          <ShareContent />
         </div>
       </div>
     </div>
@@ -85,8 +71,12 @@
 
 <script>
   import axios from 'axios'
+  import ShareContent from '../components/ShareContent.vue'
   export default {
     name: "Page",
+    components: {
+      ShareContent
+    },
     data() {
       return {
         loading: true, // show loading page

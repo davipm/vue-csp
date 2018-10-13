@@ -66,30 +66,4 @@
     max-width: 100%;
     height: auto;
   }
-
-  // share buttons page/post
-  .share-buttons {
-    margin-top: 1.5rem;
-  }
-
-  .share-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    list-style: none;
-  }
-
-  .share-link {
-    display: inline-block;
-    color: #34343c;
-    font-family: "Centuma", Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    margin-right: 15px;
-
-    &:hover {
-      color: #34343c;
-    }
-  }
 </style>
