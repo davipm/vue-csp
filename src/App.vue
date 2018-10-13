@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import $ from 'jquery'
   import Header from './components/Header.vue'
   import Footer from './components/Footer.vue'
   import BackToTop from './components/BackToTop.vue'
@@ -23,6 +24,11 @@
       BackToTop
     }
   }
+
+  $(document).ready(function () {
+    // if needs jquery
+    console.log('Jquery works');
+  })
 </script>
 
 <style lang="scss">
