@@ -61,7 +61,7 @@
               <time class="post-time">
                 {{ post.date }}
               </time>
-              <router-link to="#">
+              <router-link :to="`/post/${post.slug}`">
                 <h5 class="card-title">
                   {{ post.title.rendered }}
                 </h5>
@@ -101,11 +101,11 @@
           }
         }).then((res) => {
           this.posts = res.data;
-          console.log(res.data)
+          //console.log(res.data)
         })
         .catch((res) => {
           this.error = true;
-          console.log(res);
+          //console.log(res);
         })
         .finally( () => {
           this.loading = false;
