@@ -124,7 +124,12 @@
     },
     data() {
       return {
-        asideMessage: 'Saiba Mais',
+        message: {
+          pageTitle: 'Notícias',
+          alert1: 'OPS!',
+          alert2: 'Algo errado aconteceu, por favor tente mais tarde.',
+          asideMessage: 'Saiba Mais',
+        },
         loading: true,
         error: false,
         post: {},
