@@ -2,7 +2,9 @@
   <section class="section blog">
     <div class="container">
       <!-- Heading -->
-      <h3 class="blog-title">Notícias</h3>
+      <h3 class="blog-title">
+        {{ message.pageTitle }}
+      </h3>
       <!-- Loading Grid -->
       <div v-if="loading" class="row">
         <div class="col-md-4">
@@ -35,7 +37,7 @@
       </div>
       <!-- alert error -->
       <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>OPS!</strong> Algo errado aconteceu, por favor tente mais tarde.
+        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,6 +90,11 @@
     name: "BlogHome",
     data() {
       return {
+        message: {
+          pageTitle: 'Notícias',
+          alert1: 'OPS!',
+          alert2: 'Algo errado aconteceu, por favor tente mais tarde.'
+        },
         loading: true,
         error: false,
         posts: {}
