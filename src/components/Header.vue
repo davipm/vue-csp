@@ -107,11 +107,13 @@
                 <li class="submenu-item">
                   <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
                     Meio Ambiente
+                    <i class="fas fa-chevron-right"></i>
                   </router-link>
                 </li>
                 <li class="submenu-item">
                   <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
                     Relação com a comunidade
+                    <i class="fas fa-chevron-right"></i>
                   </router-link>
                 </li>
               </ul>
@@ -120,11 +122,56 @@
               <router-link :to="`/page/produtos`" class="nav-link">
                 Produtos
               </router-link>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                    Placas
+                  </router-link>
+                </li>
+                <li class="submenu-item">
+                  <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    Co-produtos
+                  </router-link>
+                </li>
+                <li class="submenu-item">
+                  <a href="#" class="submenu-link">
+                    Certificações
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <router-link :to="`/page/fornecedores`" class="nav-link">
                 Fornecedores
               </router-link>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                    Seja nosso fornecedor
+                  </router-link>
+                </li>
+                <li class="submenu-item">
+                  <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    Pré-cadastro
+                  </router-link>
+                </li>
+                <li class="submenu-item">
+                  <a href="#" class="submenu-link">
+                    Cartilha do Fornecedor
+                  </a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#" class="submenu-link">
+                    Portal e-Fornecedores
+                  </a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#" class="submenu-link">
+                    Dúvidas Frequentes
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <router-link :to="`/page/trabalhe-conosco`" class="nav-link">
@@ -358,5 +405,11 @@
   .submenu-item:hover .submenu-link {
     background-color: #003A1F;
     color: #fff;
+  }
+
+  .fa-chevron-right {
+    float: right;
+    position: relative;
+    top: 5px;
   }
 </style>
