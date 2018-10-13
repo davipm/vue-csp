@@ -10,22 +10,34 @@
               </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Você na CSP</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Você na CSP
+              </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Patrocínio</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Patrocínio
+              </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Gestão Ambental</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Gestão Ambental
+              </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Trabalhe Conosco</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Trabalhe Conosco
+              </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Portal de Acionista</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Portal de Acionista
+              </router-link>
             </li>
             <li class="menu-footer-item">
-              <a href="#" class="menu-footer-link">Newsletter</a>
+              <router-link :to="`/page/`" class="menu-footer-link">
+                Newsletter
+              </router-link>
             </li>
           </ul>
         </div>
@@ -47,17 +59,17 @@
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="#" class="list-menu-link">
+                <a href="https://www.facebook.com" class="list-menu-link">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="#" class="list-menu-link">
+                <a href="https://www.youtube.com/watch?v=cNplZrRSjeI" class="list-menu-link">
                   <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="#" class="list-menu-link">
+                <a href="https://www.linkedin.com" class="list-menu-link">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
