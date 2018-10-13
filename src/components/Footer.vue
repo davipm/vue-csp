@@ -81,10 +81,10 @@
           </div>
           <div class="footer-info">
             <router-link :to="'/page/mapa-site'" class="footer-info-link mr-2">
-              Mapa Site
+              {{ message.siteMap }}
             </router-link> |
             <router-link :to="'/page/politica-de-privacidade'" class="footer-info-link ml-2">
-              Politica de Privacidade
+              {{ message.privacyPolicy }}
             </router-link>
             <address class="footer-address mt-3">
               <p class="address-item mb-0">Copyright © 2018 - Companhia Siderúrgica do Pecém</p>
@@ -96,7 +96,7 @@
       <!-- developer credits -->
       <div class="row mt-3">
         <div class="col-md-12 text-center">
-          <p class="mb-0">Desenvolvido por <a href="#">Davi Pereira</a></p>
+          <p class="mb-0">{{ message.developedBy }} <a href="https://github.com/davi-94/portfolio" target="_blank">Davi Pereira</a></p>
         </div>
       </div>
     </div>
@@ -108,7 +108,11 @@
     name: "Footer",
     data() {
       return {
-
+        message: {
+          siteMap: 'Mapa Site',
+          privacyPolicy: 'Politica de Privacidade',
+          developedBy: 'Desenvolvido por'
+        }
       }
     },
   }
