@@ -21,7 +21,7 @@
         <time class="post-time">
           {{ post.date }}
         </time>
-        <router-link to="#">
+        <router-link :to="`/post/${post.slug}`">
           <h5 class="card-title">
             {{ post.title.rendered }}
           </h5>
@@ -45,7 +45,8 @@
     name: "AsidePosts",
     data() {
       return {
-        asideMessage: 'Saiba Mais'
+        asideMessage: 'Saiba Mais',
+        posts: {},
       }
     },
     watch: {
