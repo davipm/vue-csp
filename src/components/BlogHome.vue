@@ -100,6 +100,7 @@
         posts: {}
       }
     },
+
     methods: {
       getPosts() {
         axios.get('http://wpstudy.local/wp-json/wp/v2/posts', {
@@ -108,17 +109,16 @@
           }
         }).then((res) => {
           this.posts = res.data;
-          console.log(res.data)
         })
         .catch((res) => {
           this.error = true;
-          //console.log(res);
         })
         .finally( () => {
           this.loading = false;
         })
       }
     },
+
     created() {
       this.getPosts();
     }
