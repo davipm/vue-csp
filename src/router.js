@@ -29,7 +29,7 @@ export default new Router({
       component: Single
     },
     {
-      path: '/page/:slug/:id',
+      path: '/page/:slug',
       name: 'Page',
       component: Page
     }
