@@ -27,8 +27,7 @@
 
   $(document).ready(function () {
     // if needs jquery
-    console.log('Jquery works');
-  })
+  });
 </script>
 
 <style lang="scss">
@@ -71,5 +70,18 @@
   .section-content img {
     max-width: 100%;
     height: auto;
+  }
+
+  .carousel-control-prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    height: 45px;
+    width: 45px;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #34343c;
+    opacity: 1;
   }
 </style>
