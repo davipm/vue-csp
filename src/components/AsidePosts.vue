@@ -49,11 +49,13 @@
         posts: {},
       }
     },
+
     watch: {
       '$route'(to, from) {
         this.getPosts(to.params.slug)
       }
     },
+
     methods: {
       getPosts() {
         axios.get('http://wpstudy.local/wp-json/wp/v2/posts', {
@@ -62,12 +64,12 @@
           }
         }).then((res) => {
           this.posts = res.data;
-          // console.log(res.data)
         }).catch((res) => {
-          // console.log(res);
+          // catch errors
         })
       },
     },
+
     created() {
       this.getPosts();
     }
