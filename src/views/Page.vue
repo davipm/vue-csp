@@ -42,31 +42,31 @@
         <div class="section-page col-md-9">
           <!-- page title -->
           <h2 class="page-title">
-            {{ page[0].title.rendered }}
+            {{ page.title.rendered }}
           </h2>
           <!-- page content -->
           <div class="page-content"
-               v-html="page[0].content.rendered"
+               v-html="page.content.rendered"
           ></div>
-          <!-- contact form loading example -->
-          <!--
-          <div id="spinner"
-               :class="{'d-none': formLoading}">
-            <img src="http://www.ajaxload.info/images/exemples/25.gif" />
-          </div>
-          -->
-          <!-- /contact form loading example -->
-          <!-- contact form example -->
-          <!--
-          <iframe src="http://wpstudy.local/contato/"
-                  class="w-100"
-                  style="height: 500px; border: none;"
-                  @load="removeFormLoading"
-          ></iframe>
-          -->
-          <!-- /contact form example -->
-          <!-- share buttons -->
-          <!--<ShareContent />-->
+          <!-- gallery -->
+          <b-carousel v-if="page.acf" id="carousel1" class="carousel-fade"
+                      style="text-shadow: 1px 1px 2px #333;"
+                      controls
+                      indicators
+                      background="#ababab"
+                      :interval="4000"
+                      img-width="1024"
+                      img-height="480"
+                      v-model="slide"
+                      @sliding-start="onSlideStart"
+                      @sliding-end="onSlideEnd"
+          >
+            <!-- Slides with image only -->
+            <b-carousel-slide :img-src="item.url"
+                              v-for="(item, index) in gallery"
+                              :key="index">
+            </b-carousel-slide>
+          </b-carousel>
         </div>
       </div>
       <!-- share buttons -->
@@ -77,12 +77,13 @@
 
 <script>
   import axios from 'axios'
-  import ShareContent from '../components/ShareContent.vue'
+  import ShareContent from '@/components/ShareContent.vue'
   export default {
     name: "Page",
     components: {
       ShareContent
     },
+
     data() {
       return {
         message: {
@@ -92,35 +93,48 @@
         loading: true, // show loading page
         formLoading: false, // show form loading
         error: false,
-        page: {}
+        page: {},
+        gallery: {},
+        slide: 0,
+        sliding: null
       }
     },
+
     methods: {
       getPage(slug) {
         axios.get(`http://wpstudy.local/wp-json/wp/v2/pages`, {
           params: {
             slug: slug
           }
-        }).then((res) => {
-          this.page = res.data;
-          console.log(res.data);
-        }).catch((error) => {
+        })
+        .then((res) => {
+          this.page = res.data[0];
+          this.gallery = res.data[0].acf.galeria;
+        })
+        .catch((error) => {
           this.error = true;
-          console.log(error);
-        }).finally(() => {
+        })
+        .finally(() => {
           this.loading = false;
         })
       },
-      removeFormLoading() {
-        this.formLoading = this.formLoading = true; // remove form loading on load
+
+      onSlideStart (slide) {
+        this.sliding = true;
+      },
+
+      onSlideEnd (slide) {
+        this.sliding = false;
       }
     },
+
     watch: {
       '$route' (to, from) {
         this.getPage(to.params.slug);
         this.loading = true; // reset loading page when change routes
       }
     },
+
     created() {
       this.getPage(this.$route.params.slug);
     }
