@@ -154,7 +154,7 @@
 
   .list-menu-link {
     display: inline-block;
-    padding-top: 1px;
+    padding-top: 2px;
     width: 27px;
     height: 27px;
     text-align: center;
