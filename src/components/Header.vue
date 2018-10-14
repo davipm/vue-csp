@@ -147,29 +147,29 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                  <router-link :to="`/page/seja-nosso-fornecedor`" class="submenu-link">
                     Seja nosso fornecedor
                   </router-link>
                 </li>
                 <li class="submenu-item">
-                  <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                  <router-link :to="`/page/pre-cadastro`" class="submenu-link">
                     Pré-cadastro
                   </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/cartilha-do-fornecedor`" class="submenu-link">
                     Cartilha do Fornecedor
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/portal-e-fornecedores`" class="submenu-link">
                     Portal e-Fornecedores
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/duvidas-frequentes`" class="submenu-link">
                     Dúvidas Frequentes
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </li>
@@ -269,7 +269,7 @@
 
   .list-menu-link {
     display: block;
-    padding-top: 1px;
+    padding-top: 2px;
     width: 27px;
     height: 27px;
     text-align: center;
