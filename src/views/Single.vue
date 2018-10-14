@@ -123,6 +123,7 @@
     components: {
       ShareContent
     },
+
     data() {
       return {
         message: {
@@ -137,6 +138,7 @@
         posts: {},
       }
     },
+
     methods: {
       getPost(slug){
         axios.get(`http://wpstudy.local/wp-json/wp/v2/posts`, {
@@ -145,14 +147,14 @@
           }
         }).then((res) => {
           this.post = res.data;
-          console.log(res.data)
         }).catch((res) => {
-          console.log(res);
+          // catch error
         })
         .finally( () => {
           this.loading = false;
         })
       },
+
       getPosts() {
         axios.get('http://wpstudy.local/wp-json/wp/v2/posts', {
           params: {
@@ -166,6 +168,7 @@
         })
       },
     },
+
     watch: {
       '$route' (to, from) {
         this.getPost(to.params.slug);
@@ -173,6 +176,7 @@
         this.loading = true;
       }
     },
+
     created() {
       this.getPost(this.$route.params.slug);
       this.getPosts(this.$route.params.slug);
