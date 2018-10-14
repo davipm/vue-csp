@@ -45,7 +45,7 @@
           <div class="footer-content">
             <ul class="list-menu-footer">
               <li class="list-menu-item">
-                <a href="#" class="list-menu-link">
+                <a href="#" class="list-menu-link" title="English Translate">
                   <svg style="position: relative;bottom: 2px;width: 20px;" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 640 480">
                     <g fill-rule="evenodd">
                       <g stroke-width="1pt">
@@ -96,7 +96,7 @@
       <!-- developer credits -->
       <div class="row mt-3">
         <div class="col-md-12 text-center">
-          <p class="mb-0">{{ message.developedBy }} <a href="https://github.com/davi-94/portfolio" target="_blank">Davi Pereira</a></p>
+          <p class="dev-credits">{{ message.developedBy }} <a href="https://davi-94.github.io/portfolio/" class="dev-link" target="_blank">Davi Pereira</a></p>
         </div>
       </div>
     </div>
@@ -199,5 +199,19 @@
 
   .footer-info-link {
     color: #fff;
+  }
+
+  .dev-credits {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .dev-link {
+    color: #fff;
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
   }
 </style>
