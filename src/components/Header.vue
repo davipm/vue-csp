@@ -13,7 +13,7 @@
           <div class="container-right">
             <ul class="list-menu-header">
               <li class="list-menu-item">
-                <a href="#" class="list-menu-link">
+                <a href="#" class="list-menu-link" title="English Translate">
                   <svg style="position: relative;bottom: 2px;width: 20px;" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 640 480">
                     <g fill-rule="evenodd">
                       <g stroke-width="1pt">
@@ -63,39 +63,39 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                  <router-link :to="`/page/visao-missao-e-valores`" class="submenu-link">
                     Misão, Visão e Valores
                   </router-link>
                 </li>
                 <li class="submenu-item">
-                  <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                  <router-link :to="`/page/nossa-historia`" class="submenu-link">
                     Nossa História
                   </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/diretoria`" class="submenu-link">
                     Diretoria
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/voce-na-csp`" class="submenu-link">
                     Programa de Visitas
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/complexo-industrial-e-portuario-do-pecem`" class="submenu-link">
                     Complexo Insdustrial e Portuário do Pecém
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/processo-de-producao-do-aco`" class="submenu-link">
                     Processo de produção do aço
-                  </a>
+                  </router-link>
                 </li>
                 <li class="submenu-item">
-                  <a href="#" class="submenu-link">
+                  <router-link :to="`/page/patrocinios`" class="submenu-link">
                     Patrocínios
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </li>
@@ -124,7 +124,7 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                  <router-link :to="`/page/placas`" class="submenu-link">
                     Placas
                   </router-link>
                 </li>
