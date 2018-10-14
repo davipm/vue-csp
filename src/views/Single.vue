@@ -58,6 +58,7 @@
         <div class="section-content col-md-9 " v-for="(item, index) in post" :key="index">
           <!-- category -->
           <h5 class="category" v-if="item.categories[0] === 4">Notícias</h5>
+          <h5 class="category" v-else-if="item.categories[0] === 5">CSP Podcast</h5>
           <h5 class="category" v-else>Sem categoria</h5>
           <!-- title -->
           <h3 class="single-title">
@@ -72,7 +73,7 @@
         <div class="col-md-3">
           <aside class="aside-posts">
             <h3 class="single-title">
-              {{ asideMessage.toUpperCase() }}
+              {{ message.asideMessage.toUpperCase() }}
             </h3>
             <div class="card" v-for="(post, index) in posts" v-bind:key="index">
               <router-link :to="`/post/${post.slug}`">
