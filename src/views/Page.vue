@@ -42,29 +42,35 @@
         <div class="section-page col-md-9">
           <!-- page title -->
           <h2 class="page-title">
-            {{ page.title.rendered }}
+            {{ page[0].title.rendered }}
           </h2>
           <!-- page content -->
           <div class="page-content"
-               v-html="page.content.rendered"
+               v-html="page[0].content.rendered"
           ></div>
           <!-- contact form loading example -->
+          <!--
           <div id="spinner"
                :class="{'d-none': formLoading}">
             <img src="http://www.ajaxload.info/images/exemples/25.gif" />
           </div>
+          -->
           <!-- /contact form loading example -->
           <!-- contact form example -->
+          <!--
           <iframe src="http://wpstudy.local/contato/"
                   class="w-100"
                   style="height: 500px; border: none;"
                   @load="removeFormLoading"
           ></iframe>
+          -->
           <!-- /contact form example -->
           <!-- share buttons -->
-          <ShareContent />
+          <!--<ShareContent />-->
         </div>
       </div>
+      <!-- share buttons -->
+      <ShareContent />
     </div>
   </section>
 </template>
@@ -90,9 +96,14 @@
       }
     },
     methods: {
-      getPage(id) {
-        axios.get(`http://wpstudy.local/wp-json/wp/v2/pages/${id}`).then((res) => {
+      getPage(slug) {
+        axios.get(`http://wpstudy.local/wp-json/wp/v2/pages`, {
+          params: {
+            slug: slug
+          }
+        }).then((res) => {
           this.page = res.data;
+          console.log(res.data);
         }).catch((error) => {
           this.error = true;
           console.log(error);
@@ -106,19 +117,24 @@
     },
     watch: {
       '$route' (to, from) {
-        this.getPage(to.params.id);
+        this.getPage(to.params.slug);
         this.loading = true; // reset loading page when change routes
       }
     },
     created() {
-      this.getPage(this.$route.params.id);
+      this.getPage(this.$route.params.slug);
     }
   }
 </script>
 
 <style scoped>
+  .page {
+    padding: 30px 0;
+  }
+
   .page-title {
     font-family: "Centuma", Roboto, sans-serif;
     color: #65666A;
+    margin-bottom: 20px;
   }
 </style>
