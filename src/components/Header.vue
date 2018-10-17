@@ -58,7 +58,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="#" class="nav-link">
+              <router-link to="/page/" class="nav-link">
                 Sobre a CSP
               </router-link>
               <ul class="submenu">
@@ -184,7 +184,7 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                  <router-link :to="`/page/`" class="submenu-link">
                     Notícias
                   </router-link>
                 </li>
@@ -244,7 +244,7 @@
       return {
 
       }
-    }
+    },
   }
 </script>
 

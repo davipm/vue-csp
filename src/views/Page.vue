@@ -49,7 +49,7 @@
                v-html="page.content.rendered"
           ></div>
           <!-- gallery -->
-          <b-carousel v-if="page.acf" id="carousel1" class="carousel-fade"
+          <b-carousel v-if="page.acf.galeria" id="carousel1" class="carousel-fade"
                       style="text-shadow: 1px 1px 2px #333;"
                       controls
                       indicators
@@ -110,6 +110,7 @@
         .then((res) => {
           this.page = res.data[0];
           this.gallery = res.data[0].acf.galeria;
+          console.log(this.page);
         })
         .catch((error) => {
           this.error = true;

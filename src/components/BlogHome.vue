@@ -107,7 +107,8 @@
           params: {
             per_page: 3
           }
-        }).then((res) => {
+        })
+        .then((res) => {
           this.posts = res.data;
         })
         .catch((res) => {

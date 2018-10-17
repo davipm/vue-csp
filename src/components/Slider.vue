@@ -1,25 +1,18 @@
 <template>
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active"
-           style="background: url('http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png') no-repeat center/cover;
-           height: 550px;">
-      </div>
       <div class="carousel-item"
-           style="background: url('http://www.cspecem.com/wp-content/uploads/2018/04/AN_BANNER_SITE_10ANOS.jpg') no-repeat center/cover;
-           height: 550px;">
-      </div>
-      <div class="carousel-item"
-           style="background: url('http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-05.jpg') no-repeat center/cover;
-           height: 550px;">
-      </div>
-      <div class="carousel-item"
-           style="background: url('http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-04.jpg') no-repeat center/cover;
-           height: 550px;">
-      </div>
-      <div class="carousel-item"
-           style="background: url('http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-03.jpg') no-repeat center/cover;
-           height: 550px;">
+           v-for="(img, index) in images"
+           :key="index"
+           :style="{
+              background: 'url('+ img.url +')',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              height: '550px'
+           }"
+           :class="{active: index == 0}"
+      >
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -35,7 +28,18 @@
 
 <script>
   export default {
-    name: "Slider"
+    name: "Slider",
+    data() {
+      return {
+        images: [
+          { url: 'http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png' },
+          { url: 'http://www.cspecem.com/wp-content/uploads/2018/04/AN_BANNER_SITE_10ANOS.jpg' },
+          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-05.jpg' },
+          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-04.jpg' },
+          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-03.jpg' },
+        ]
+      }
+    }
   }
 </script>
 
