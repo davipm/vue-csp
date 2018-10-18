@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Single from './views/Single.vue'
 import Page from './views/Page.vue'
+import AllPost from './views/AllPost.vue'
 
 Vue.use(Router);
 
@@ -33,5 +34,10 @@ export default new Router({
       name: 'Page',
       component: Page,
     },
+    {
+      path: '/page/imprensa/posts',
+      name: 'AllPost',
+      component: AllPost
+    }
   ]
 })

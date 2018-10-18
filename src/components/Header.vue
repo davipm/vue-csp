@@ -184,7 +184,7 @@
               </router-link>
               <ul class="submenu">
                 <li class="submenu-item">
-                  <router-link :to="`/page/`" class="submenu-link">
+                  <router-link :to="`/page/imprensa/posts`" class="submenu-link">
                     Notícias
                   </router-link>
                 </li>
