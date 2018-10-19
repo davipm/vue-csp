@@ -197,4 +197,70 @@
     margin-bottom: 1rem;
     color: #00734A;
   }
+
+  .card {
+    border: none;
+    margin-bottom: 40px;
+
+    &-title {
+      font-family: "Centuma", Roboto, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      color: #65666A;
+    }
+
+    &-body {
+      padding: 0;
+      min-height: 180px;
+    }
+
+    &-footer {
+      border: none;
+      padding: 0;
+      background: inherit;
+      text-align: right;
+    }
+  }
+
+  .post-time {
+    font-family: "Centuma", Roboto, sans-serif;
+    font-weight: 300;
+    color: #00734A;
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    background: #00734A;
+    border: none;
+    color: #fff;
+    padding: 4px;
+    border-radius: 0 0 50px 0;
+
+    &:hover {
+      background: #00442e;
+    }
+  }
+
+  .img-content {
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .img-fluid {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
 </style>

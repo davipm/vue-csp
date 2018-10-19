@@ -202,4 +202,11 @@
       transform: scale(1.1);
     }
   }
+
+  // mobile grid's
+  @media ( max-width: 768px ) {
+    .card {
+      margin-bottom: 30px;
+    }
+  }
 </style>

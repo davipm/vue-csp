@@ -3,33 +3,7 @@
     <div class="container">
       <!-- grid loading -->
       <div v-if="loading" class="row">
-        <div class="col-md-9 section-content">
-          <div class="mb-4">
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-          </div>
-          <div class="mb-4">
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-          </div>
-          <div class="mb-4">
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-          </div>
-          <div class="mb-4">
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-            <div class="shine"></div>
-          </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="shine box"></div>
           <div>
             <div class="shine"></div>
@@ -37,6 +11,44 @@
             <div class="shine"></div>
             <div class="shine"></div>
           </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box"></div>
+          <div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box"></div>
+          <div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box"></div>
+          <div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box"></div>
+          <div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+            <div class="shine"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
           <div class="shine box"></div>
           <div>
             <div class="shine"></div>
@@ -107,6 +119,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: "AllPosts",
     data() {
@@ -123,16 +136,27 @@
     },
 
     methods: {
-
+      getPosts() {
+        axios.get('http://wpstudy.local/wp-json/wp/v2/posts')
+        .then((res) => {
+          this.posts = res.data;
+        })
+        .catch((res) => {
+          this.error = true;
+        })
+        .finally( () => {
+          this.loading = false;
+        })
+      }
     },
 
     created() {
-
+      this.getPosts();
     }
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .page {
     padding: 30px 0;
   }
@@ -141,5 +165,71 @@
     font-family: "Centuma", Roboto, sans-serif;
     color: #65666A;
     margin-bottom: 20px;
+  }
+
+  .card {
+    border: none;
+    margin-bottom: 40px;
+
+    &-title {
+       font-family: "Centuma", Roboto, sans-serif;
+       font-weight: bold;
+       font-size: 18px;
+       color: #65666A;
+     }
+
+    &-body {
+       padding: 0;
+       min-height: 180px;
+     }
+
+    &-footer {
+       border: none;
+       padding: 0;
+       background: inherit;
+       text-align: right;
+     }
+  }
+
+  .post-time {
+    font-family: "Centuma", Roboto, sans-serif;
+    font-weight: 300;
+    color: #00734A;
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    background: #00734A;
+    border: none;
+    color: #fff;
+    padding: 4px;
+    border-radius: 0 0 50px 0;
+
+  &:hover {
+     background: #00442e;
+   }
+  }
+
+  .img-content {
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .img-fluid {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+  &:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+     -o-transform: scale(1.1);
+     transform: scale(1.1);
+   }
   }
 </style>
