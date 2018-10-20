@@ -59,17 +59,17 @@
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.facebook.com" class="list-menu-link">
+                <a href="https://www.facebook.com" target="_blank" class="list-menu-link">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.youtube.com/watch?v=cNplZrRSjeI" class="list-menu-link">
+                <a href="https://www.youtube.com/watch?v=cNplZrRSjeI" target="_blank" class="list-menu-link">
                   <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.linkedin.com" class="list-menu-link">
+                <a href="https://www.linkedin.com" target="_blank" class="list-menu-link">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
@@ -87,8 +87,8 @@
               {{ message.privacyPolicy }}
             </router-link>
             <address class="footer-address mt-3">
-              <p class="address-item mb-0">Copyright © 2018 - Companhia Siderúrgica do Pecém</p>
-              <p class="address-item mb-0">Rodovia CE 155, s/n, km 11,5 – São Gonçalo do Amarante/CE</p>
+              <p class="address-item mb-0">Copyright © {{ new Date().getFullYear() }} - Companhia Siderúrgica do Pecém</p>
+              <p class="address-item mb-0">{{ message.address }}</p>
             </address>
           </div>
         </div>
@@ -111,7 +111,8 @@
         message: {
           siteMap: 'Mapa Site',
           privacyPolicy: 'Politica de Privacidade',
-          developedBy: 'Desenvolvido por'
+          developedBy: 'Desenvolvido por',
+          address: 'Rodovia CE 155, s/n, km 11,5 – São Gonçalo do Amarante/CE'
         }
       }
     },
@@ -212,6 +213,13 @@
     &:hover {
       color: #fff;
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-info,
+    .menu-footer {
+      text-align: center;
     }
   }
 </style>
