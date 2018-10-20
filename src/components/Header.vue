@@ -235,7 +235,7 @@
       </div>
     </nav>
     <ul class="nav-mobile">
-      <li>Menu Mobile Test</li>
+      <li></li>
       <li class="menu-container">
         <input id="menu-toggle" type="checkbox">
         <label for="menu-toggle" class="menu-button">
