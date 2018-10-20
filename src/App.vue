@@ -72,10 +72,10 @@
     height: auto;
   }
 
-  .carousel-control-prev {
+  .carousel-control-prev,
+  .carousel-control-next {
     position: absolute;
     top: 50%;
-    left: 15px;
     height: 45px;
     width: 45px;
     transform: translateY(-50%);
@@ -83,5 +83,13 @@
     background-color: rgba(255, 255, 255, 0.7);
     color: #34343c;
     opacity: 1;
+  }
+
+  .carousel-control-prev {
+    left: 15px;
+  }
+
+  .carousel-control-next {
+    right: 15px;
   }
 </style>
