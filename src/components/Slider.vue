@@ -9,7 +9,7 @@
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
-              height: '550px'
+              //height: '550px'
            }"
            :class="{active: index == 0}"
       >
@@ -37,6 +37,7 @@
           { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-05.jpg' },
           { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-04.jpg' },
           { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-03.jpg' },
+          { url: 'http://www.cspecem.com/wp-content/uploads/2018/10/banner_site_jovem_aprendiz.png' },
         ]
       }
     }
@@ -50,5 +51,15 @@
     width: 100%;
     height: 10px;
     background: #fff url("../assets/imgs/bordar-slider.png")no-repeat center/cover;
+  }
+
+  .carousel-item {
+    height: 550px;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 200px;
+    }
   }
 </style>
