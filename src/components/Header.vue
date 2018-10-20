@@ -100,9 +100,9 @@
               </ul>
             </li>
             <li class="nav-item">
-              <router-link :to="`/page/pagina-principal/58`" class="nav-link">
+              <a class="nav-link">
                 Sustentabilisade
-              </router-link>
+              </a>
               <ul class="submenu">
                 <li class="submenu-item">
                   <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
@@ -119,9 +119,9 @@
               </ul>
             </li>
             <li class="nav-item">
-              <router-link :to="`/page/produtos`" class="nav-link">
+              <a class="nav-link">
                 Produtos
-              </router-link>
+              </a>
               <ul class="submenu">
                 <li class="submenu-item">
                   <router-link :to="`/page/placas`" class="submenu-link">
@@ -142,9 +142,9 @@
               </ul>
             </li>
             <li class="nav-item">
-              <router-link :to="`/page/fornecedores`" class="nav-link">
+              <a class="nav-link">
                 Fornecedores
-              </router-link>
+              </a>
               <ul class="submenu">
                 <li class="submenu-item">
                   <router-link :to="`/page/seja-nosso-fornecedor`" class="submenu-link">
@@ -179,9 +179,9 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link :to="`/page/imprensa`" class="nav-link">
+              <a class="nav-link">
                 Imprensa
-              </router-link>
+              </a>
               <ul class="submenu">
                 <li class="submenu-item">
                   <router-link :to="`/page/imprensa/posts`" class="submenu-link">
