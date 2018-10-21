@@ -3,7 +3,7 @@
     <h3 class="single-title">
       {{ asideMessage.toUpperCase() }}
     </h3>
-    <div class="card" v-for="(post, index) in posts" v-bind:key="index">
+    <div class="card" v-for="(post, index) in posts" :key="index">
       <router-link :to="`/post/${post.slug}`">
         <div class="img-content">
           <img class="img-fluid"
@@ -62,9 +62,11 @@
           params: {
             per_page: 2
           }
-        }).then((res) => {
+        })
+        .then((res) => {
           this.posts = res.data;
-        }).catch((res) => {
+        })
+        .catch((res) => {
           // catch errors
         })
       },

@@ -29,6 +29,7 @@
         shareMessage: 'Compartilhar'
       }
     },
+
     methods: {
       printPage() {
         window.print();

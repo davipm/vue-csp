@@ -205,9 +205,9 @@
     padding: 4px;
     border-radius: 0 0 50px 0;
 
-  &:hover {
-     background: #00442e;
-   }
+    &:hover {
+       background: #00442e;
+     }
   }
 
   .img-content {
@@ -224,12 +224,12 @@
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 
-  &:hover {
-     -webkit-transform: scale(1.1);
-     -moz-transform: scale(1.1);
-     -ms-transform: scale(1.1);
-     -o-transform: scale(1.1);
-     transform: scale(1.1);
-   }
+    &:hover {
+       -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+       -ms-transform: scale(1.1);
+       -o-transform: scale(1.1);
+       transform: scale(1.1);
+     }
   }
 </style>
