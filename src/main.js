@@ -7,7 +7,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
+
+// base api request demo
+axios.defaults.baseURL = 'http://demoapi.heyholetsgo.com.br/wp-json';
+
+// base api request localhost
+//axios.defaults.baseURL = 'http://wpstudy.local/wp-json';
 
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
