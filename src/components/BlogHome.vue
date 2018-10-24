@@ -103,7 +103,7 @@
 
     methods: {
       getPosts() {
-        axios.get('http://wpstudy.local/wp-json/wp/v2/posts', {
+        axios.get('/wp/v2/posts', {
           params: {
             per_page: 3
           }
