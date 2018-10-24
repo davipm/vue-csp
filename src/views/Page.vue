@@ -102,7 +102,7 @@
 
     methods: {
       getPage(slug) {
-        axios.get(`http://wpstudy.local/wp-json/wp/v2/pages`, {
+        axios.get(`/wp/v2/pages`, {
           params: {
             slug: slug
           }
@@ -110,7 +110,7 @@
         .then((res) => {
           this.page = res.data[0];
           this.gallery = res.data[0].acf.galeria;
-          console.log(this.page);
+          //console.log(this.page);
         })
         .catch((error) => {
           this.error = true;
