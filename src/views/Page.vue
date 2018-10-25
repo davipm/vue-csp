@@ -101,18 +101,18 @@
     },
 
     methods: {
-      getPage(slug) {
+      getPage( slug ) {
         axios.get(`/wp/v2/pages`, {
           params: {
             slug: slug
           }
         })
-        .then((res) => {
+        .then(( res ) => {
           this.page = res.data[0];
           this.gallery = res.data[0].acf.galeria;
           //console.log(this.page);
         })
-        .catch((error) => {
+        .catch(( error ) => {
           this.error = true;
         })
         .finally(() => {
@@ -120,17 +120,17 @@
         })
       },
 
-      onSlideStart (slide) {
+      onSlideStart( slide ) {
         this.sliding = true;
       },
 
-      onSlideEnd (slide) {
+      onSlideEnd( slide ) {
         this.sliding = false;
       }
     },
 
     watch: {
-      '$route' (to, from) {
+      '$route'(to, from) {
         this.getPage(to.params.slug);
         this.loading = true; // reset loading page when change routes
       }
