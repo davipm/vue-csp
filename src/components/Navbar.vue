@@ -166,10 +166,10 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   Certificações
                   <i class="fas fa-chevron-right"></i>
-                </a>
+                </router-link>
               </li>
             </ul>
           </li>
@@ -226,29 +226,29 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   Sala de Imprensa
-                </a>
+                </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   Saiu na Midia
-                </a>
+                </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   Acessoria de Imprensa
-                </a>
+                </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   CSP News
-                </a>
+                </router-link>
               </li>
               <li class="submenu-item">
-                <a href="#" class="submenu-link">
+                <router-link to="/" class="submenu-link">
                   CSP Notícias
-                </a>
+                </router-link>
               </li>
             </ul>
           </li>
