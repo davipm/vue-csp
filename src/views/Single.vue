@@ -242,13 +242,13 @@
   }
 
   .img-content {
-    height: 220px;
+    height: auto;
     overflow: hidden;
   }
 
   .img-fluid {
     width: 100%;
-    height: 100%;
+    //height: 100%;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
