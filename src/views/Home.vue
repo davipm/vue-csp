@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <section class="home">
     <Slider />
     <BlogHome />
-  </div>
+  </section>
 </template>
 
 <script>
