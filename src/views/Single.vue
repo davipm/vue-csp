@@ -117,7 +117,7 @@
 
 <script>
   import axios from 'axios'
-  import ShareContent from '../components/ShareContent.vue'
+  import ShareContent from '@/components/ShareContent.vue'
   export default {
     name: "Single",
     components: {
