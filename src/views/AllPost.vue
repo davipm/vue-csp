@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import AllPosts from '../components/AllPosts.vue'
+  import AllPosts from '@/components/AllPosts.vue'
   export default {
     name: "AllPost",
     components: {
