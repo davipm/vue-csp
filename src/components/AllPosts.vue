@@ -138,13 +138,13 @@
     methods: {
       getPosts() {
         axios.get('/wp/v2/posts')
-        .then((res) => {
+        .then(( res ) => {
           this.posts = res.data;
         })
-        .catch((res) => {
+        .catch(( res ) => {
           this.error = true;
         })
-        .finally( () => {
+        .finally(() => {
           this.loading = false;
         })
       }
