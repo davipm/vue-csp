@@ -62,4 +62,10 @@
       height: 200px;
     }
   }
+
+  @media (min-width: 1800px) and (max-width: 1920px) {
+    .carousel-item {
+      height: 700px;
+    }
+  }
 </style>
