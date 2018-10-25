@@ -24,20 +24,24 @@
         type: [String, Number],
         default: 200
       },
+
       right: {
         type: String,
         default: '30px'
       },
+
       bottom: {
         type: String,
         default: '40px'
       }
     },
+
     data() {
       return {
         visible: false,
       }
     },
+
     mounted() {
       window.smoothscroll = () => {
         let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -48,13 +52,16 @@
       };
       window.addEventListener('scroll', this.catchScroll);
     },
+
     destroyed() {
       window.removeEventListener('scroll', this.catchScroll)
     },
+
     methods: {
       catchScroll() {
         this.visible = (window.pageYOffset > parseInt(this.visibleoffset))
       },
+
       backToTop() {
         window.smoothscroll();
         this.$emit('scrolled');
@@ -68,6 +75,7 @@
   .back-to-top-fade-leave-active {
     transition: opacity .7s;
   }
+
   .back-to-top-fade-enter,
   .back-to-top-fade-leave-to{
     opacity: 0;
