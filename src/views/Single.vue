@@ -170,12 +170,18 @@
           // console.log(res);
         })
       },
+
+      scrollTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     },
 
     watch: {
       '$route' (to, from) {
         this.getPost(to.params.slug);
         this.getPosts(to.params.slug);
+        this.scrollTop();
         this.loading = true;
       }
     },
@@ -183,6 +189,7 @@
     created() {
       this.getPost(this.$route.params.slug);
       this.getPosts(this.$route.params.slug);
+      this.scrollTop();
     }
   }
 </script>
