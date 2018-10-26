@@ -1,5 +1,17 @@
 <template>
   <div class="share-buttons">
+    <!-- alert massage -->
+    <b-alert :show="dismissCountDown"
+             fade
+             dismissible
+             variant="warning"
+             @dismissed="dismissCountDown = 0"
+             @dismiss-count-down="countDownChanged"
+    >
+      {{ massageError }}
+    </b-alert>
+
+    <!-- share buttons -->
     <ul class="share-list">
       <li class="share-item">
         <a href="#"
@@ -11,7 +23,10 @@
         </a>
       </li>
       <li class="share-item">
-        <a href="#" class="share-link">
+        <a href="#"
+           @click.prevent="showAlert"
+           class="share-link"
+        >
           <i class="fas fa-share-alt"></i>
           {{ shareMessage }}
         </a>
@@ -26,13 +41,24 @@
     data() {
       return {
         printMessage: 'Imprimir',
-        shareMessage: 'Compartilhar'
+        shareMessage: 'Compartilhar',
+        massageError: 'Esta função ainda não está implementada',
+        dismissSecs: 3,
+        dismissCountDown: 0
       }
     },
 
     methods: {
       printPage() {
         window.print();
+      },
+
+      countDownChanged( dismissCountDown ) {
+        this.dismissCountDown = dismissCountDown;
+      },
+
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs;
       }
     }
   }
