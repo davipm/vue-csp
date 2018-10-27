@@ -62,7 +62,7 @@
                       @sliding-end="onSlideEnd"
           >
             <!-- Slides with image only -->
-            <b-carousel-slide :img-src="item.url"
+            <b-carousel-slide :img-src="item.sizes.large"
                               v-for="(item, index) in gallery"
                               :key="index">
             </b-carousel-slide>
@@ -110,7 +110,6 @@
         .then(( res ) => {
           this.page = res.data[0];
           this.gallery = res.data[0].acf.galeria;
-          //console.log(this.page);
         })
         .catch(( error ) => {
           this.error = true;
