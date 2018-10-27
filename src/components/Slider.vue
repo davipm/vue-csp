@@ -11,7 +11,7 @@
               backgroundSize: 'cover',
               //height: '550px'
            }"
-           :class="{active: index == 0}"
+           :class="{active: index === 0}"
       >
       </div>
     </div>
