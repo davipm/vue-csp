@@ -22,31 +22,98 @@
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
-                <router-link to="/">
+                <router-link :to="`/page/visao-missao-e-valores`">
                   Misão, Visão e Valores
                 </router-link>
               </li>
               <li>
-                <router-link to="/">
+                <router-link :to="`/page/nossa-historia`">
                   Nossa História
                 </router-link>
               </li>
               <li>
-                <a href="#">
-                  Programa de Visitas
-                </a>
+                <router-link :to="`/page/diretoria`">
+                  Diretoria
+                </router-link>
               </li>
               <li>
-                <a href="#">
+                <router-link :to="`/page/voce-na-csp`">
+                  Programa de Visitas
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="`/page/complexo-industrial-e-portuario-do-pecem`">
                   Complexo Insdustrial e Portuário do Pecém
-                </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="`/page/processo-de-producao-do-aco`">
+                  Processo de produção do aço
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="`/page/patrocinios`">
+                  Patrocínios
+                </router-link>
               </li>
             </ul>
           </li>
           <li>
-            <a href="#">
-              Sustentabilidade
-            </a>
+            <input type="checkbox" id="sub-two" class="submenu-toggle">
+            <label class="submenu-label" for="sub-two">Sustentabilisade</label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="menu-sub">
+              <li class="menu-sub-title">
+                <label class="submenu-label" for="sub-two">Back</label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              <li>
+                <input type="checkbox" id="sub-three" class="submenu-toggle">
+                <label class="submenu-label" for="sub-three">Meio Ambiente</label>
+                <div class="arrow right">&#8250;</div>
+                <ul class="menu-sub">
+                  <li class="menu-sub-title">
+                    <label class="submenu-label" for="sub-three">Back</label>
+                    <div class="arrow left">&#8249;</div>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="sub-four" class="submenu-toggle">
+                <label class="submenu-label" for="sub-four">Relação com a Comunidade</label>
+                <div class="arrow right">&#8250;</div>
+                <ul class="menu-sub">
+                  <li class="menu-sub-title">
+                    <label class="submenu-label" for="sub-four">Back</label>
+                    <div class="arrow left">&#8249;</div>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                  <li>
+                    <a href="#">Sub-item</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li>
             <router-link to="/">
@@ -59,7 +126,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/">
+            <router-link :to="`/page/trabalhe-conosco`">
               Trabalhe Conosco
             </router-link>
           </li>
@@ -69,17 +136,22 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/">
+            <router-link :to="`/page/ouvidoria`">
               Ouvidoria
             </router-link>
           </li>
           <li>
-            <input type="checkbox" id="sub-two" class="submenu-toggle">
+            <router-link :to="`/page/fale-conosco`">
+              Fale Conosco
+            </router-link>
+          </li>
+          <li>
+            <input type="checkbox" id="sub-ten" class="submenu-toggle">
             <label class="submenu-label" for="sub-two">Category</label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
-                <label class="submenu-label" for="sub-two">Back</label>
+                <label class="submenu-label" for="sub-ten">Back</label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
