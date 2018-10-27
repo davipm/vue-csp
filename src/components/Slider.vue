@@ -2,10 +2,10 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item"
-           v-for="(img, index) in images"
+           v-for="(item, index) in images"
            :key="index"
            :style="{
-              background: 'url('+ img.url +')',
+              background: 'url('+ item.url +')',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -27,10 +27,12 @@
 </template>
 
 <script>
+  // import axios from 'axios'
   export default {
     name: "Slider",
     data() {
       return {
+        //images2: [],
         images: [
           { url: 'http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png' },
           { url: 'http://www.cspecem.com/wp-content/uploads/2018/04/AN_BANNER_SITE_10ANOS.jpg' },
@@ -40,6 +42,19 @@
           { url: 'http://www.cspecem.com/wp-content/uploads/2018/10/banner_site_jovem_aprendiz.png' },
         ]
       }
+    },
+
+    methods: {
+      // getSliders() {
+      //   axios.get('/api/v1/slider')
+      //       .then(( res ) => {
+      //         this.images2 = res.data;
+      //       })
+      // }
+    },
+
+    created() {
+      // this.getSliders();
     }
   }
 </script>
