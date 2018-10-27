@@ -80,7 +80,7 @@
                 <div class="img-content">
                   <img class="img-fluid"
                        v-if="post.acf.featured_image"
-                       :src="post.acf.featured_image"
+                       :src="post.acf.featured_image.sizes.medium_large"
                        alt="Card image cap"
                   >
                   <img class="img-fluid"
@@ -140,18 +140,18 @@
     },
 
     methods: {
-      getPost(slug){
+      getPost( slug ){
         axios.get(`/wp/v2/posts`, {
           params: {
             slug: slug
           }
         })
-        .then((res) => {
+        .then(( res ) => {
           this.post = res.data;
-        }).catch((res) => {
+        }).catch(( res ) => {
           // catch error
         })
-        .finally( () => {
+        .finally(() => {
           this.loading = false;
         })
       },
@@ -162,11 +162,10 @@
             per_page: 2
           }
         })
-        .then((res) => {
+        .then(( res ) => {
           this.posts = res.data;
-          // console.log(res.data)
         })
-        .catch((res) => {
+        .catch(( res ) => {
           // console.log(res);
         })
       },
