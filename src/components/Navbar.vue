@@ -61,52 +61,52 @@
             </a>
             <ul class="submenu">
               <li class="submenu-item">
-                <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                <a class="submenu-link">
                   Meio Ambiente
                   <i class="fas fa-chevron-right"></i>
-                </router-link>
+                </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                    <router-link :to="`/page/`" class="submenu-link">
                       Linha do tempo Sustentável
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <a class="submenu-link">
                       Gestão Ambiental
                       <i class="fas fa-chevron-right"></i>
-                    </router-link>
+                    </a>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                        <router-link :to="`/page/pre-operacao`" class="submenu-link">
                           Pré-operação
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                        <router-link :to="`/page/nossa-gestao`" class="submenu-link">
                           Operação
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                        <router-link :to="`/page/educacao-ambiental`" class="submenu-link">
                           Educação Ambiental
                         </router-link>
                       </li>
                     </ul>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <router-link :to="`/page/monitoramento-ambiental`" class="submenu-link">
                       Monitoramento Ambiental
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <a class="submenu-link">
                       Controles Ambientais
                       <i class="fas fa-chevron-right"></i>
-                    </router-link>
+                    </a>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                        <router-link :to="`/page/`" class="submenu-link">
                           Plantas
                         </router-link>
                       </li>
@@ -115,34 +115,34 @@
                 </ul>
               </li>
               <li class="submenu-item">
-                <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                <a class="submenu-link">
                   Relação com a comunidade
                   <i class="fas fa-chevron-right"></i>
-                </router-link>
+                </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/misao-visao-valores/77`" class="submenu-link">
+                    <router-link :to="`/page/nossa-relacao-com-a-comunidade`" class="submenu-link">
                       Nossa Relação com a Comunidade
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <router-link :to="`/page/`" class="submenu-link">
                       Programa Território Empreendedor
                       <i class="fas fa-chevron-right"></i>
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <router-link :to="`/page/`" class="submenu-link">
                       Infraestrutura social
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <router-link :to="`/page/`" class="submenu-link">
                       Programa de dialogo Social
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                    <router-link :to="`/page/`" class="submenu-link">
                       Ideia da Gente
                     </router-link>
                   </li>
@@ -161,7 +161,7 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                <router-link :to="`/page/`" class="submenu-link">
                   Co-produtos
                 </router-link>
               </li>
@@ -221,7 +221,7 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link :to="`/page/nossa-historia/102`" class="submenu-link">
+                <router-link :to="`/page/`" class="submenu-link">
                   CSP Podcast
                 </router-link>
               </li>
@@ -345,11 +345,17 @@
     text-decoration: none;
     background-color: #00734A;
     color: #fff;
+    cursor: pointer;
     -webkit-transition: all .15s ease-in-out;
     -moz-transition: all .15s ease-in-out;
     -ms-transition: all .15s ease-in-out;
     -o-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
+
+    &:not([href]):not([tabindex]) {
+      background-color: #00734A;
+      color: #fff;
+    }
 
     &:hover {
       text-decoration: none;
@@ -389,6 +395,11 @@
 
   .submenu-item-lv-2 > .submenu-link {
     background-color: #003A1F;
+
+    &:not([href]):not([tabindex]) {
+      background-color: #003A1F;
+      color: #fff;
+    }
   }
 
   .submenu-item-lv-2:hover > .submenu-link {
@@ -397,6 +408,11 @@
 
   .submenu-lv-3 > .submenu-link {
     background-color: #00734A;
+
+    &:not([href]):not([tabindex]) {
+      background-color: #00734A;
+      color: #fff;
+    }
   }
 
   .submenu-item-lv-3:hover > .submenu-link {
