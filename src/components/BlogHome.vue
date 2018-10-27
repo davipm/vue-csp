@@ -50,7 +50,7 @@
               <div class="img-content">
                 <img class="img-fluid"
                      v-if="post.acf.featured_image"
-                     :src="post.acf.featured_image"
+                     :src="post.acf.featured_image.sizes.medium_large"
                      alt="Card image cap"
                 >
                 <img class="img-fluid"
