@@ -5,27 +5,27 @@
         <div class="col-md-6">
           <ul class="menu-footer">
             <li class="menu-footer-item">
-              <router-link :to="`/page/`" class="menu-footer-link">
+              <router-link :to="`/page/fale-conosco`" class="menu-footer-link">
                 Fale Conosco
               </router-link>
             </li>
             <li class="menu-footer-item">
-              <router-link :to="`/page/`" class="menu-footer-link">
+              <router-link :to="`/page/voce-na-csp`" class="menu-footer-link">
                 Você na CSP
               </router-link>
             </li>
             <li class="menu-footer-item">
-              <router-link :to="`/page/`" class="menu-footer-link">
+              <router-link :to="`/page/patrocinios`" class="menu-footer-link">
                 Patrocínio
               </router-link>
             </li>
             <li class="menu-footer-item">
-              <router-link :to="`/page/`" class="menu-footer-link">
+              <router-link :to="`/page/nossa-gestao`" class="menu-footer-link">
                 Gestão Ambental
               </router-link>
             </li>
             <li class="menu-footer-item">
-              <router-link :to="`/page/`" class="menu-footer-link">
+              <router-link :to="`/page/trabalhe-conosco`" class="menu-footer-link">
                 Trabalhe Conosco
               </router-link>
             </li>
@@ -59,17 +59,17 @@
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.facebook.com" target="_blank" class="list-menu-link">
+                <a href="https://www.facebook.com/cspceara" target="_blank" class="list-menu-link">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.youtube.com/watch?v=cNplZrRSjeI" target="_blank" class="list-menu-link">
+                <a href="https://www.youtube.com/user/cspceara" target="_blank" class="list-menu-link">
                   <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.linkedin.com" target="_blank" class="list-menu-link">
+                <a href="https://www.linkedin.com/company-beta/1246662/" target="_blank" class="list-menu-link">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
