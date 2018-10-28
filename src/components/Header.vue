@@ -27,17 +27,17 @@
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.facebook.com" target="_blank" class="list-menu-link">
+                <a href="https://www.facebook.com/cspceara" target="_blank" class="list-menu-link">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.youtube.com/watch?v=cNplZrRSjeI" target="_blank" class="list-menu-link">
+                <a href="https://www.youtube.com/user/cspceara" target="_blank" class="list-menu-link">
                   <i class="fab fa-youtube"></i>
                 </a>
               </li>
               <li class="list-menu-item">
-                <a href="https://www.linkedin.com" target="_blank" class="list-menu-link">
+                <a href="https://www.linkedin.com/company-beta/1246662" target="_blank" class="list-menu-link">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
