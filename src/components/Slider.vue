@@ -2,10 +2,10 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item"
-           v-for="(item, index) in images"
+           v-for="(item, index) in images2"
            :key="index"
            :style="{
-              background: 'url('+ item.url +')',
+              background: 'url('+ item[0].img.url +')',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -27,34 +27,30 @@
 </template>
 
 <script>
-  // import axios from 'axios'
+  import axios from 'axios'
   export default {
     name: "Slider",
     data() {
       return {
-        //images2: [],
-        images: [
-          { url: 'http://www.cspecem.com/wp-content/uploads/2018/06/BANNERSITE-1536X480px-PODCAST-CSP.png' },
-          { url: 'http://www.cspecem.com/wp-content/uploads/2018/04/AN_BANNER_SITE_10ANOS.jpg' },
-          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-05.jpg' },
-          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-04.jpg' },
-          { url: 'http://www.cspecem.com/wp-content/uploads/2017/12/csp_somosacoecoracao_bannersite_v2-03.jpg' },
-          { url: 'http://www.cspecem.com/wp-content/uploads/2018/10/banner_site_jovem_aprendiz.png' },
-        ]
+        images2: [],
       }
     },
 
     methods: {
-      // getSliders() {
-      //   axios.get('/api/v1/slider')
-      //       .then(( res ) => {
-      //         this.images2 = res.data;
-      //       })
-      // }
+      getSliders() {
+        axios.get('/api/v1/slider')
+            .then(( res ) => {
+              // convert obj in array
+              let obj = res.data;
+              this.images2 = Object.keys(obj).map(function (key) {
+                return [obj[key]];
+              });
+            })
+      }
     },
 
     created() {
-      // this.getSliders();
+      this.getSliders();
     }
   }
 </script>
@@ -68,18 +64,24 @@
     background: #fff url("../assets/imgs/bordar-slider.png")no-repeat center/cover;
   }
 
+  .carousel-inner {
+    height: 550px;
+  }
+
   .carousel-item {
     height: 550px;
   }
 
   @media (max-width: 768px) {
-    .carousel-item {
+    .carousel-item,
+    .carousel-inner {
       height: 200px;
     }
   }
 
   @media (min-width: 1800px) and (max-width: 1920px) {
-    .carousel-item {
+    .carousel-item,
+    .carousel-inner {
       height: 700px;
     }
   }
