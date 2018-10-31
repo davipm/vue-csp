@@ -148,14 +148,14 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .page {
     padding: 30px 0;
-  }
 
-  .page-title {
-    font-family: "Centuma", Roboto, sans-serif;
-    color: #65666A;
-    margin-bottom: 20px;
+    &-title {
+      font-family: "Centuma", Roboto, sans-serif;
+      color: #65666A;
+      margin-bottom: 20px;
+    }
   }
 </style>
