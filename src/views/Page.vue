@@ -90,7 +90,7 @@
           alert1: 'OPS!',
           alert2: 'Algo errado aconteceu, por favor tente mais tarde.'
         },
-        loading: true, // show loading page
+        loading: true, // show loading lines
         formLoading: false, // show form loading
         error: false,
         page: {},
@@ -128,16 +128,16 @@
       },
 
       scrollTop() {
-        document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
       }
     },
 
     watch: {
       '$route'(to, from) {
         this.getPage(to.params.slug);
-        this.scrollTop();
         this.loading = true; // reset loading page when change routes
+        this.scrollTop();
       }
     },
 
