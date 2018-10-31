@@ -48,7 +48,7 @@
       </div>
       <!-- alert error -->
       <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>OPS!</strong> Algo errado aconteceu, por favor tente mais tarde.
+        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -149,7 +149,8 @@
         .then(( res ) => {
           this.post = res.data;
         })
-        .catch(( res ) => {
+        .catch(( error ) => {
+          this.error = true;
           // catch error
         })
         .finally(() => {
@@ -167,7 +168,7 @@
           this.posts = res.data;
         })
         .catch(( res ) => {
-          // console.log(res);
+          this.error = true;
         })
       },
 
@@ -181,15 +182,15 @@
       '$route' (to, from) {
         this.getPost(to.params.slug);
         this.getPosts(to.params.slug);
-        this.loading = true;
-        this.scrollTop();
+        this.loading = true; // resenting load on change routes
+        this.scrollTop(); // always start with scrollTop 0 when change routes
       }
     },
 
     created() {
-      this.getPost(this.$route.params.slug);
-      this.getPosts(this.$route.params.slug);
-      this.scrollTop();
+      this.getPost(this.$route.params.slug); // slug current post
+      this.getPosts(this.$route.params.slug); // slug aside posts
+      this.scrollTop(); // always start with scrollTop 0
     }
   }
 </script>
