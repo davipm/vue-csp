@@ -77,16 +77,24 @@
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <router-link to="/">
+                      Linha do tempo Sustentável
+                    </router-link>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a>
+                      Gestão Ambiental
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <router-link :to="`/page/monitoramento-ambiental`">
+                      Monitoramento Ambiental
+                    </router-link>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a>
+                      Controles Ambientais
+                    </a>
                   </li>
                 </ul>
               </li>
