@@ -43,8 +43,17 @@
               </li>
             </ul>
             <form class="form-header">
-              <input type="text" class="form-control input-header" placeholder="Pesquisar" aria-label="Search">
-              <button class="btn-search-header"><i class="fas fa-search"></i></button>
+              <input type="text"
+                     class="form-control input-header"
+                     placeholder="Pesquisar"
+                     aria-label="Search"
+                     v-model="search"
+              >
+              <button class="btn-search-header"
+                      @click.prevent="showSearch"
+              >
+                <i class="fas fa-search"></i>
+              </button>
             </form>
           </div>
         </div>
@@ -67,6 +76,18 @@
       Navbar,
       MobileMenu
     },
+
+    data() {
+      return {
+        search: ''
+      }
+    },
+
+    methods: {
+      showSearch() {
+        alert(this.search)
+      }
+    }
   }
 </script>
 
