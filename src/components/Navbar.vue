@@ -126,23 +126,35 @@
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/programa-territorio-empreendedor`" class="submenu-link">
                       Programa Território Empreendedor
                       <i class="fas fa-chevron-right"></i>
                     </router-link>
+                    <ul class="submenu-lv-3">
+                      <li class="submenu-item-lv-3">
+                        <router-link :to="`/page/fortalecimento-da-base-produtiva-2`" class="submenu-link">
+                          Inscrições - Eixo Fortalecimento da base produtiva
+                        </router-link>
+                      </li>
+                      <li class="submenu-item-lv-3">
+                        <router-link :to="`/page/cultura-empreendedora-2`" class="submenu-link">
+                          Inscrições - Eixo Cultura Empreendedora
+                        </router-link>
+                      </li>
+                    </ul>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/infraestrutura-social`" class="submenu-link">
                       Infraestrutura social
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/programa-de-dialogo-social`" class="submenu-link">
                       Programa de dialogo Social
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/ideia-da-gente`" class="submenu-link">
                       Ideia da Gente
                     </router-link>
                   </li>
