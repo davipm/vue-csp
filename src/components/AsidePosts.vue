@@ -52,7 +52,7 @@
 
     watch: {
       '$route'(to, from) {
-        this.getPosts(to.params.slug)
+        this.getPosts(to.params.slug);
       }
     },
 
@@ -63,10 +63,10 @@
             per_page: 2
           }
         })
-        .then((res) => {
+        .then(( res ) => {
           this.posts = res.data;
         })
-        .catch((res) => {
+        .catch(( res ) => {
           // catch errors
         })
       },
