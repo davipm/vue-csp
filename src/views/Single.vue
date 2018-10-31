@@ -59,7 +59,7 @@
           <!-- category -->
           <h5 class="category" v-if="item.categories[0] === 4">Notícias</h5>
           <h5 class="category" v-else-if="item.categories[0] === 5">CSP Podcast</h5>
-          <h5 class="category" v-else>Sem categoria</h5>
+          <h5 class="category" v-else>Post</h5>
           <!-- title -->
           <h3 class="single-title">
             {{ item.title.rendered }}
@@ -148,7 +148,8 @@
         })
         .then(( res ) => {
           this.post = res.data;
-        }).catch(( res ) => {
+        })
+        .catch(( res ) => {
           // catch error
         })
         .finally(() => {
@@ -171,8 +172,8 @@
       },
 
       scrollTop() {
-        document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
       }
     },
 
@@ -180,8 +181,8 @@
       '$route' (to, from) {
         this.getPost(to.params.slug);
         this.getPosts(to.params.slug);
-        this.scrollTop();
         this.loading = true;
+        this.scrollTop();
       }
     },
 
