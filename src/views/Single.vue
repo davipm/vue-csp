@@ -206,8 +206,8 @@
   }
 
   .card {
-    border: none;
     margin-bottom: 40px;
+    border: none;
 
     &-title {
       font-family: "Centuma", Roboto, sans-serif;
