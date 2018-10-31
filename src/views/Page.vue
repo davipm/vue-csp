@@ -109,7 +109,7 @@
         })
         .then(( res ) => {
           this.page = res.data[0];
-          this.gallery = res.data[0].acf.galeria;
+          this.gallery = res.data[0].acf.galeria; // return only images gallery
         })
         .catch(( error ) => {
           this.error = true;
@@ -137,13 +137,13 @@
       '$route'(to, from) {
         this.getPage(to.params.slug);
         this.loading = true; // reset loading page when change routes
-        this.scrollTop();
+        this.scrollTop(); // always start with scrollTop 0 when change routes
       }
     },
 
     created() {
-      this.getPage(this.$route.params.slug);
-      this.scrollTop();
+      this.getPage(this.$route.params.slug); // slug current page
+      this.scrollTop(); // always start with scrollTop 0
     }
   }
 </script>
