@@ -48,6 +48,12 @@
       }
     },
 
+    watch: {
+      '$route'() {
+        console.log(window.location.href); // test for sharing post
+      }
+    },
+
     methods: {
       printPage() {
         window.print();
@@ -60,6 +66,10 @@
       showAlert() {
         this.dismissCountDown = this.dismissSecs;
       }
+    },
+
+    created() {
+      console.log(window.location.href); // test for sharing post
     }
   }
 </script>
