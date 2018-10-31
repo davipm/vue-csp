@@ -1,6 +1,6 @@
 <template>
   <transition name="back-to-top-fade">
-    <div class="vue-back-to-top" id="BackToTop"
+    <div class="btn-back-to-top" id="BackToTop"
          :style="`bottom:${this.bottom};right:${this.right};`"
          v-show="visible"
          @click="backToTop"
@@ -81,7 +81,7 @@
     opacity: 0;
   }
 
-  .vue-back-to-top {
+  .btn-back-to-top {
     position: fixed;
     z-index: 1000;
     cursor:pointer;
