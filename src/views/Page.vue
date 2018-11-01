@@ -126,24 +126,17 @@
       onSlideEnd( slide ) {
         this.sliding = false;
       },
-
-      scrollTop() {
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }
     },
 
     watch: {
       '$route'(to, from) {
         this.getPage(to.params.slug);
         this.loading = true; // reset loading page when change routes
-        this.scrollTop(); // always start with scrollTop 0 when change routes
       }
     },
 
     created() {
       this.getPage(this.$route.params.slug); // slug current page
-      this.scrollTop(); // always start with scrollTop 0
     }
   }
 </script>
