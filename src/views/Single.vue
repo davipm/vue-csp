@@ -136,6 +136,8 @@
         error: false,
         post: {},
         posts: {},
+        titleMeta: '',
+        contentMeta: ''
       }
     },
 
@@ -148,6 +150,8 @@
         })
         .then(( res ) => {
           this.post = res.data;
+          this.titleMeta = res.data[0].title.rendered;
+          this.contentMeta = res.data[0].excerpt.rendered;
         })
         .catch(( error ) => {
           this.error = true;
@@ -171,11 +175,6 @@
           this.error = true;
         })
       },
-
-      scrollTop() {
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }
     },
 
     watch: {
@@ -183,21 +182,34 @@
         this.getPost(to.params.slug);
         this.getPosts(to.params.slug);
         this.loading = true; // resenting load on change routes
-        this.scrollTop(); // always start with scrollTop 0 when change routes
       }
     },
 
     created() {
       this.getPost(this.$route.params.slug); // slug current post
       this.getPosts(this.$route.params.slug); // slug aside posts
-      this.scrollTop(); // always start with scrollTop 0
-    }
+    },
+
+    metaInfo() {
+      return {
+        title: this.titleMeta + ' | CSP',
+        meta: [
+          { vmid: 'description', name: 'description', content: this.contentMeta },
+        ]
+      }
+    },
   }
 </script>
 
 <style scoped lang="scss">
   .section-content {
     border-right: 1px solid #00734A;
+  }
+
+  .category {
+    font-family: "Centuma", Roboto, sans-serif;
+    font-size: 26px;
+    color: #65666A;
   }
 
   .single-title {
