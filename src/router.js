@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Single from './views/Single.vue'
 import Page from './views/Page.vue'
 import AllPost from './views/AllPost.vue'
+import PageModal from './views/PageModal.vue'
 
 Vue.use(Router);
 
@@ -38,6 +39,16 @@ export default new Router({
       path: '/page/imprensa/posts',
       name: 'AllPost',
       component: AllPost
+    },
+    {
+      path: '/page/ideia-da-gente/:slug',
+      name: 'PageModal',
+      component: PageModal
     }
-  ]
+  ],
+
+  // scroll to top when change routes
+  scrollBehavior(to, from, scrollPosition) {
+    return { x: 0, y: 0 };
+  }
 })
