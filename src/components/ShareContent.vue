@@ -23,8 +23,7 @@
         </a>
       </li>
       <li class="share-item">
-        <a href="#"
-           @click.prevent="showAlert"
+        <a :href="`https://www.facebook.com/sharer/sharer.php?u=${getUrlShare}`"
            class="share-link"
         >
           <i class="fas fa-share-alt"></i>
@@ -68,9 +67,11 @@
       }
     },
 
-    created() {
-      console.log(window.location.href); // test for sharing post
-    }
+    computed: {
+      getUrlShare() {
+        return window.location.href;
+      }
+    },
   }
 </script>
 
