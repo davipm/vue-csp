@@ -9,6 +9,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
+import Meta from 'vue-meta'
 
 // base api request demo
 axios.defaults.baseURL = 'http://demoapi.heyholetsgo.com.br/wp-json';
@@ -17,6 +18,7 @@ axios.defaults.baseURL = 'http://demoapi.heyholetsgo.com.br/wp-json';
 //axios.defaults.baseURL = 'http://wpstudy.local/wp-json';
 
 Vue.use(BootstrapVue);
+Vue.use(Meta);
 Vue.config.productionTip = false;
 
 new Vue({
