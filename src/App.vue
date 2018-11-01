@@ -22,6 +22,36 @@
       Header,
       Footer,
       BackToTop
+    },
+
+    metaInfo: {
+      title: 'CSP Vue Version',
+      meta: [
+        // OpenGraph data (Most widely used)
+        {property: 'og:title', content: 'My Page Title ← My Site'},
+        {property: 'og:site_name', content: 'My Site'},
+        // The list of types is available here: http://ogp.me/#types
+        {property: 'og:type', content: 'website'},
+        // Should the the same as your canonical link, see below.
+        {property: 'og:url', content: 'https://www.my-site.com/my-special-page'},
+        {property: 'og:image', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'},
+        // Often the same as your meta description, but not always.
+        {property: 'og:description', content: 'I have things here on my site.'},
+
+        // Twitter card
+        {name: 'twitter:card', content: 'summary'},
+        {name: 'twitter:site', content: 'https://www.my-site.com/my-special-page'},
+        {name: 'twitter:title', content: 'My Page Title ← My Site'},
+        {name: 'twitter:description', content: 'I have things here on my site.'},
+        // Your twitter handle, if you have one.
+        {name: 'twitter:creator', content: '@alligatorio'},
+        {name: 'twitter:image:src', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'},
+
+        // Google / Schema.org markup:
+        {itemprop: 'name', content: 'My Page Title ← My Site'},
+        {itemprop: 'description', content: 'I have things here on my site.'},
+        {itemprop: 'image', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'}
+      ]
     }
   }
 
