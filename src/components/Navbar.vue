@@ -248,17 +248,17 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <router-link to="/page/assessoria-de-imprensa" class="submenu-link">
                   Acessoria de Imprensa
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <router-link to="/page/imprensa/cspnews" class="submenu-link">
                   CSP News
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <router-link to="/page/imprensa/cspnotcias" class="submenu-link">
                   CSP Notícias
                 </router-link>
               </li>
