@@ -96,6 +96,7 @@
       background-color: #00734A;
       border-radius: 3px;
       opacity: .6;
+
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
       -ms-transition: all .3s ease-in-out;
