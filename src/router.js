@@ -41,10 +41,10 @@ export default new Router({
       component: AllPost
     },
     {
-      path: '/page/ideia-da-gente/:slug',
+      path: '/page/imprensa/:slug',
       name: 'PageModal',
       component: PageModal
-    }
+    },
   ],
 
   // scroll to top when change routes
