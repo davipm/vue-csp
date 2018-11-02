@@ -178,10 +178,27 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <a class="submenu-link">
                   Certificações
                   <i class="fas fa-chevron-right"></i>
-                </router-link>
+                </a>
+                <ul class="submenu-lv-2">
+                  <li class="submenu-item-lv-2">
+                    <router-link :to="`/page/`" class="submenu-link">
+                      Qualidade
+                    </router-link>
+                  </li>
+                  <li class="submenu-item-lv-2">
+                    <router-link :to="`/page/`" class="submenu-link">
+                      Produto
+                    </router-link>
+                  </li>
+                  <li class="submenu-item-lv-2">
+                    <router-link :to="`/page/`" class="submenu-link">
+                      Meio Ambiente
+                    </router-link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
