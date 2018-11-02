@@ -2,30 +2,67 @@
   <section class="section page-news">
     <!-- loading -->
     <div class="container loading" v-if="loading">
-      <div class="col-md-9 section-content">
-        <div class="mb-4">
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
+      <!-- grid -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
         </div>
-        <div class="mb-4">
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
         </div>
-        <div class="mb-4">
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
         </div>
-        <div class="mb-4">
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
-          <div class="shine"></div>
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="media">
+            <div class="shine box"></div>
+            <div class="media-body align-self-center">
+              <div class="shine"></div>
+              <div class="shine"></div>
+              <div class="shine"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -42,7 +79,9 @@
     <!-- content -->
     <div class="container" v-else>
       <!-- heading -->
-      <h3 class="page-title">CSP Notícias</h3>
+      <h3 class="page-title">
+        {{ pageTitle }}
+      </h3>
       <!-- page content -->
       <div class="page-content">
         <!-- grid -->
@@ -92,27 +131,45 @@
       return {
         loading: true,
         error: false,
-        news: {}
+        message: {
+          alert1: 'OPS!',
+          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
+        },
+        news: {},
+        pageTitle: ''
+      }
+    },
+
+    watch: {
+      '$route'(to, from) {
+        this.getRoute(to.params.slug);
+        this.loading = true;
       }
     },
 
     methods: {
       getRoute( slug ) {
-        axios.get('/api/v1/cspnotcias')
-        .then(( res ) => {
-          this.news = res.data;
-        })
-        .catch(( res ) => {
-            this.err = true;
-         })
-         .finally(() => {
-           this.loading = false;
-         })
+        axios.get(`/api/v1/${slug}`)
+            .then(( res ) => {
+              this.news = res.data;
+              if ( slug === 'cspnews' ) {
+                this.pageTitle = 'CSP News';
+              }
+              else {
+                this.pageTitle = 'CSP Notícias';
+              }
+            })
+            .catch(( error ) => {
+              this.error = true;
+            })
+            .finally(() => {
+              this.loading = false;
+            });
       }
     },
 
     created() {
-      this.getRoute();
+      this.getRoute(this.$route.params.slug);
     }
   }
 </script>
@@ -136,11 +193,13 @@
     margin-right: 1rem;
     max-width: 128px;
     height: auto;
+
     -webkit-transition: all .6s ease-in-out;
     -moz-transition: all .6s ease-in-out;
     -ms-transition: all .6s ease-in-out;
     -o-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out;
+
     -webkit-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
     -moz-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
     -ms-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
@@ -171,5 +230,16 @@
     color: #65666a;
     background-color: #d8d9da;
     border: none;
+  }
+
+  // loading box's
+  .shine {
+    width: 80%;
+  }
+
+  .box {
+    width: 39%;
+    height: 220px;
+    margin-right: 1rem;
   }
 </style>
