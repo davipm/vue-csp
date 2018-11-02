@@ -129,7 +129,7 @@
         message: {
           pageTitle: 'Notícias',
           alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, por favor tente mais tarde.',
+          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
           asideMessage: 'Saiba Mais',
         },
         loading: true,
