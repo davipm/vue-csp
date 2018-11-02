@@ -100,7 +100,9 @@
               </li>
               <li>
                 <input type="checkbox" id="sub-four" class="submenu-toggle">
-                <label class="submenu-label" for="sub-four">Relação com a Comunidade</label>
+                <label class="submenu-label" for="sub-four">
+                  Relação com a Comunidade
+                </label>
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
@@ -108,25 +110,84 @@
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a href="#">
+                      Nossa Relação com a Comunidade
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a href="#">
+                      Programa Território Empreendedor
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a href="#">
+                      Inscrições - Eixo Fortalecimento da base produtiva
+                    </a>
                   </li>
                   <li>
-                    <a href="#">Sub-item</a>
+                    <a href="#">
+                      Inscrições - Eixo Cultura Empreendedora
+                    </a>
                   </li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <router-link to="/">
-              Produtos
-            </router-link>
+            <input type="checkbox" id="sub-produtos" class="submenu-toggle">
+            <label class="submenu-label" for="sub-produtos">Produtos</label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="menu-sub">
+              <li class="menu-sub-title">
+                <label class="submenu-label" for="sub-produtos">Back</label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              <li>
+                <router-link to="/">
+                  Placas
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/">
+                  Co-produtos
+                </router-link>
+              </li>
+              <li>
+                <input type="checkbox" id="sub-certificacoes" class="submenu-toggle">
+                <label class="submenu-label" for="sub-certificacoes">
+                  Certificações
+                </label>
+                <div class="arrow right">&#8250;</div>
+                <ul class="menu-sub">
+                  <li class="menu-sub-title">
+                    <label class="submenu-label" for="sub-certificacoes">
+                      Back
+                    </label>
+                    <div class="arrow left">&#8249;</div>
+                  </li>
+                  <li>
+                    <router-link to="/">
+                      Sub-item
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/">
+                      Sub-item
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/">
+                      Sub-item
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/">
+                      Sub-item
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li>
             <router-link to="/">
@@ -139,9 +200,54 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/">
+            <input type="checkbox" id="sub-imprensa" class="submenu-toggle">
+            <label class="submenu-label" for="sub-imprensa">
               Imprensa
-            </router-link>
+            </label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="menu-sub">
+              <li class="menu-sub-title">
+                <label class="submenu-label" for="sub-imprensa">
+                  Back
+                </label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              <li>
+                <router-link to="/page/imprensa/posts">
+                  Notícias
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/">
+                  CSP Podcast
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/">
+                  Sala de Imprensa
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/">
+                  Saiu na Midia
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/assessoria-de-imprensa">
+                  Acessoria de Imprensa
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/imprensa/cspnews">
+                  CSP News
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/imprensa/cspnotcias">
+                  CSP Notícias
+                </router-link>
+              </li>
+            </ul>
           </li>
           <li>
             <router-link :to="`/page/ouvidoria`">
@@ -155,24 +261,36 @@
           </li>
           <li>
             <input type="checkbox" id="sub-ten" class="submenu-toggle">
-            <label class="submenu-label" for="sub-two">Category</label>
+            <label class="submenu-label" for="sub-two">
+              Category
+            </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
-                <label class="submenu-label" for="sub-ten">Back</label>
+                <label class="submenu-label" for="sub-ten">
+                  Back
+                </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
-                <a href="#">Sub-item</a>
+                <router-link to="/">
+                  Sub-item
+                </router-link>
               </li>
               <li>
-                <a href="#">Sub-item</a>
+                <router-link to="/">
+                  Sub-item
+                </router-link>
               </li>
               <li>
-                <a href="#">Sub-item</a>
+                <router-link to="/">
+                  Sub-item
+                </router-link>
               </li>
               <li>
-                <a href="#">Sub-item</a>
+                <router-link to="/">
+                  Sub-item
+                </router-link>
               </li>
             </ul>
           </li>
