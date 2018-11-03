@@ -24,33 +24,34 @@
       BackToTop
     },
 
+    // meta tags SEO
     metaInfo: {
       title: 'CSP Vue Version',
       meta: [
         // OpenGraph data (Most widely used)
-        {property: 'og:title', content: 'My Page Title ← My Site'},
-        {property: 'og:site_name', content: 'My Site'},
+        {property: 'og:title', content: 'Page Title ← CSP'},
+        {property: 'og:site_name', content: 'CSP'},
         // The list of types is available here: http://ogp.me/#types
         {property: 'og:type', content: 'website'},
         // Should the the same as your canonical link, see below.
-        {property: 'og:url', content: 'https://www.my-site.com/my-special-page'},
-        {property: 'og:image', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'},
+        {property: 'og:url', content: 'http://cspvue.surge.sh'},
+        {property: 'og:image', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
         // Often the same as your meta description, but not always.
-        {property: 'og:description', content: 'I have things here on my site.'},
+        {property: 'og:description', content: 'Some description.'},
 
         // Twitter card
         {name: 'twitter:card', content: 'summary'},
-        {name: 'twitter:site', content: 'https://www.my-site.com/my-special-page'},
-        {name: 'twitter:title', content: 'My Page Title ← My Site'},
-        {name: 'twitter:description', content: 'I have things here on my site.'},
+        {name: 'twitter:site', content: 'http://cspvue.surge.sh'},
+        {name: 'twitter:title', content: 'Page Title ← CSP'},
+        {name: 'twitter:description', content: 'Some description.'},
         // Your twitter handle, if you have one.
-        {name: 'twitter:creator', content: '@alligatorio'},
-        {name: 'twitter:image:src', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'},
+        {name: 'twitter:creator', content: '@davipmdev'},
+        {name: 'twitter:image:src', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
 
         // Google / Schema.org markup:
-        {itemprop: 'name', content: 'My Page Title ← My Site'},
-        {itemprop: 'description', content: 'I have things here on my site.'},
-        {itemprop: 'image', content: 'http://localhost:8080/img/logo-default.54b9af6f.png'}
+        {itemprop: 'name', content: 'Page Title ← CSP'},
+        {itemprop: 'description', content: 'Some description.'},
+        {itemprop: 'image', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'}
       ]
     }
   }
@@ -115,11 +116,7 @@
     opacity: 1;
   }
 
-  .carousel-control-prev {
-    left: 15px;
-  }
+  .carousel-control-prev { left: 15px; }
 
-  .carousel-control-next {
-    right: 15px;
-  }
+  .carousel-control-next { right: 15px; }
 </style>
