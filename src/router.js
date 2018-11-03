@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Single from './views/Single.vue'
 import Page from './views/Page.vue'
 import AllPost from './views/AllPost.vue'
+import PageNews from './views/PageNews.vue'
 import PageModal from './views/PageModal.vue'
 
 Vue.use(Router);
@@ -36,14 +37,19 @@ export default new Router({
       component: Page,
     },
     {
+      path: '/page/controles-ambientais/plantas',
+      name: 'PageModal',
+      component: PageModal,
+    },
+    {
       path: '/page/imprensa/posts',
       name: 'AllPost',
       component: AllPost
     },
     {
       path: '/page/imprensa/:slug',
-      name: 'PageModal',
-      component: PageModal
+      name: 'PageNews',
+      component: PageNews
     },
   ],
 

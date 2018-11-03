@@ -106,7 +106,7 @@
                     </a>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/`" class="submenu-link">
+                        <router-link :to="`/page/controles-ambientais/plantas`" class="submenu-link">
                           Plantas
                         </router-link>
                       </li>
@@ -304,13 +304,9 @@
 </script>
 
 <style scoped lang="scss">
-  .navbar {
-    padding-bottom: 0;
-  }
+  .navbar { padding-bottom: 0; }
 
-  .navbar-collapse {
-    justify-content: center;
-  }
+  .navbar-collapse { justify-content: center; }
 
   .nav-link {
     cursor: pointer;
@@ -456,8 +452,6 @@
 
   // mobile grid's
   @media (max-width: 768px) {
-    .navbar {
-      display: none;
-    }
+    .navbar { display: none; }
   }
 </style>
