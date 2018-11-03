@@ -1,70 +1,8 @@
 <template>
-  <section class="section page-news">
+  <section class="section page-modal">
     <!-- loading -->
     <div class="container loading" v-if="loading">
-      <!-- grid -->
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="media">
-            <div class="shine box"></div>
-            <div class="media-body align-self-center">
-              <div class="shine"></div>
-              <div class="shine"></div>
-              <div class="shine"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
     <!-- error -->
     <div class="container error" v-else-if="error">
@@ -76,45 +14,69 @@
         </button>
       </div>
     </div>
-    <!-- content -->
+    <!-- page content -->
     <div class="container" v-else>
-      <!-- heading -->
       <h3 class="page-title">
-        {{ pageTitle }}
+        Plantas
       </h3>
-      <!-- page content -->
       <div class="page-content">
-        <!-- grid -->
+        <!-- the modal -->
+        <b-modal id="myModal"
+                 cancel-variant="none"
+                 size="lg"
+                 centered title="Title Test"
+        >
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Sistema de Aspersão de Água</strong></p>
+              <p>
+                Para controlar a emissão de material
+                particulado nas pilhas do Pátio de Matérias- Primas,
+                a CSP conta com um sistema de aspersão que utiliza
+                água recirculada. Além desse controle, é realizada a
+                aspersão nas vias de acesso ao pátio.
+              </p>
+              <p><strong>Sistema de Aspersão de Água</strong></p>
+              <p>
+                Para controlar a emissão de material
+                particulado nas pilhas do Pátio de Matérias- Primas,
+                a CSP conta com um sistema de aspersão que utiliza
+                água recirculada. Além desse controle, é realizada a
+                aspersão nas vias de acesso ao pátio.
+              </p>
+              <p><strong>Sistema de Aspersão de Água</strong></p>
+              <p>
+                Para controlar a emissão de material
+                particulado nas pilhas do Pátio de Matérias- Primas,
+                a CSP conta com um sistema de aspersão que utiliza
+                água recirculada. Além desse controle, é realizada a
+                aspersão nas vias de acesso ao pátio.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="w-100 sticky-top" alt="">
+            </div>
+          </div>
+        </b-modal>
         <div class="row">
-          <div class="col-md-4 mb-5" v-for="(item, index) in news" :key="index">
-            <div class="media">
-              <a :href="item.pdf_file" target="_blank">
-                <div class="media-img-content" v-if="item.cover">
-                  <img class="media-img"
-                       :src="item.cover.sizes.medium"
-                       :alt="item.title"
-                  >
-                </div>
-                <img class="media-img"
-                     v-else
-                     src="https://via.placeholder.com/128x200"
-                     alt="Generic placeholder image"
-                >
-              </a>
-              <div class="media-body align-self-center">
-                <time class="media-date">
-                  {{ item.date }}
-                </time>
-                <h5 class="media-title">
-                  {{ item.title }}
-                </h5>
-                <a :href="item.pdf_file"
-                   target="_blank"
-                   class="btn btn-primary"
-                >
-                  Veja Mais
-                </a>
+          <div class="col-md-4">
+            <div class="card" v-b-modal="'myModal'">
+              <div class="card-img-content">
+                <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
               </div>
+              <div class="card-body">
+                <h5 class="card-title">Patio de materias-primas</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
             </div>
           </div>
         </div>
@@ -124,122 +86,64 @@
 </template>
 
 <script>
-  import axios from 'axios'
   export default {
     name: "PageModal",
     data() {
       return {
-        loading: true,
+        loading: false,
         error: false,
+        modalItem: {},
         message: {
           alert1: 'OPS!',
           alert2: 'Algo errado aconteceu, recarregue a página novamente.',
         },
-        news: {},
-        pageTitle: ''
       }
-    },
-
-    watch: {
-      '$route'(to, from) {
-        this.getRoute(to.params.slug);
-        this.loading = true;
-      }
-    },
-
-    methods: {
-      getRoute( slug ) {
-        axios.get(`/api/v1/${slug}`)
-            .then(( res ) => {
-              this.news = res.data;
-              if ( slug === 'cspnews' ) {
-                this.pageTitle = 'CSP News';
-              }
-              else {
-                this.pageTitle = 'CSP Notícias';
-              }
-            })
-            .catch(( error ) => {
-              this.error = true;
-            })
-            .finally(() => {
-              this.loading = false;
-            });
-      }
-    },
-
-    created() {
-      this.getRoute(this.$route.params.slug);
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .page-news {
-    padding-top: 25px;
-  }
+  .card {
+    cursor: pointer;
+    border: none;
 
-  .page-title {
-    margin-bottom: 2rem;
-    font-family: "Centuma", Roboto, sans-serif;
-    color: #65666A;
-  }
-  
-  .media-img-content {
-    overflow: hidden;
-  }
+    &-body { padding-top: 0.8rem; }
 
-  .media-img {
-    margin-right: 1rem;
-    max-width: 128px;
-    height: auto;
+    &-title {
+      text-align: center;
+      font-family: "Centuma", Roboto, sans-serif;
+      font-size: 15px;
+    }
 
-    -webkit-transition: all .6s ease-in-out;
-    -moz-transition: all .6s ease-in-out;
-    -ms-transition: all .6s ease-in-out;
-    -o-transition: all .6s ease-in-out;
-    transition: all .6s ease-in-out;
-
-    -webkit-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
-    -moz-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
-    -ms-box-shadow: 0 0 20px -1px rgba(117,117,117,1);
-    box-shadow: 0 0 20px -5px rgba(117,117,117,1);
+    &-img-content { overflow: hidden; }
     
-    &:hover {
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
+    &-img {
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      
+      &:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+      }
     }
   }
+</style>
 
-  .media-date {
-    color: #65666A;
-  }
+<style lang="scss">
+  .btn-none { display: none; }
 
-  .media-title {
-    color: #00734A;
-  }
+  .modal-body {
+    max-height: 400px;
+    overflow: auto;
 
-  .btn-primary {
-    padding: 5px 10px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    color: #65666a;
-    background-color: #d8d9da;
-    border: none;
-  }
-
-  // loading box's
-  .shine {
-    width: 80%;
-  }
-
-  .box {
-    width: 39%;
-    height: 220px;
-    margin-right: 1rem;
+    p {
+      font-size: 14px;
+    }
   }
 </style>
