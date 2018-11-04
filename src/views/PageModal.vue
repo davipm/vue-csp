@@ -2,7 +2,32 @@
   <section class="section page-modal">
     <!-- loading -->
     <div class="container loading" v-if="loading">
-
+      <div class="row">
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="shine box mb-1"></div>
+          <div class="shine mb-4"></div>
+        </div>
+      </div>
     </div>
     <!-- error -->
     <div class="container error" v-else-if="error">
@@ -17,66 +42,48 @@
     <!-- page content -->
     <div class="container" v-else>
       <h3 class="page-title">
-        Plantas
+        {{ message.pageTitle }}
       </h3>
       <div class="page-content">
-        <!-- the modal -->
-        <b-modal id="myModal"
-                 cancel-variant="none"
-                 size="lg"
-                 centered title="Title Test"
-        >
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Sistema de Aspersão de Água</strong></p>
-              <p>
-                Para controlar a emissão de material
-                particulado nas pilhas do Pátio de Matérias- Primas,
-                a CSP conta com um sistema de aspersão que utiliza
-                água recirculada. Além desse controle, é realizada a
-                aspersão nas vias de acesso ao pátio.
-              </p>
-              <p><strong>Sistema de Aspersão de Água</strong></p>
-              <p>
-                Para controlar a emissão de material
-                particulado nas pilhas do Pátio de Matérias- Primas,
-                a CSP conta com um sistema de aspersão que utiliza
-                água recirculada. Além desse controle, é realizada a
-                aspersão nas vias de acesso ao pátio.
-              </p>
-              <p><strong>Sistema de Aspersão de Água</strong></p>
-              <p>
-                Para controlar a emissão de material
-                particulado nas pilhas do Pátio de Matérias- Primas,
-                a CSP conta com um sistema de aspersão que utiliza
-                água recirculada. Além desse controle, é realizada a
-                aspersão nas vias de acesso ao pátio.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="w-100 sticky-top" alt="">
-            </div>
-          </div>
-        </b-modal>
+        <!-- page content -->
         <div class="row">
-          <div class="col-md-4">
-            <div class="card" v-b-modal="'myModal'">
+          <div class="col-md-4" v-for="(item, index) in modalItem" :key="index">
+            <!-- the modal -->
+            <b-modal :id="item.slug"
+                     cancel-variant="none"
+                     ok-variant="modal"
+                     ok-title="Fechar"
+                     size="lg"
+                     centered :title="item.title"
+            >
+              <div class="row">
+                <div class="col-md-6">
+                  <div v-html="item.content"></div>
+                </div>
+                <div class="col-md-6">
+                  <img v-if="item.image"
+                       class="w-100 sticky-top"
+                       :src="item.image.sizes.medium"
+                       :alt="item.image.filename"
+                  >
+                  <img v-else src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
+                </div>
+              </div>
+            </b-modal>
+            <div class="card" v-b-modal="item.slug">
               <div class="card-img-content">
-                <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
+                <img v-if="item.image"
+                     class="card-img"
+                     :src="item.image.sizes.medium"
+                     :alt="item.image.filename"
+                >
+                <img v-else src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
               </div>
               <div class="card-body">
-                <h5 class="card-title">Patio de materias-primas</h5>
+                <h5 class="card-title">
+                  {{ item.title }}
+                </h5>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
             </div>
           </div>
         </div>
@@ -86,23 +93,51 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: "PageModal",
     data() {
       return {
-        loading: false,
+        loading: true,
         error: false,
         modalItem: {},
         message: {
           alert1: 'OPS!',
           alert2: 'Algo errado aconteceu, recarregue a página novamente.',
+          pageTitle: 'Plantas'
         },
       }
+    },
+
+    methods: {
+      getPosts(){
+        axios.get('/api/v1/plantas')
+            .then(( res ) => {
+              this.modalItem = res.data;
+            })
+            .catch(( res ) => {
+              this.error = true;
+            })
+            .finally(() => {
+              this.loading = false;
+            })
+      }
+    },
+
+    created() {
+      this.getPosts();
     }
   }
 </script>
 
 <style scoped lang="scss">
+  .page-modal { padding-top: 1.5rem; }
+
+  .page-title {
+    margin-bottom: 1.5rem;
+    color: #65666A;
+  }
+
   .card {
     cursor: pointer;
     border: none;
@@ -111,8 +146,10 @@
 
     &-title {
       text-align: center;
+      font-weight: bold;
       font-family: "Centuma", Roboto, sans-serif;
       font-size: 15px;
+      color: #65666A;
     }
 
     &-img-content { overflow: hidden; }
@@ -138,12 +175,25 @@
 <style lang="scss">
   .btn-none { display: none; }
 
+  .btn-modal {
+    padding: 10px 20px;
+    background-color: inherit;
+    font-size: 14px;
+    color: #65666A;
+    border: 1px solid #65666A;
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      background: #34343c;
+      border-color: #34343c;
+    }
+  }
+
   .modal-body {
     max-height: 400px;
     overflow: auto;
 
-    p {
-      font-size: 14px;
-    }
+    p { font-size: 14px; }
   }
 </style>

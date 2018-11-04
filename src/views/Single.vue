@@ -154,8 +154,7 @@
           this.contentMeta = res.data[0].excerpt.rendered;
         })
         .catch(( error ) => {
-          this.error = true;
-          // catch error
+          this.error = true; // catch error
         })
         .finally(() => {
           this.loading = false;
@@ -269,6 +268,7 @@
   .img-fluid {
     width: 100%;
     //height: 100%;
+
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
