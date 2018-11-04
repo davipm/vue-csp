@@ -54,7 +54,8 @@
                      ok-variant="modal"
                      ok-title="Fechar"
                      size="lg"
-                     centered :title="item.title"
+                     centered
+                     :title="item.title"
             >
               <div class="row">
                 <div class="col-md-6">
