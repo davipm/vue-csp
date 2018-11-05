@@ -82,9 +82,34 @@
                     </router-link>
                   </li>
                   <li>
-                    <a>
+                    <input type="checkbox" id="sub-gestao-ambiental" class="submenu-toggle">
+                    <label class="submenu-label" for="sub-gestao-ambiental">
                       Gestão Ambiental
-                    </a>
+                    </label>
+                    <div class="arrow right">&#8250;</div>
+                    <ul class="menu-sub">
+                      <li class="menu-sub-title">
+                        <label class="submenu-label" for="sub-gestao-ambiental">
+                          Back
+                        </label>
+                        <div class="arrow left">&#8249;</div>
+                      </li>
+                      <li>
+                        <router-link to="/page/pre-operacao">
+                          Pré-operação
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="/page/nossa-gestao">
+                          Operação
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="/page/educacao-ambiental">
+                          Educação Ambiental
+                        </router-link>
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <router-link :to="`/page/monitoramento-ambiental`">
@@ -92,9 +117,24 @@
                     </router-link>
                   </li>
                   <li>
-                    <a>
+                    <input type="checkbox" id="sub-controle-ambiental" class="submenu-toggle">
+                    <label class="submenu-label" for="sub-controle-ambiental">
                       Controles Ambientais
-                    </a>
+                    </label>
+                    <div class="arrow right">&#8250;</div>
+                    <ul class="menu-sub">
+                      <li class="menu-sub-title">
+                        <label class="submenu-label" for="sub-controle-ambiental">
+                          Back
+                        </label>
+                        <div class="arrow left">&#8249;</div>
+                      </li>
+                      <li>
+                        <router-link to="/page/controles-ambientais/plantas">
+                          Plantas
+                        </router-link>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </li>
@@ -110,24 +150,24 @@
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
-                    <a href="#">
+                    <router-link to="/page/nossa-relacao-com-a-comunidade">
                       Nossa Relação com a Comunidade
-                    </a>
+                    </router-link>
                   </li>
                   <li>
-                    <a href="#">
+                    <router-link to="/page/programa-territorio-empreendedor">
                       Programa Território Empreendedor
-                    </a>
+                    </router-link>
                   </li>
                   <li>
-                    <a href="#">
+                    <router-link to="/page/fortalecimento-da-base-produtiva-2">
                       Inscrições - Eixo Fortalecimento da base produtiva
-                    </a>
+                    </router-link>
                   </li>
                   <li>
-                    <a href="#">
+                    <router-link to="/page/cultura-empreendedora-2">
                       Inscrições - Eixo Cultura Empreendedora
-                    </a>
+                    </router-link>
                   </li>
                 </ul>
               </li>
@@ -143,12 +183,12 @@
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
-                <router-link to="/">
+                <router-link to="/page/placas">
                   Placas
                 </router-link>
               </li>
               <li>
-                <router-link to="/">
+                <router-link to="/page/co-produtos">
                   Co-produtos
                 </router-link>
               </li>
@@ -166,23 +206,18 @@
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
-                    <router-link to="/">
-                      Sub-item
+                    <router-link to="/page/imprensa/cerqualidades">
+                      Qualidade
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/">
-                      Sub-item
+                    <router-link to="/page/imprensa/cerprodutos">
+                      Produto
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/">
-                      Sub-item
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/">
-                      Sub-item
+                    <router-link to="/page/imprensa/cermeioambientes">
+                      Meio Ambiente
                     </router-link>
                   </li>
                 </ul>

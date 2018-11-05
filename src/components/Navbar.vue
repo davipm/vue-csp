@@ -173,7 +173,7 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link :to="`/page/`" class="submenu-link">
+                <router-link :to="`/page/co-produtos`" class="submenu-link">
                   Co-produtos
                 </router-link>
               </li>
@@ -184,17 +184,17 @@
                 </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/imprensa/cerqualidades`" class="submenu-link">
                       Qualidade
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/imprensa/cerprodutos`" class="submenu-link">
                       Produto
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/imprensa/cermeioambientes`" class="submenu-link">
                       Meio Ambiente
                     </router-link>
                   </li>
