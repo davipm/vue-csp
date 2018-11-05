@@ -155,6 +155,19 @@
               if ( slug === 'cspnews' ) {
                 this.pageTitle = 'CSP News';
               }
+
+              else if ( slug === 'cerqualidades' ) {
+                this.pageTitle = 'Certificados de Qualidade'
+              }
+
+              else if ( slug === 'cerprodutos' ) {
+                this.pageTitle = 'Certificados de Produtos'
+              }
+
+              else if ( slug === 'cermeioambientes' ) {
+                this.pageTitle = 'Certificados de Meio Ambiente'
+              }
+
               else {
                 this.pageTitle = 'CSP Notícias';
               }
