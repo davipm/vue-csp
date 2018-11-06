@@ -10,11 +10,15 @@
         </svg>
       </label>
       <div class="menu-sidebar">
-        <h6 class="menu-sidebar-title">MENU COMPLETO</h6>
+        <h6 class="menu-sidebar-title">
+          {{ menuTitle }}
+        </h6>
         <ul class="menu-sidebar-content">
           <li>
             <input type="checkbox" id="sub-one" class="submenu-toggle">
-            <label class="submenu-label" for="sub-one">Sobre a CSP</label>
+            <label class="submenu-label" for="sub-one">
+              Sobre a CSP
+            </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
@@ -62,7 +66,9 @@
           </li>
           <li>
             <input type="checkbox" id="sub-two" class="submenu-toggle">
-            <label class="submenu-label" for="sub-two">Sustentabilisade</label>
+            <label class="submenu-label" for="sub-two">
+              Sustentabilisade
+            </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
@@ -163,18 +169,46 @@
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/page/programa-territorio-empreendedor">
+                    <input type="checkbox"
+                           id="sub-programa-territorio-empreendedor"
+                           class="submenu-toggle"
+                    >
+                    <label class="submenu-label" for="sub-programa-territorio-empreendedor">
                       Programa Território Empreendedor
+                    </label>
+                    <div class="arrow right">&#8250;</div>
+                    <ul class="menu-sub">
+                      <li class="menu-sub-title">
+                        <label class="submenu-label" for="sub-programa-territorio-empreendedor">
+                          {{ menuBack }}
+                        </label>
+                        <div class="arrow left">&#8249;</div>
+                      </li>
+                      <li>
+                        <router-link to="/page/fortalecimento-da-base-produtiva-2">
+                          Inscrições - Eixo Fortalecimento da base produtiva
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="/page/cultura-empreendedora-2">
+                          Inscrições - Eixo Cultura Empreendedora
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <router-link to="/page/infraestrutura-social">
+                      Infraestrutura social
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/page/fortalecimento-da-base-produtiva-2">
-                      Inscrições - Eixo Fortalecimento da base produtiva
+                    <router-link to="/page/programa-de-dialogo-social">
+                      Programa de dialogo Social
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/page/cultura-empreendedora-2">
-                      Inscrições - Eixo Cultura Empreendedora
+                    <router-link to="/page/ideia-da-gente">
+                      Ideia da Gente
                     </router-link>
                   </li>
                 </ul>
@@ -183,7 +217,9 @@
           </li>
           <li>
             <input type="checkbox" id="sub-produtos" class="submenu-toggle">
-            <label class="submenu-label" for="sub-produtos">Produtos</label>
+            <label class="submenu-label" for="sub-produtos">
+              Produtos
+            </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
@@ -235,9 +271,44 @@
             </ul>
           </li>
           <li>
-            <router-link to="/">
+            <input type="checkbox" id="sub-fornecedores" class="submenu-toggle">
+            <label class="submenu-label" for="sub-fornecedores">
               Fornecedores
-            </router-link>
+            </label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="menu-sub">
+              <li class="menu-sub-title">
+                <label class="submenu-label" for="sub-fornecedores">
+                  {{ menuBack }}
+                </label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              <li>
+                <router-link to="/page/seja-nosso-fornecedor">
+                  Seja nosso fornecedor
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/pre-cadastro">
+                  Pré-cadastro
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/cartilha-do-fornecedor">
+                  Cartilha do Fornecedor
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/portal-e-fornecedores">
+                  Portal e-Fornecedores
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/page/duvidas-frequentes">
+                  Dúvidas Frequentes
+                </router-link>
+              </li>
+            </ul>
           </li>
           <li>
             <router-link :to="`/page/trabalhe-conosco`">
@@ -304,6 +375,7 @@
               Fale Conosco
             </router-link>
           </li>
+          <!--
           <li>
             <input type="checkbox" id="sub-ten" class="submenu-toggle">
             <label class="submenu-label" for="sub-two">
@@ -339,6 +411,7 @@
               </li>
             </ul>
           </li>
+          -->
         </ul>
       </div>
     </li>
@@ -350,6 +423,7 @@
     name: "MobileMenu",
     data() {
       return {
+        menuTitle: 'MENU COMPLETO',
         menuBack: 'Back'
       }
     }
@@ -550,8 +624,6 @@
 
   // mobile grid's
   @media (max-width: 768px) {
-    .nav-mobile {
-      display: block;
-    }
+    .nav-mobile { display: block; }
   }
 </style>
