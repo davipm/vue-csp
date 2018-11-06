@@ -122,12 +122,12 @@
                     </router-link>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/fortalecimento-da-base-produtiva-2`" class="submenu-link">
+                        <router-link :to="`/page/fortalecimento-da-base-produtiva`" class="submenu-link">
                           Inscrições - Eixo Fortalecimento da base produtiva
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
-                        <router-link :to="`/page/cultura-empreendedora-2`" class="submenu-link">
+                        <router-link :to="`/page/cultura-empreendedora`" class="submenu-link">
                           Inscrições - Eixo Cultura Empreendedora
                         </router-link>
                       </li>

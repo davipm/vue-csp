@@ -129,7 +129,7 @@
 
     methods: {
       showSearch() {
-        window.open(`http://localhost:8080/search/${this.search.toLowerCase()}`, '_self');
+        window.open(`http://cspvue.surge.sh/search/${this.search.toLowerCase()}`, '_self');
       }
     }
   }

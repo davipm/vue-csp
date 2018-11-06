@@ -185,12 +185,12 @@
                         <div class="arrow left">&#8249;</div>
                       </li>
                       <li>
-                        <router-link to="/page/fortalecimento-da-base-produtiva-2">
+                        <router-link to="/page/fortalecimento-da-base-produtiva">
                           Inscrições - Eixo Fortalecimento da base produtiva
                         </router-link>
                       </li>
                       <li>
-                        <router-link to="/page/cultura-empreendedora-2">
+                        <router-link to="/page/cultura-empreendedora">
                           Inscrições - Eixo Cultura Empreendedora
                         </router-link>
                       </li>
