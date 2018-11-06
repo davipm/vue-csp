@@ -6,6 +6,7 @@ import Page from './views/Page.vue'
 import AllPost from './views/AllPost.vue'
 import PageNews from './views/PageNews.vue'
 import PageModal from './views/PageModal.vue'
+import Search from './views/Search.vue'
 
 Vue.use(Router);
 
@@ -45,6 +46,10 @@ export default new Router({
       path: '/page/imprensa/posts',
       name: 'AllPost',
       component: AllPost
+    },
+    {
+      path: '/search/:slug',
+      component: Search,
     },
     {
       path: '/page/imprensa/:slug',
