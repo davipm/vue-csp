@@ -102,7 +102,7 @@
                 >
               </a>
               <div class="media-body align-self-center">
-                <time class="media-date">
+                <time class="media-date" v-if="item.date">
                   {{ item.date }}
                 </time>
                 <h5 class="media-title">

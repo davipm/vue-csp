@@ -96,7 +96,9 @@
         page: {},
         gallery: {},
         slide: 0,
-        sliding: null
+        sliding: null,
+        titleMeta: '',
+        contentMeta: ''
       }
     },
 
@@ -137,7 +139,16 @@
 
     created() {
       this.getPage(this.$route.params.slug); // slug current page
-    }
+    },
+
+    metaInfo() {
+      return {
+        title: this.titleMeta + ' | CSP',
+        meta: [
+          { vmid: 'description', name: 'description', content: this.contentMeta },
+        ]
+      }
+    },
   }
 </script>
 

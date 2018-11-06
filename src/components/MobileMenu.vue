@@ -18,7 +18,9 @@
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
-                <label class="submenu-label" for="sub-one">Back</label>
+                <label class="submenu-label" for="sub-one">
+                  {{ menuBack }}
+                </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
@@ -64,7 +66,9 @@
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
-                <label class="submenu-label" for="sub-two">Back</label>
+                <label class="submenu-label" for="sub-two">
+                  {{ menuBack }}
+                </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
@@ -73,7 +77,9 @@
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
-                    <label class="submenu-label" for="sub-three">Back</label>
+                    <label class="submenu-label" for="sub-three">
+                      {{ menuBack }}
+                    </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
@@ -90,7 +96,7 @@
                     <ul class="menu-sub">
                       <li class="menu-sub-title">
                         <label class="submenu-label" for="sub-gestao-ambiental">
-                          Back
+                          {{ menuBack }}
                         </label>
                         <div class="arrow left">&#8249;</div>
                       </li>
@@ -125,7 +131,7 @@
                     <ul class="menu-sub">
                       <li class="menu-sub-title">
                         <label class="submenu-label" for="sub-controle-ambiental">
-                          Back
+                          {{ menuBack }}
                         </label>
                         <div class="arrow left">&#8249;</div>
                       </li>
@@ -146,7 +152,9 @@
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
-                    <label class="submenu-label" for="sub-four">Back</label>
+                    <label class="submenu-label" for="sub-four">
+                      {{ menuBack }}
+                    </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
@@ -179,7 +187,9 @@
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
-                <label class="submenu-label" for="sub-produtos">Back</label>
+                <label class="submenu-label" for="sub-produtos">
+                  {{ menuBack }}
+                </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
@@ -201,7 +211,7 @@
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
                     <label class="submenu-label" for="sub-certificacoes">
-                      Back
+                      {{ menuBack }}
                     </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
@@ -243,7 +253,7 @@
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-imprensa">
-                  Back
+                  {{ menuBack }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
@@ -303,7 +313,7 @@
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-ten">
-                  Back
+                  {{ menuBack }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
@@ -337,7 +347,12 @@
 
 <script>
   export default {
-    name: "MobileMenu"
+    name: "MobileMenu",
+    data() {
+      return {
+        menuBack: 'Back'
+      }
+    }
   }
 </script>
 

@@ -37,20 +37,20 @@
         {property: 'og:url', content: 'http://cspvue.surge.sh'},
         {property: 'og:image', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
         // Often the same as your meta description, but not always.
-        {property: 'og:description', content: 'Some description.'},
+        {property: 'og:description', content: 'Siderurgica do Pécem.'},
 
         // Twitter card
         {name: 'twitter:card', content: 'summary'},
         {name: 'twitter:site', content: 'http://cspvue.surge.sh'},
-        {name: 'twitter:title', content: 'Page Title ← CSP'},
-        {name: 'twitter:description', content: 'Some description.'},
+        {name: 'twitter:title', content: 'CSP'},
+        {name: 'twitter:description', content: 'Siderurgica do Pécem.'},
         // Your twitter handle, if you have one.
         {name: 'twitter:creator', content: '@davipmdev'},
         {name: 'twitter:image:src', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
 
         // Google / Schema.org markup:
-        {itemprop: 'name', content: 'Page Title ← CSP'},
-        {itemprop: 'description', content: 'Some description.'},
+        {itemprop: 'name', content: 'CSP'},
+        {itemprop: 'description', content: 'Siderurgica do Pécem.'},
         {itemprop: 'image', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'}
       ]
     }
