@@ -85,7 +85,7 @@
 
     methods: {
       showSearch() {
-        alert(this.search)
+        window.open(`http://localhost:8080/search/${this.search.toLowerCase()}`, '_self');
       }
     }
   }

@@ -75,8 +75,17 @@
               </li>
             </ul>
             <form class="form-footer">
-              <input type="text" class="form-control input-footer" placeholder="Pesquisar" aria-label="Search">
-              <button class="btn-search-footer"><i class="fas fa-search"></i></button>
+              <input type="text"
+                     class="form-control input-footer"
+                     placeholder="Pesquisar"
+                     aria-label="Search"
+                     v-model="search"
+              >
+              <button class="btn-search-footer"
+                      @click.prevent="showSearch"
+              >
+                <i class="fas fa-search"></i>
+              </button>
             </form>
           </div>
           <div class="footer-info">
@@ -108,6 +117,7 @@
     name: "Footer",
     data() {
       return {
+        search: '',
         message: {
           siteMap: 'Mapa Site',
           privacyPolicy: 'Politica de Privacidade',
@@ -116,6 +126,12 @@
         }
       }
     },
+
+    methods: {
+      showSearch() {
+        window.open(`http://localhost:8080/search/${this.search.toLowerCase()}`, '_self');
+      }
+    }
   }
 </script>
 
