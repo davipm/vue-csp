@@ -172,7 +172,7 @@
                 this.pageTitle = 'CSP Notícias';
               }
             })
-            .catch(( error ) => {
+            .catch(() => {
               this.error = true;
             })
             .finally(() => {

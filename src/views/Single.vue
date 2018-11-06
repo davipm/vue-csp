@@ -170,7 +170,7 @@
         .then(( res ) => {
           this.posts = res.data;
         })
-        .catch(( res ) => {
+        .catch(() => {
           this.error = true;
         })
       },

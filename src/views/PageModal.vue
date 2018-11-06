@@ -116,7 +116,7 @@
             .then(( res ) => {
               this.modalItem = res.data;
             })
-            .catch(( res ) => {
+            .catch(() => {
               this.error = true;
             })
             .finally(() => {
