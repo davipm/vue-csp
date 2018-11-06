@@ -112,13 +112,22 @@
         .then(( res ) => {
           this.page = res.data[0];
           this.gallery = res.data[0].acf.galeria; // return only images gallery
+          this.titleMeta = res.data[0].title.rendered;
+          this.contentMeta = res.data[0].excerpt.rendered;
         })
-        .catch(( error ) => {
+        .catch(() => {
           this.error = true;
         })
         .finally(() => {
           this.loading = false;
         })
+      },
+
+      showSearch( slug ) {
+        axios.get(`/wp/v2/posts?search=${slug}`)
+            .then(( res ) => {
+              console.log(res.data)
+            });
       },
 
       onSlideStart( slide ) {
@@ -139,6 +148,7 @@
 
     created() {
       this.getPage(this.$route.params.slug); // slug current page
+      this.showSearch(this.$route.params.slug);
     },
 
     metaInfo() {
