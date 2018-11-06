@@ -129,7 +129,8 @@
 
     methods: {
       showSearch() {
-        window.open(`http://cspvue.surge.sh/search/${this.search.toLowerCase()}`, '_self');
+        this.$router.push(`/`);
+        this.$router.push(`search/${this.search.toLowerCase()}`);
       }
     }
   }

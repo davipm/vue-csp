@@ -177,30 +177,61 @@
 
     methods: {
       getPost( slug ) {
-        axios.get(`/wp/v2/posts?search=${slug}`)
-            .then(( res ) => {
-              this.searchPost = res.data;
-              this.pageTitle = `Resultado da pesquisa para: ${slug}`;
-            })
-            .catch(() => {
-              this.error = true;
-            })
-            .finally(() => {
-              this.loading = false;
-            })
+        if ( slug === undefined ) {
+          axios.get(`/wp/v2/posts`)
+              .then(( res ) => {
+                this.searchPost = res.data;
+                this.pageTitle = `Resultado da pesquisa para:`;
+              })
+              .catch(() => {
+                this.error = true;
+              })
+              .finally(() => {
+                this.loading = false;
+              })
+        }
+
+        else {
+          axios.get(`/wp/v2/posts?search=${slug}`)
+              .then(( res ) => {
+                this.searchPost = res.data;
+                this.pageTitle = `Resultado da pesquisa para: ${slug}`;
+              })
+              .catch(() => {
+                this.error = true;
+              })
+              .finally(() => {
+                this.loading = false;
+              })
+        }
       },
 
       getPage( slug ) {
-        axios.get(`/wp/v2/pages?search=${slug}`)
-            .then(( res ) => {
-              this.searchPage = res.data;
-            })
-            .catch(() => {
-              this.error = true;
-            })
-            .finally(() => {
-              this.loading = false;
-            })
+        if (slug === undefined) {
+          axios.get(`/wp/v2/pages`)
+              .then(( res ) => {
+                this.searchPage = res.data;
+              })
+              .catch(() => {
+                this.error = true;
+              })
+              .finally(() => {
+                this.loading = false;
+              })
+        }
+
+        else {
+          axios.get(`/wp/v2/pages?search=${slug}`)
+              .then(( res ) => {
+                this.searchPage = res.data;
+              })
+              .catch(() => {
+                this.error = true;
+              })
+              .finally(() => {
+                this.loading = false;
+              })
+        }
       },
     },
 

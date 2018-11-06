@@ -49,6 +49,11 @@ export default new Router({
     },
     {
       path: '/search/:slug',
+      name: 'Search',
+      component: Search,
+    },
+    {
+      path: '/search/',
       component: Search,
     },
     {
