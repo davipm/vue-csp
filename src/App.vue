@@ -64,6 +64,7 @@
 <style lang="scss">
   // geral css
   @import "./assets/loading";
+  @import "./assets/fonts/fonts.css";
   html,
   body {
     margin: auto;
@@ -117,6 +118,5 @@
   }
 
   .carousel-control-prev { left: 15px; }
-
   .carousel-control-next { right: 15px; }
 </style>
