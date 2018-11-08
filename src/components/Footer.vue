@@ -4,6 +4,15 @@
       <div class="row">
         <div class="col-md-6">
           <ul class="menu-footer">
+            <li class="menu-footer-item"
+                v-for="(item, index) in menus"
+                :key="index"
+            >
+              <router-link :to="item.url" class="menu-footer-link">
+                {{ item.title }}
+              </router-link>
+            </li>
+            <!--
             <li class="menu-footer-item">
               <router-link :to="`/page/fale-conosco`" class="menu-footer-link">
                 Fale Conosco
@@ -39,6 +48,7 @@
                 Newsletter
               </router-link>
             </li>
+            -->
           </ul>
         </div>
         <div class="col-md-6">
@@ -113,10 +123,12 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: "Footer",
     data() {
       return {
+        menus: {},
         search: '',
         message: {
           siteMap: 'Mapa Site',
@@ -131,7 +143,18 @@
       showSearch() {
         this.$router.push(`/`);
         this.$router.push(`search/${this.search.toLowerCase()}`);
+      },
+
+      getMenus() {
+        axios.get(`/menus/v1/menus/footer_menu`)
+            .then(( res ) => {
+              this.menus = res.data.items;
+            })
       }
+    },
+
+    created() {
+      this.getMenus();
     }
   }
 </script>
