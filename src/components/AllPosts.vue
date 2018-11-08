@@ -124,24 +124,50 @@
     name: "AllPosts",
     data() {
       return {
-        pageTitle: 'Notícias',
+        pageTitle: '',
         loading: true,
         error: false,
-        posts: {}
+        posts: {},
+        categories: 0
       }
     },
 
     watch: {
-
+      '$route'(to, from) {
+        this.loading = true;
+        this.getPosts(to.params.slug);
+      }
     },
 
     methods: {
-      getPosts() {
-        axios.get('/wp/v2/posts')
+      getPosts( slug ) {
+        switch ( slug ) {
+          case 'posts' :
+            this.categories = 4;
+            this.pageTitle = 'Notícias';
+            break;
+
+          case 'csp-podcast' :
+            this.categories = 5;
+            this.pageTitle = 'CSP Podcast';
+            break;
+
+          case 'saiu-na-midia':
+            this.categories = 7;
+            this.pageTitle = 'Saiu na Midia';
+            break
+        }
+
+        axios.get('/wp/v2/posts', {
+          params: {
+            categories: this.categories,
+          }
+        })
         .then(( res ) => {
           this.posts = res.data;
+          console.log(slug);
         })
-        .catch(( res ) => {
+        .catch(() => {
           this.error = true;
         })
         .finally(() => {
@@ -151,7 +177,7 @@
     },
 
     created() {
-      this.getPosts();
+      this.getPosts(this.$route.params.slug);
     }
   }
 </script>

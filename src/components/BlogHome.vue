@@ -105,6 +105,7 @@
       getPosts() {
         axios.get('/wp/v2/posts', {
           params: {
+            categories: 4,
             per_page: 3
           }
         })

@@ -61,6 +61,10 @@ export default new Router({
       name: 'PageNews',
       component: PageNews
     },
+    {
+      path: '/page/categories/:slug',
+      component: AllPost
+    },
   ],
 
   // scroll to top when change routes

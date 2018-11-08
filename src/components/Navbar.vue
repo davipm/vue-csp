@@ -235,12 +235,12 @@
             </a>
             <ul class="submenu">
               <li class="submenu-item">
-                <router-link :to="`/page/imprensa/posts`" class="submenu-link">
+                <router-link :to="`/page/categories/posts`" class="submenu-link">
                   Notícias
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link :to="`/page/`" class="submenu-link">
+                <router-link :to="`/page/categories/csp-podcast`" class="submenu-link">
                   CSP Podcast
                 </router-link>
               </li>
@@ -250,7 +250,7 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <router-link to="/page/categories/saiu-na-midia" class="submenu-link">
                   Saiu na Midia
                 </router-link>
               </li>
