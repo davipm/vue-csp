@@ -26,7 +26,7 @@
 
     // meta tags SEO
     metaInfo: {
-      title: 'CSP Vue Version',
+      title: 'CSP - Companhia Siderúgica do Pécem',
       meta: [
         // OpenGraph data (Most widely used)
         {property: 'og:title', content: 'Page Title ← CSP'},
@@ -46,12 +46,12 @@
         {name: 'twitter:description', content: 'Siderurgica do Pécem.'},
         // Your twitter handle, if you have one.
         {name: 'twitter:creator', content: '@davipmdev'},
-        {name: 'twitter:image:src', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
+        {name: 'twitter:image:src', content: 'https://cspvue.surge.sh/img/logo-default.54b9af6f.png'},
 
         // Google / Schema.org markup:
         {itemprop: 'name', content: 'CSP'},
-        {itemprop: 'description', content: 'Siderurgica do Pécem.'},
-        {itemprop: 'image', content: 'http://cspvue.surge.sh/img/logo-default.54b9af6f.png'}
+        {itemprop: 'description', content: 'Companhia Siderúgica do Pécem.'},
+        {itemprop: 'image', content: 'https://cspvue.surge.sh/img/logo-default.54b9af6f.png'}
       ]
     }
   }

@@ -92,7 +92,7 @@
                   </router-link>
                   <div class="card-body">
                     <time class="post-time">
-                      {{ post.date }}
+                      {{ post.date | prettyDates}}
                     </time>
                     <router-link :to="`/post/${post.slug}`">
                       <h5 class="card-title">
@@ -112,6 +112,16 @@
               </div>
             </div>
           </div>
+
+          <b-pagination size="md"
+                        align="center"
+                        :total-rows="3"
+                        v-model="currentPage"
+                        :per-page="2"
+                        @change="getPosts"
+          >
+          </b-pagination>
+          <br>
         </div>
       </div>
     </div>
@@ -119,6 +129,7 @@
 </template>
 
 <script>
+  import moment from 'moment'
   import axios from 'axios'
   export default {
     name: "AllPosts",
@@ -128,7 +139,16 @@
         loading: true,
         error: false,
         posts: {},
-        categories: 0
+        categories: 0,
+        currentPage: 1,
+      }
+    },
+
+    filters: {
+      prettyDates( value ) {
+        if ( !value ) return '';
+        let date = moment.utc( value );
+        return date.format('DD/MM/YYYY');
       }
     },
 
@@ -161,11 +181,12 @@
         axios.get('/wp/v2/posts', {
           params: {
             categories: this.categories,
+            per_page: 9,
+            page: this.currentPage
           }
         })
         .then(( res ) => {
           this.posts = res.data;
-          console.log(slug);
         })
         .catch(() => {
           this.error = true;
@@ -258,5 +279,16 @@
        -o-transform: scale(1.1);
        transform: scale(1.1);
      }
+  }
+</style>
+
+<style lang="scss">
+  .page-link {
+    color: #00734A;
+  }
+
+  .page-item.active .page-link {
+    background-color: #00734A;
+    border-color: #00734A;
   }
 </style>

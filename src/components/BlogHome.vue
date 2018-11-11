@@ -61,7 +61,7 @@
             </router-link>
             <div class="card-body">
               <time class="post-time">
-                {{ post.date }}
+                {{ post.date | prettyDates }}
               </time>
               <router-link :to="`/post/${post.slug}`">
                 <h5 class="card-title">
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+  import moment from 'moment'
   import axios from 'axios'
   export default {
     name: "BlogHome",
@@ -98,6 +99,14 @@
         loading: true,
         error: false,
         posts: {}
+      }
+    },
+
+    filters: {
+      prettyDates( value ) {
+        if ( !value ) return '';
+        let date = moment.utc( value );
+        return date.format('DD/MM/YYYY');
       }
     },
 

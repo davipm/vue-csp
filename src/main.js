@@ -12,7 +12,7 @@ import BootstrapVue from 'bootstrap-vue'
 import Meta from 'vue-meta'
 
 // base api request demo
-axios.defaults.baseURL = 'http://demoapi.heyholetsgo.com.br/wp-json';
+axios.defaults.baseURL = 'https://demoapi.heyholetsgo.com.br/wp-json';
 // base api request localhost
 //axios.defaults.baseURL = 'http://wpstudy.local/wp-json';
 
