@@ -156,6 +156,8 @@
     &-img-content { overflow: hidden; }
     
     &-img {
+      min-width: 350px;
+      min-height: 197.16px;
       -webkit-transition: all .3s ease-in-out;
       -moz-transition: all .3s ease-in-out;
       -ms-transition: all .3s ease-in-out;

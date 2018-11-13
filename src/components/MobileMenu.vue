@@ -89,7 +89,7 @@
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
-                    <router-link to="/">
+                    <router-link to="/page/meio-ambiente/linha-do-tempo-sustentavel">
                       Linha do tempo Sustentável
                     </router-link>
                   </li>
@@ -329,12 +329,12 @@
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
-                <router-link to="/page/imprensa/posts">
+                <router-link to="/page/categories/posts">
                   Notícias
                 </router-link>
               </li>
               <li>
-                <router-link to="/">
+                <router-link to="/page/categories/csp-podcast">
                   CSP Podcast
                 </router-link>
               </li>
@@ -344,7 +344,7 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/">
+                <router-link to="/page/categories/saiu-na-midia">
                   Saiu na Midia
                 </router-link>
               </li>
