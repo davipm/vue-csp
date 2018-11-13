@@ -57,7 +57,7 @@
                 </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
-                    <router-link :to="`/page/`" class="submenu-link">
+                    <router-link :to="`/page/meio-ambiente/linha-do-tempo-sustentavel`" class="submenu-link">
                       Linha do tempo Sustentável
                     </router-link>
                   </li>
@@ -294,7 +294,10 @@
 </script>
 
 <style scoped lang="scss">
-  .navbar { padding-bottom: 0; }
+  .navbar {
+    padding-bottom: 0;
+    z-index: 2;
+  }
 
   .navbar-collapse { justify-content: center; }
 
