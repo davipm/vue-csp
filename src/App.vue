@@ -89,8 +89,8 @@
 
   ::selection {
     color: #fff;
-    background: #00734A;
     text-shadow: none;
+    background: #00734A;
   }
 
   .section {
@@ -100,8 +100,8 @@
   }
 
   .section-content img {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
   }
 
   .carousel-control-prev,
@@ -111,9 +111,9 @@
     height: 45px;
     width: 45px;
     transform: translateY(-50%);
+    color: #34343c;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.7);
-    color: #34343c;
     opacity: 1;
   }
 
