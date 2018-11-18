@@ -13,7 +13,11 @@
           <div class="container-right">
             <ul class="list-menu-header">
               <li class="list-menu-item">
-                <a v-if="br_flag" @click="changeLanguage" class="list-menu-link" title="Tradução Brasileira">
+                <a v-if="br_flag"
+                   @click="changeLanguage"
+                   class="list-menu-link"
+                   title="Tradução Brasileira"
+                >
                   <svg style="position: relative;bottom: 2px;width: 20px;" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-br" viewBox="0 0 640 480">
                     <g stroke-width="1pt">
                       <path fill="#229e45" fill-rule="evenodd" d="M0 0h640v480H0z"/>
@@ -60,7 +64,11 @@
                     </g>
                   </svg>
                 </a>
-                <a v-if="en_flag" @click="changeLanguage" class="list-menu-link" title="English Translate">
+                <a v-if="en_flag"
+                   @click="changeLanguage"
+                   class="list-menu-link"
+                   title="English Translate"
+                >
                   <svg style="position: relative;bottom: 2px;width: 20px;" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 640 480">
                     <g fill-rule="evenodd">
                       <g stroke-width="1pt">
