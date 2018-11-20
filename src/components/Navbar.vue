@@ -245,7 +245,7 @@
                 </router-link>
               </li>
               <li class="submenu-item">
-                <router-link to="/" class="submenu-link">
+                <router-link to="/page/sala-de-imprensa/login" class="submenu-link">
                   Sala de Imprensa
                 </router-link>
               </li>

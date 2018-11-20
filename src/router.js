@@ -8,6 +8,7 @@ import PageNews from './views/PageNews.vue'
 import PageModal from './views/PageModal.vue'
 import Search from './views/Search.vue'
 import TimeLine from './views/TimeLine.vue'
+import LoginForm from './components/LoginForm.vue'
 
 Vue.use(Router);
 
@@ -62,6 +63,11 @@ export default new Router({
       path: '/page/meio-ambiente/linha-do-tempo-sustentavel',
       name: 'TimeLine',
       component: TimeLine
+    },
+    {
+      path: '/page/sala-de-imprensa/login',
+      name: 'LoginForm',
+      component: LoginForm
     }
   ],
 
