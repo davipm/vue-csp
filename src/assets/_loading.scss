@@ -1,3 +1,6 @@
+$pulseSize: 4em;
+$pulseTime: 1.2s;
+
 .shine {
   background: #f6f7f8 linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%) no-repeat 800px 220px;
   background-size: 800px 220px;
@@ -141,4 +144,39 @@ a img.aligncenter {
   width: auto;
   z-index: 100000;
   /* Above WP toolbar. */
+}
+
+//page time line loading
+.page-loading {
+  min-height: 50vh;
+}
+
+.pulse-loading {
+  display: block;
+  margin: auto;
+  width: $pulseSize;
+  height: $pulseSize;
+  border-radius: $pulseSize;
+  background-color: #00734A;
+  outline: 1px solid transparent;
+  animation: pulseanim $pulseTime ease-in-out infinite;
+}
+
+@keyframes pulseanim {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
 }

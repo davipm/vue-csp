@@ -123,13 +123,6 @@
         })
       },
 
-      showSearch( slug ) {
-        axios.get(`/wp/v2/posts?search=${slug}`)
-            .then(( res ) => {
-              console.log(res.data)
-            });
-      },
-
       onSlideStart( slide ) {
         this.sliding = true;
       },
@@ -165,7 +158,6 @@
 <style scoped lang="scss">
   .page {
     padding: 30px 0;
-
     &-title {
       font-family: "Centuma", Roboto, sans-serif;
       color: #65666A;
