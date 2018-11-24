@@ -1,3 +1,22 @@
 {
-  "message": "hello i18n !!"
+  "aboutCsp": {
+    "aboutCsp": "Sobre a CSP",
+    "mission": "Misão, Visão e Valores",
+    "ourStory": "Nossa História"
+  },
+  "sustainability": {
+    "sustainability": "Sustentabilidade"
+  },
+  "products": {
+    "products": "Produtos"
+  },
+  "providers": {
+    "providers": "Fornecedores"
+  },
+  "workWithUs": "Trabalhe Conosco",
+  "press": {
+    "press": "Imprensa"
+  },
+  "ombudsman": "Ouvidoria",
+  "contact": "Fale Conosco"
 }

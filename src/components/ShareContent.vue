@@ -1,3 +1,17 @@
+<i18n>
+  {
+    "pt_BR": {
+      "printMessage": "Imprimir",
+      "shareMessage": "Compartilhar"
+    },
+
+    "en": {
+      "printMessage": "Print Page",
+      "shareMessage": "Share it"
+    }
+  }
+</i18n>
+
 <template>
   <div class="share-buttons">
     <!-- alert massage -->
@@ -19,15 +33,16 @@
            class="share-link"
         >
           <i class="fas fa-print"></i>
-          {{ printMessage }}
+          {{ $t('printMessage') }}
         </a>
       </li>
       <li class="share-item">
-        <a :href="`https://www.facebook.com/sharer/sharer.php?u=${getUrlShare}`"
+        <a :href="`https://www.facebook.com/sharer/sharer.php?u=${getUrlShare()}`"
            class="share-link"
+           target="_blank"
         >
           <i class="fas fa-share-alt"></i>
-          {{ shareMessage }}
+          {{ $t('shareMessage') }}
         </a>
       </li>
     </ul>
@@ -35,12 +50,11 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: "ShareContent",
     data() {
       return {
-        printMessage: 'Imprimir',
-        shareMessage: 'Compartilhar',
         massageError: 'Esta função ainda não está implementada',
         dismissSecs: 3,
         dismissCountDown: 0
@@ -49,7 +63,11 @@
 
     watch: {
       '$route'() {
-        console.log(window.location.href); // test for sharing post
+        this.getUrlShare();
+      },
+
+      locale(val) {
+        this.$i18n.locale = val;
       }
     },
 
@@ -62,16 +80,21 @@
         this.dismissCountDown = dismissCountDown;
       },
 
-      showAlert() {
-        this.dismissCountDown = this.dismissSecs;
-      }
-    },
-
-    computed: {
       getUrlShare() {
         return window.location.href;
       }
     },
+
+    computed: {
+      ...mapState([
+        'locale'
+      ])
+    },
+
+    created() {
+      this.getUrlShare();
+      this.$i18n.locale = this.locale;
+    }
   }
 </script>
 

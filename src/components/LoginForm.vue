@@ -1,14 +1,38 @@
+<i18n>
+  {
+    "pt_BR": {
+      "title": "Sala de Imprensa",
+      "subtitle": "Este conteúdo é restrito a membros do site. Se você é um usuário registrado, por favor faça o login. Novos usuários podem registrar-se abaixo.",
+      "loginForm": {
+        "title": "Login de Usuários",
+        "username": "Nome de usuário",
+        "password": "Senha",
+        "remember": "Lembrar"
+      }
+    },
+
+    "en": {
+      "title": "Press room",
+      "subtitle": "This content is restricted to site members. If you are a registered user, please login. New users can register below.",
+      "loginForm": {
+        "title": "User Login",
+        "username": "User Name",
+        "password": "Password",
+        "remember": "Remember"
+      }
+    }
+  }
+</i18n>
+
 <template>
   <section class="section page">
     <div class="container">
       <!-- heading -->
       <h2 class="page-title">
-        Sala de Imprensa
+        {{ $t('title') }}
       </h2>
       <p class="subtitle">
-        Este conteúdo é restrito a membros do site.
-        Se você é um usuário registrado, por favor faça o login.
-        Novos usuários podem registrar-se abaixo.
+        {{ $t('subtitle') }}
       </p>
       <!-- page forms -->
       <div class="row mt-3">
@@ -16,11 +40,11 @@
         <div class="col-md-6 login-form">
           <form @submit="onSubmitLogin">
             <h5 class="login-title">
-              Login de Usuários
+              {{ $t('loginForm.title') }}
             </h5>
             <div class="form-group">
               <label for="user-name">
-                Nome de usuário
+                {{ $t('loginForm.username') }}
               </label>
               <input type="text"
                      class="form-control"
@@ -31,7 +55,7 @@
             </div>
             <div class="form-group">
               <label for="user-pass">
-                Senha
+                {{ $t('loginForm.password') }}
               </label>
               <input type="password"
                      class="form-control"
@@ -47,7 +71,7 @@
                      v-model="loginForm.remember"
               >
               <label for="remember-user">
-                Lembrar
+                {{ $t('loginForm.remember') }}
               </label>
             </div>
             <button type="submit" class="btn btn-primary">
@@ -131,6 +155,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: "LoginForm",
     data() {
@@ -150,6 +175,18 @@
       }
     },
 
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+      }
+    },
+
+    computed: {
+        ...mapState([
+            'locale'
+        ])
+    },
+
     methods: {
       onSubmitLogin(e) {
         e.preventDefault();
@@ -160,6 +197,10 @@
         e.preventDefault();
         alert(JSON.stringify(this.registerForm));
       }
+    },
+
+    created() {
+      this.$i18n.locale = this.locale; // this val came from vuex
     }
   }
 </script>

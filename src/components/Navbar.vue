@@ -1,10 +1,59 @@
 <i18n>
   {
     "pt_BR": {
-      "search": "Pesquisar"
+      "aboutCsp": {
+        "aboutCsp": "Sobre a CSP",
+        "mission": "Misão, Visão e Valores",
+        "ourStory": "Nossa História",
+        "directors": "Diretoria",
+        "visiting": "Programa de Visitas",
+        "complex": "Complexo Industrial e Portuário do Pecém",
+        "production": "Processo de produção do aço",
+        "sponsorships": "Patrocínios"
+      },
+      "sustainability": {
+        "sustainability": "Sustentabilidade"
+      },
+      "products": {
+        "products": "Produtos"
+      },
+      "providers": {
+        "providers": "Fornecedores"
+      },
+      "workWithUs": "Trabalhe Conosco",
+      "press": {
+        "press": "Imprensa"
+      },
+      "ombudsman": "Ouvidoria",
+      "contact": "Fale Conosco"
     },
+
     "en": {
-      "search": "Search"
+      "aboutCsp": {
+        "aboutCsp": "About CSP",
+        "mission": "Mission, Vision and Values",
+        "ourStory": "Our story",
+        "directors": "Directors",
+        "visiting": "Visiting Program",
+        "complex": "Pecém Industrial and Port Complex",
+        "production": "Steel production process",
+        "sponsorships": "Sponsorships"
+      },
+      "sustainability": {
+        "sustainability": "Sustainability"
+      },
+      "products": {
+        "products": "Products"
+      },
+      "providers": {
+        "providers": "Providers"
+      },
+      "workWithUs": "Work with us",
+      "press": {
+          "press": "Press"
+      },
+      "ombudsman": "Ombudsman",
+      "contact": "Contact us"
     }
   }
 </i18n>
@@ -16,49 +65,49 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link">
-              Sobre a CSP
+              {{ $t('aboutCsp.aboutCsp') }}
             </a>
             <ul class="submenu">
               <li class="submenu-item">
                 <router-link :to="`/page/visao-missao-e-valores`" class="submenu-link">
-                  Misão, Visão e Valores
+                  {{ $t('aboutCsp.mission') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/nossa-historia`" class="submenu-link">
-                  Nossa História
+                  {{ $t('aboutCsp.ourStory') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/diretoria`" class="submenu-link">
-                  Diretoria
+                  {{ $t('aboutCsp.directors') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/voce-na-csp`" class="submenu-link">
-                  Programa de Visitas
+                  {{ $t('aboutCsp.visiting') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/complexo-industrial-e-portuario-do-pecem`" class="submenu-link">
-                  Complexo Insdustrial e Portuário do Pecém
+                  {{ $t('aboutCsp.complex') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/processo-de-producao-do-aco`" class="submenu-link">
-                  Processo de produção do aço
+                  {{ $t('aboutCsp.production') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/patrocinios`" class="submenu-link">
-                  Patrocínios
+                  {{ $t('aboutCsp.sponsorships') }}
                 </router-link>
               </li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link">
-              Sustentabilisade
+              {{ $t('sustainability.sustainability') }}
             </a>
             <ul class="submenu">
               <li class="submenu-item">
@@ -165,7 +214,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link">
-              Produtos
+              {{ $t('products.products') }}
             </a>
             <ul class="submenu">
               <li class="submenu-item">
@@ -205,7 +254,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link">
-              Fornecedores
+              {{ $t('providers.providers') }}
             </a>
             <ul class="submenu">
               <li class="submenu-item">
@@ -237,12 +286,12 @@
           </li>
           <li class="nav-item">
             <router-link :to="`/page/trabalhe-conosco`" class="nav-link">
-              Trabalhe Conosco
+              {{ $t('workWithUs') }}
             </router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link">
-              Imprensa
+              {{ $t('press.press') }}
             </a>
             <ul class="submenu">
               <li class="submenu-item">
@@ -284,12 +333,12 @@
           </li>
           <li class="nav-item">
             <router-link :to="`/page/ouvidoria`" class="nav-link">
-              Ouvidoria
+              {{ $t('ombudsman') }}
             </router-link>
           </li>
           <li class="nav-item">
             <router-link :to="`/page/fale-conosco`" class="nav-link">
-              Fale Conosco
+              {{ $t('contact') }}
             </router-link>
           </li>
         </ul>
@@ -299,8 +348,20 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
-    name: "Navbar"
+    name: "Navbar",
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+      }
+    },
+
+    computed: {
+        ...mapState([
+            'locale'
+        ])
+    }
   }
 </script>
 

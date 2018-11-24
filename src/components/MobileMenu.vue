@@ -1,3 +1,53 @@
+<i18n>
+  {
+    "pt_BR": {
+      "aboutCsp": {
+      "aboutCsp": "Sobre a CSP",
+      "mission": "Misão, Visão e Valores",
+      "ourStory": "Nossa História"
+    },
+    "sustainability": {
+      "sustainability": "Sustentabilidade"
+    },
+  "products": {
+  "products": "Produtos"
+  },
+  "providers": {
+  "providers": "Fornecedores"
+  },
+  "workWithUs": "Trabalhe Conosco",
+  "press": {
+  "press": "Imprensa"
+  },
+  "ombudsman": "Ouvidoria",
+  "contact": "Fale Conosco"
+  },
+
+  "en": {
+  "aboutCsp": {
+  "aboutCsp": "About CSP",
+  "mission": "Mission, Vision and Values",
+  "ourStory": "Our story"
+  },
+  "sustainability": {
+  "sustainability": "Sustainability"
+  },
+  "products": {
+  "products": "Products"
+  },
+  "providers": {
+  "providers": "Providers"
+  },
+  "workWithUs": "Work with us",
+  "press": {
+  "press": "Press"
+  },
+  "ombudsman": "Ombudsman",
+  "contact": "Contact us"
+  }
+  }
+</i18n>
+
 <template>
   <ul class="nav-mobile">
     <li></li>
