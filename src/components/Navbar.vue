@@ -1,3 +1,14 @@
+<i18n>
+  {
+    "pt_BR": {
+      "search": "Pesquisar"
+    },
+    "en": {
+      "search": "Search"
+    }
+  }
+</i18n>
+
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container">

@@ -67,8 +67,8 @@
   @import "./assets/fonts/fonts.css";
   html,
   body {
-    margin: auto;
     padding: 0;
+    margin: auto;
     max-width: 2000px;
     font-family: "Centuma", Roboto, sans-serif;
   }
@@ -80,11 +80,13 @@
   h5,
   h6 {
     font-family: "Centuma", Roboto, sans-serif;
+    font-style: normal;
   }
 
   p {
     font-family: "Centuma", Roboto, sans-serif;
     font-weight: 300;
+    font-style: normal;
   }
 
   ::selection {

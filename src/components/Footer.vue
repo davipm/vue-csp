@@ -1,3 +1,25 @@
+<i18n>
+  {
+    "pt_BR": {
+      "siteMap": "Mapa Site",
+      "privacyPolicy": "Política de Privacidade",
+      "developedBy": "Desenvolvido por",
+      "address": "Rodovia CE 155, s/n, km 11,5 – São Gonçalo do Amarante/CE",
+      "search": "Pesquisar",
+      "company": "Companhia Siderúrgica do Pecém"
+    },
+
+    "en": {
+      "siteMap": "Site Map",
+      "privacyPolicy": "Privacy policy",
+      "developedBy": "Developed by",
+      "address": "Rodovia CE 155, s/n, km 11,5 – São Gonçalo do Amarante/CE",
+      "search": "Search",
+      "company": "Company Siderúrgica do Pecém"
+    }
+  }
+</i18n>
+
 <template>
   <footer class="section footer">
     <div class="container">
@@ -56,7 +78,7 @@
             <ul class="list-menu-footer">
               <li class="list-menu-item">
                 <a v-if="br_flag"
-                   @click="changeLanguage"
+                   @click="CHANGE_LANG"
                    class="list-menu-link"
                    title="Tradução Brasileira"
                 >
@@ -107,7 +129,7 @@
                   </svg>
                 </a>
                 <a v-if="en_flag"
-                   @click="changeLanguage"
+                   @click="CHANGE_LANG"
                    class="list-menu-link"
                    title="English Translate"
                 >
@@ -142,7 +164,7 @@
             <form class="form-footer">
               <input type="text"
                      class="form-control input-footer"
-                     placeholder="Pesquisar"
+                     :placeholder="$t('search')"
                      aria-label="Search"
                      v-model="search"
               >
@@ -155,14 +177,14 @@
           </div>
           <div class="footer-info">
             <router-link :to="'/page/mapa-site'" class="footer-info-link mr-2">
-              {{ message.siteMap }}
+              {{ $t('siteMap') }}
             </router-link> |
             <router-link :to="'/page/politica-de-privacidade'" class="footer-info-link ml-2">
-              {{ message.privacyPolicy }}
+              {{ $t('privacyPolicy') }}
             </router-link>
             <address class="footer-address mt-3">
-              <p class="address-item mb-0">Copyright © {{ new Date().getFullYear() }} - Companhia Siderúrgica do Pecém</p>
-              <p class="address-item mb-0">{{ message.address }}</p>
+              <p class="address-item mb-0">Copyright © {{ new Date().getFullYear() }} - {{ $t('company') }}</p>
+              <p class="address-item mb-0">{{ $t('address') }}</p>
             </address>
           </div>
         </div>
@@ -170,7 +192,7 @@
       <!-- developer credits -->
       <div class="row mt-3">
         <div class="col-md-12 text-center">
-          <p class="dev-credits">{{ message.developedBy }} <a href="https://davi-94.github.io/portfolio/" class="dev-link" target="_blank">Davi Pereira</a></p>
+          <p class="dev-credits">{{ $t('developedBy') }} <a href="https://davi-94.github.io/portfolio/" class="dev-link" target="_blank">Davi Pereira</a></p>
         </div>
       </div>
     </div>
@@ -178,6 +200,7 @@
 </template>
 
 <script>
+  import { mapMutations, mapGetters, mapState } from 'vuex'
   import axios from 'axios'
   export default {
     name: "Footer",
@@ -185,22 +208,31 @@
       return {
         menus: {},
         search: '',
-        br_flag: false,
-        en_flag: true,
-        message: {
-          siteMap: 'Mapa Site',
-          privacyPolicy: 'Politica de Privacidade',
-          developedBy: 'Desenvolvido por',
-          address: 'Rodovia CE 155, s/n, km 11,5 – São Gonçalo do Amarante/CE'
-        }
       }
     },
 
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+      }
+    },
+
+    computed: {
+      ...mapState([
+        'locale',
+        'br_flag',
+        'en_flag'
+      ]),
+
+      ...mapGetters([
+        'currentLang'
+      ]),
+    },
+
     methods: {
-      changeLanguage() {
-        this.br_flag = !this.br_flag;
-        this.en_flag = !this.en_flag;
-      },
+        ...mapMutations([
+            'CHANGE_LANG'
+        ]),
 
       showSearch() {
         this.$router.push(`/`);

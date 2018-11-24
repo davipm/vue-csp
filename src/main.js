@@ -10,6 +10,7 @@ import store from './store'
 import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue'
 import Meta from 'vue-meta'
+import i18n from './i18n'
 
 // base api request demo
 axios.defaults.baseURL = 'https://demoapi.heyholetsgo.com.br/wp-json';
@@ -23,5 +24,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app');

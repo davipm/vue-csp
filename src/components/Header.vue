@@ -1,3 +1,14 @@
+<i18n>
+  {
+    "pt_BR": {
+      "search": "Pesquisar"
+    },
+    "en": {
+      "search": "Search"
+    }
+  }
+</i18n>
+
 <template>
   <header class="header">
     <div class="container">
@@ -14,7 +25,7 @@
             <ul class="list-menu-header">
               <li class="list-menu-item">
                 <a v-if="br_flag"
-                   @click="changeLanguage"
+                   @click="CHANGE_LANG"
                    class="list-menu-link"
                    title="Tradução Brasileira"
                 >
@@ -65,7 +76,7 @@
                   </svg>
                 </a>
                 <a v-if="en_flag"
-                   @click="changeLanguage"
+                   @click="CHANGE_LANG"
                    class="list-menu-link"
                    title="English Translate"
                 >
@@ -100,7 +111,7 @@
             <form class="form-header">
               <input type="text"
                      class="form-control input-header"
-                     placeholder="Pesquisar"
+                     :placeholder="$t('search')"
                      aria-label="Search"
                      v-model="search"
               >
@@ -122,6 +133,7 @@
 </template>
 
 <script>
+  import { mapMutations, mapGetters, mapState } from 'vuex'
   import Navbar from './Navbar.vue'
   import MobileMenu from './MobileMenu.vue'
   export default {
@@ -134,16 +146,31 @@
     data() {
       return {
         search: '',
-        br_flag: false,
-        en_flag: true
       }
     },
 
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+      }
+    },
+
+    computed: {
+        ...mapState([
+            'locale',
+            'br_flag',
+            'en_flag'
+        ]),
+
+      ...mapGetters([
+        'currentLang'
+      ]),
+    },
+
     methods: {
-      changeLanguage() {
-        this.br_flag = !this.br_flag;
-        this.en_flag = !this.en_flag;
-      },
+      ...mapMutations([
+        'CHANGE_LANG'
+      ]),
 
       showSearch() {
         this.$router.push(`/`);

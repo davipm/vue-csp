@@ -141,7 +141,6 @@
 
     created() {
       this.getPage(this.$route.params.slug); // slug current page
-      this.showSearch(this.$route.params.slug);
     },
 
     metaInfo() {
