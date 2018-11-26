@@ -31,7 +31,6 @@
     </div>
     <!-- error -->
     <div class="container error" v-else-if="error">
-      <!-- alert error -->
       <div  class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

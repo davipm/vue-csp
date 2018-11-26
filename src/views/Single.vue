@@ -153,7 +153,7 @@
           this.titleMeta = res.data[0].title.rendered;
           this.contentMeta = res.data[0].excerpt.rendered;
         })
-        .catch(( error ) => {
+        .catch(() => {
           this.error = true; // catch error
         })
         .finally(() => {

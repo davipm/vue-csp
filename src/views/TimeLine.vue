@@ -224,7 +224,16 @@
 
     created() {
 
-    }
+    },
+
+    metaInfo() {
+      return {
+        title: this.message.pageTitle + ' | CSP',
+        meta: [
+          { vmid: 'description', name: 'description', content: this.message.pageTitle },
+        ]
+      }
+    },
   }
 </script>
 
@@ -297,7 +306,7 @@
     color: #ffffff;
     background-color: #00734A;
 
-    & .time-title {
+    .time-title {
       color: #f6921e;
     }
   }
@@ -306,7 +315,7 @@
     color: #00734A;
     background-color: #f6921e;
 
-    & .time-title {
+    .time-title {
       color: #ffffff;
     }
   }
@@ -315,7 +324,7 @@
     color: #444444;
     background-color: #a6a8ab;
 
-    & .time-title {
+    .time-title {
       color: #ffffff;
     }
   }
