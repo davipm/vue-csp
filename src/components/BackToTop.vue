@@ -102,13 +102,13 @@
       -ms-transition: all .3s ease-in-out;
       -o-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
-      
-      &:hover {
-        opacity: 1;
-      }
 
       span {
         color: #fff;
+      }
+
+      &:hover {
+        opacity: 1;
       }
     }
   }

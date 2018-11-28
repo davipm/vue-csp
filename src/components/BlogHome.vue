@@ -1,9 +1,21 @@
+<i18n>
+  {
+    "pt_BR": {
+      "title": "Notícias"
+    },
+
+    "en": {
+      "title": "News"
+    }
+  }
+</i18n>
+
 <template>
   <section class="section blog">
     <div class="container">
       <!-- Heading -->
       <h3 class="blog-title">
-        {{ message.pageTitle }}
+        {{ $t('title') }}
       </h3>
       <!-- Loading Grid -->
       <div v-if="loading" class="row">
@@ -51,11 +63,11 @@
                 <img class="img-fluid"
                      v-if="post.acf.featured_image"
                      :src="post.acf.featured_image.sizes.medium_large"
-                     alt="Card image cap"
+                     :alt="post.title.rendered"
                 >
                 <img class="img-fluid"
                      v-else src="https://via.placeholder.com/300x220"
-                     alt="Card image cap"
+                     alt="Image Default"
                 >
               </div>
             </router-link>
@@ -87,12 +99,12 @@
 <script>
   import moment from 'moment'
   import axios from 'axios'
+  import { mapState } from 'vuex'
   export default {
     name: "BlogHome",
     data() {
       return {
         message: {
-          pageTitle: 'Notícias',
           alert1: 'OPS!',
           alert2: 'Algo errado aconteceu, recarregue a página novamente.',
         },
@@ -108,6 +120,18 @@
         let date = moment.utc( value );
         return date.format('DD/MM/YYYY');
       }
+    },
+
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+      }
+    },
+
+    computed: {
+        ...mapState([
+            'locale'
+        ])
     },
 
     methods: {
@@ -132,6 +156,7 @@
 
     created() {
       this.getPosts();
+      this.$i18n.locale = this.locale; // this came from vuex
     }
   }
 </script>

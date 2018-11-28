@@ -2,7 +2,7 @@
   <div id="carouselHome" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item"
-           v-for="(item, index) in images2"
+           v-for="(item, index) in images"
            :key="index"
            :style="{
               background: 'url('+ item[0].img.url +')',
@@ -32,7 +32,7 @@
     name: "Slider",
     data() {
       return {
-        images2: [],
+        images: [],
       }
     },
 
@@ -42,7 +42,7 @@
             .then(( res ) => {
               // convert obj in array
               let obj = res.data;
-              this.images2 = Object.keys(obj).map(function (key) {
+              this.images = Object.keys(obj).map(function (key) {
                 return [obj[key]];
               });
             })
@@ -55,33 +55,22 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .carousel::after {
     content: '';
     display: block;
     width: 100%;
     height: 10px;
-    background: #fff url("../assets/imgs/bordar-slider.png")no-repeat center/cover;
+    background: #fff url("../assets/img/bordar-slider.png")no-repeat center/cover;
   }
 
-  .carousel-inner {
-    height: 550px;
-  }
-
+  .carousel-inner,
   .carousel-item {
     height: 550px;
-  }
-
-  @media (max-width: 768px) {
-    .carousel-item,
-    .carousel-inner {
+    @media (max-width: 768px) {
       height: 200px;
     }
-  }
-
-  @media (min-width: 1800px) and (max-width: 1920px) {
-    .carousel-item,
-    .carousel-inner {
+    @media (min-width: 1800px) and (max-width: 1920px) {
       height: 700px;
     }
   }

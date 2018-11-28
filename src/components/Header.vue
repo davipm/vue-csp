@@ -16,7 +16,7 @@
         <div class="col-md-6">
           <div class="header-logo">
             <router-link to="/" class="logo-router">
-              <img src="../assets/imgs/logo-default.png" alt="Logo CSP">
+              <img src="../assets/img/logo-default.png" alt="Logo CSP">
             </router-link>
           </div>
         </div>
@@ -188,7 +188,7 @@
       content: '';
       display: block;
       height: 10px;
-      background: #fff url("../assets/imgs/bordar-slider.png") no-repeat center/cover;
+      background: #fff url("../assets/img/bordar-slider.png") no-repeat center/cover;
       width: 100%;
     }
   }
