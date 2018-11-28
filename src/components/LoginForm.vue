@@ -8,6 +8,14 @@
         "username": "Nome de usuário",
         "password": "Senha",
         "remember": "Lembrar"
+      },
+      "registerForm": {
+        "title": "Registro de Novo Usuário",
+        "username": "Escolha um Nome de Usuário *",
+        "name": "Nome *",
+        "email": "E-mail *",
+        "password": "Senha *",
+        "repitpassword": "Confirme a senha *"
       }
     },
 
@@ -19,6 +27,14 @@
         "username": "User Name",
         "password": "Password",
         "remember": "Remember"
+      },
+      "registerForm": {
+        "title": "Registro de Novo Usuário",
+        "username": "Escolha um Nome de Usuário *",
+        "name": "Nome *",
+        "email": "E-mail *",
+        "password": "Senha *",
+        "repitpassword": "Confirme a senha *"
       }
     }
   }
@@ -87,7 +103,7 @@
             </h5>
             <div class="form-group">
               <label for="register-user">
-                Escolha um Nome de Usuário*
+                Escolha um Nome de Usuário *
               </label>
               <input type="text"
                      class="form-control"
@@ -98,7 +114,7 @@
             </div>
             <div class="form-group">
               <label for="register-name">
-                Nome*
+                Nome *
               </label>
               <input type="text"
                      class="form-control"
@@ -140,7 +156,7 @@
                      v-model="registerForm.repitpassword"
               >
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary disabled" disabled>
               Cadastrar-se
             </button>
             <br>
@@ -190,7 +206,12 @@
     methods: {
       onSubmitLogin(e) {
         e.preventDefault();
-        alert(JSON.stringify(this.loginForm));
+        if (this.loginForm.username === 'admin' && this.loginForm.password === 'admin') {
+          this.$router.push('/page/categories/sala-de-imprensa');
+        }
+        else {
+          alert('try again');
+        }
       },
 
       onSubmitRegister(e) {
@@ -207,11 +228,11 @@
 
 <style scoped lang="scss">
   .page {
-    padding: 30px 0;
+    padding: 1.9rem 0;
     &-title {
+      margin-bottom: 1.2rem;
       font-family: "Centuma", Roboto, sans-serif;
       color: #65666A;
-      margin-bottom: 20px;
     }
   }
 

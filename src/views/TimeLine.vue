@@ -17,172 +17,57 @@
       </div>
       <!-- carousel content -->
       <div class="page-content" v-else>
-        <b-modal id="myModal"
-                 cancel-variant="none"
-                 ok-variant="modal"
-                 ok-title="Fechar"
-                 size="lg"
-                 centered
-                 title="Modal Test"
-        >
-          Modal Test
-        </b-modal>
         <carousel :responsive="{ 0:{ items: 1, nav: false }, 600:{ items: 2, nav: true} }">
-          <div class="item">
-            <a href="#" v-b-modal="'myModal'" class="item-link">
-              <div class="col-md-6 time-content time-bg-green">
-                <h5 class="time-title">2008</h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
+          <div class="item" v-for="item in posts"
+               :key="item.id"
+          >
+            <div v-for="(items, index) in item.time_line"
+                 :key="index"
+                 v-b-modal="items.image.title"
+                 class="item-link"
+            >
+              <b-modal :id="items.image.title"
+                       cancel-variant="none"
+                       ok-variant="modal"
+                       ok-title="Fechar"
+                       size="lg"
+                       centered
+                       :title="items.year"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div v-html="items.content"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <img v-if="items.image"
+                         :src="items.image.sizes.medium"
+                         :alt="items.image.title"
+                         class="w-100 sticky-top"
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/FJS_5066.jpg')no-repeat center/cover"></figure>
-              </div>
-            </a>
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/DSC02680.jpg')no-repeat center/cover"></figure>
-              </div>
-              <div class="col-md-6 time-content time-bg-orange">
-                <h5 class="time-title">2009</h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-content time-bg-gray">
+                <div v-html="items.content"></div>
+              </b-modal>
+              <div class="col-md-6 time-content"
+                   :class="`${items.color}`"
+              >
                 <h5 class="time-title">
-                  2010
+                  {{ items.year }}
                 </h5>
                 <div class="time-body">
                   <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
+                    {{ items.excerpt }}
                   </p>
                 </div>
               </div>
               <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/xiloteca-CSP.jpg')no-repeat center/cover"></figure>
+                <figure class="time-img"
+                        :style="{
+                            background: 'url(' + items.image.url + ') no-repeat center/cover'
+                          }"
+                ></figure>
               </div>
-            </a>
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/DSC_3011.jpg')no-repeat center/cover"></figure>
-              </div>
-              <div class="col-md-6 time-content time-bg-green">
-                <h5 class="time-title">
-                  2011
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-content time-bg-orange">
-                <h5 class="time-title">
-                  2012
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/FJS_5066.jpg')no-repeat center/cover"></figure>
-              </div>
-            </a>
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/DSC02680.jpg')no-repeat center/cover"></figure>
-              </div>
-              <div class="col-md-6 time-content time-bg-gray">
-                <h5 class="time-title">
-                  2013
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-content time-bg-orange">
-                <h5 class="time-title">
-                  2014
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/FJS_5066.jpg')no-repeat center/cover"></figure>
-              </div>
-            </a>
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/DSC02680.jpg')no-repeat center/cover"></figure>
-              </div>
-              <div class="col-md-6 time-content time-bg-gray">
-                <h5 class="time-title">
-                  2015
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-content time-bg-orange">
-                <h5 class="time-title">
-                  2016
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/FJS_5066.jpg')no-repeat center/cover"></figure>
-              </div>
-            </a>
-            <a href="#" class="item-link">
-              <div class="col-md-6 time-img-content">
-                <figure class="time-img" style="background: url('http://www.cspecem.com/wp-content/uploads/2016/12/DSC02680.jpg')no-repeat center/cover"></figure>
-              </div>
-              <div class="col-md-6 time-content time-bg-gray">
-                <h5 class="time-title">
-                  2017
-                </h5>
-                <div class="time-body">
-                  <p class="time-text">
-                    Identificação das espécies da fauna e flora na área de influência da CSP
-                  </p>
-                </div>
-              </div>
-            </a>
+            </div>
           </div>
         </carousel>
       </div>
@@ -191,6 +76,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import carousel from 'vue-owl-carousel'
   export default {
     name: "TimeLine",
@@ -212,18 +98,22 @@
     },
 
     methods: {
-
-    },
-
-    mounted() {
-      setTimeout(
-          _=> this.loading = false,
-          3000
-      )
+      getTimeLine() {
+        axios.get('/api/v1/timelines')
+            .then((res) => {
+              this.posts = res.data;
+            })
+            .catch(() => {
+              this.error = true;
+            })
+            .finally(() => {
+              this.loading = false;
+            })
+      }
     },
 
     created() {
-
+      this.getTimeLine();
     },
 
     metaInfo() {
@@ -272,6 +162,7 @@
     display: flex;
     min-height: 250px;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       text-decoration: none;

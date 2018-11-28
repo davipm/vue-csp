@@ -62,9 +62,9 @@
                 </div>
                 <div class="col-md-6">
                   <img v-if="item.image"
-                       class="w-100 sticky-top"
                        :src="item.image.sizes.medium"
                        :alt="item.image.filename"
+                       class="w-100 sticky-top"
                   >
                   <img v-else src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
                 </div>
@@ -73,9 +73,9 @@
             <div class="card" v-b-modal="item.slug">
               <div class="card-img-content">
                 <img v-if="item.image"
-                     class="card-img"
                      :src="item.image.sizes.medium"
                      :alt="item.image.filename"
+                     class="card-img"
                 >
                 <img v-else src="http://www.cspecem.com/wp-content/uploads/2016/12/patio.jpg" class="card-img" alt="">
               </div>
