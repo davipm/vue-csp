@@ -197,6 +197,12 @@
       }
     },
 
+    beforeCreate() {
+      if (this.$route.params.slug === 'sala-de-imprensa') {
+        this.$router.push('/page/sala-de-imprensa/login');
+      }
+    },
+
     created() {
       this.getPosts(this.$route.params.slug);
     }

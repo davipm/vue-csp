@@ -156,7 +156,7 @@
                      v-model="registerForm.repitpassword"
               >
             </div>
-            <button type="submit" class="btn btn-primary disabled" disabled>
+            <button type="submit" class="btn btn-primary">
               Cadastrar-se
             </button>
             <br>
@@ -171,6 +171,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import { mapState } from 'vuex'
   export default {
     name: "LoginForm",
@@ -206,17 +207,41 @@
     methods: {
       onSubmitLogin(e) {
         e.preventDefault();
-        if (this.loginForm.username === 'admin' && this.loginForm.password === 'admin') {
-          this.$router.push('/page/categories/sala-de-imprensa');
-        }
-        else {
-          alert('try again');
-        }
+        axios
+            .post('http://localhost:1337/auth/local', {
+              identifier: this.loginForm.username,
+              password: this.loginForm.password
+            })
+            .then(response => {
+              // Handle success.
+              this.$router.push('/page/categories/sala-de-imprensa');
+              console.log('User profile', response.data.user);
+              console.log('User token', response.data.jwt);
+            })
+            .catch(error => {
+              // Handle error.
+              console.log('An error occurred:', error);
+            });
       },
 
       onSubmitRegister(e) {
         e.preventDefault();
-        alert(JSON.stringify(this.registerForm));
+        axios
+            .post('http://localhost:1337/auth/local/register', {
+              username: this.registerForm.username,
+              email: this.registerForm.email,
+              password: this.registerForm.password
+            })
+            .then(response => {
+              // Handle success.
+              alert('User Registered');
+              console.log('User profile', response.data.user);
+              console.log('User token', response.data.jwt);
+            })
+            .catch(error => {
+              // Handle error.
+              console.log('An error occurred:', error);
+            });
       }
     },
 

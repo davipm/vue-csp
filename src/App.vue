@@ -89,6 +89,12 @@
     font-style: normal;
   }
 
+  iframe {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
   ::selection {
     color: #fff;
     text-shadow: none;

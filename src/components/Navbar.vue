@@ -369,6 +369,9 @@
   .navbar {
     padding-bottom: 0;
     z-index: 2;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .navbar-collapse { justify-content: center; }
@@ -513,10 +516,5 @@
     float: right;
     position: relative;
     top: 5px;
-  }
-
-  // mobile grid's
-  @media (max-width: 768px) {
-    .navbar { display: none; }
   }
 </style>

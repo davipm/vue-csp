@@ -81,7 +81,7 @@
   export default {
     name: "TimeLine",
     components: {
-      carousel
+      carousel,
     },
 
     data() {
