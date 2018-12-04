@@ -125,6 +125,8 @@
     watch: {
       locale(val) {
         this.$i18n.locale = val;
+        this.loading = true;
+        this.getPosts();
       }
     },
 

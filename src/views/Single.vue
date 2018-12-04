@@ -118,6 +118,7 @@
 <script>
   import axios from 'axios'
   import ShareContent from '@/components/ShareContent.vue'
+  import { mapState } from 'vuex'
   export default {
     name: "Single",
     components: {
@@ -181,7 +182,19 @@
         this.getPost(to.params.slug);
         this.getPosts(to.params.slug);
         this.loading = true; // resenting load on change routes
+      },
+
+      locale(val) {
+        this.$i18n.locale = val;
+        this.loading = true;
+        this.getPost(this.$route.params.slug);
       }
+    },
+
+    computed: {
+      ...mapState([
+          'locale'
+      ])
     },
 
     created() {

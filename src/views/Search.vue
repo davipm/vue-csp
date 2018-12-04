@@ -156,6 +156,7 @@
 <script>
   import moment from 'moment'
   import axios from 'axios'
+  import { mapState } from 'vuex'
   export default {
     name: "Search",
     data() {
@@ -181,7 +182,20 @@
         this.loading = true;
         this.getPost(to.params.slug);
         this.getPage(to.params.slug);
+      },
+
+      locale(val) {
+        this.$i18n.locale = val;
+        this.loading = true;
+        this.getPost(this.$route.params.slug);
+        this.getPage(this.$route.params.slug);
       }
+    },
+
+    computed: {
+      ...mapState([
+        'locale'
+      ])
     },
 
     methods: {

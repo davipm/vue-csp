@@ -94,6 +94,7 @@
 
 <script>
   import axios from 'axios'
+  import { mapState } from 'vuex'
   export default {
     name: "PageModal",
     data() {
@@ -107,6 +108,20 @@
           pageTitle: 'Plantas'
         },
       }
+    },
+
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
+        this.loading = true;
+        this.getPosts();
+      }
+    },
+
+    computed: {
+      ...mapState([
+        'locale'
+      ])
     },
 
     methods: {

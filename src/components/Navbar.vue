@@ -12,18 +12,41 @@
         "sponsorships": "Patrocínios"
       },
       "sustainability": {
-        "sustainability": "Sustentabilidade"
+        "sustainability": "Sustentabilidade",
+        "environment": "Meio Ambiente",
+        "timeLine": "Linha do tempo Sustentável",
+        "environmentalManagement": "Gestão Ambiental",
+        "preOperation": "Pré-operação",
+        "operation": "Operação",
+        "environmentalEducation": "Educação Ambiental",
+        "environmentalMonitoring": "Monitoramento Ambiental",
+        "environmentalControls": "Controles Ambientais",
+        "plants": "Plantas",
+        "relationshipCommunity": "Relação com a comunidade",
+        "ourRelationshipCommunity": "Nossa Relação com a Comunidade",
+        "territoryEntrepreneurProgram": "Programa Território Empreendedor",
+        "strengtheningProductive": "Inscrições - Eixo Fortalecimento da base produtiva",
+        "entrepreneurialCulture": "Inscrições - Eixo Cultura Empreendedora",
+        "socialInfrastructure": "Infraestrutura social",
+        "socialDialogue": "Programa de diálogo Social",
+        "peopleIdea": " Ideia da Gente"
       },
       "products": {
-        "products": "Produtos"
-      },
+        "products": "Produtos",
+        "plates": "Placas",
+        "coProducts": "Co-produtos",
+        "certifications": "Certificações",
+        "quality": "Qualidade",
+        "product": "Produto",
+        "environment": "Meio Ambiente"
+       },
       "providers": {
         "providers": "Fornecedores"
-      },
+       },
       "workWithUs": "Trabalhe Conosco",
       "press": {
         "press": "Imprensa"
-      },
+       },
       "ombudsman": "Ouvidoria",
       "contact": "Fale Conosco"
     },
@@ -40,10 +63,33 @@
         "sponsorships": "Sponsorships"
       },
       "sustainability": {
-        "sustainability": "Sustainability"
+        "sustainability": "Sustainability",
+        "environment": "Environment",
+        "timeLine": "Sustainable Timeline",
+        "environmentalManagement": "Environmental management",
+        "preOperation": "Pre-operation",
+        "operation": "Operation",
+        "environmentalEducation": "Environmental education",
+        "environmentalMonitoring": "Environmental monitoring",
+        "environmentalControls": "Environmental Controls",
+        "plants": "Plants",
+        "relationshipCommunity": "Relationship with the community",
+        "ourRelationshipCommunity": "Our Relationship with the Community",
+        "territoryEntrepreneurProgram": "Territory Entrepreneur Program",
+        "strengtheningProductive": "Subscriptions - Axis Strengthening of the productive base",
+        "entrepreneurialCulture": "Inscriptions - Entrepreneurial Culture Axis",
+        "socialInfrastructure": "Social infrastructure",
+        "socialDialogue": "Social Dialogue Program",
+        "peopleIdea": "People's Idea"
       },
       "products": {
-        "products": "Products"
+        "products": "Products",
+        "plates": "Plates",
+        "coProducts": "Co-products",
+        "certifications": "Certifications",
+        "quality": "Quality",
+        "product": "Product",
+        "environment": "Environment"
       },
       "providers": {
         "providers": "Providers"
@@ -112,52 +158,52 @@
             <ul class="submenu">
               <li class="submenu-item">
                 <a class="submenu-link">
-                  Meio Ambiente
+                  {{ $t('sustainability.environment') }}
                   <i class="fas fa-chevron-right"></i>
                 </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/meio-ambiente/linha-do-tempo-sustentavel`" class="submenu-link">
-                      Linha do tempo Sustentável
+                      {{ $t('sustainability.timeLine') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <a class="submenu-link">
-                      Gestão Ambiental
+                      {{ $t('sustainability.environmentalManagement') }}
                       <i class="fas fa-chevron-right"></i>
                     </a>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/pre-operacao`" class="submenu-link">
-                          Pré-operação
+                          {{ $t('sustainability.preOperation') }}
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/nossa-gestao`" class="submenu-link">
-                          Operação
+                          {{ $t('sustainability.operation') }}
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/educacao-ambiental`" class="submenu-link">
-                          Educação Ambiental
+                          {{ $t('sustainability.environmentalEducation') }}
                         </router-link>
                       </li>
                     </ul>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/monitoramento-ambiental`" class="submenu-link">
-                      Monitoramento Ambiental
+                      {{ $t('sustainability.environmentalMonitoring') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <a class="submenu-link">
-                      Controles Ambientais
+                      {{ $t('sustainability.environmentalControls') }}
                       <i class="fas fa-chevron-right"></i>
                     </a>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/controles-ambientais/plantas`" class="submenu-link">
-                          Plantas
+                          {{ $t('sustainability.plants') }}
                         </router-link>
                       </li>
                     </ul>
@@ -166,46 +212,46 @@
               </li>
               <li class="submenu-item">
                 <a class="submenu-link">
-                  Relação com a comunidade
+                  {{ $t('sustainability.relationshipCommunity') }}
                   <i class="fas fa-chevron-right"></i>
                 </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/nossa-relacao-com-a-comunidade`" class="submenu-link">
-                      Nossa Relação com a Comunidade
+                      {{ $t('sustainability.ourRelationshipCommunity') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/programa-territorio-empreendedor`" class="submenu-link">
-                      Programa Território Empreendedor
+                      {{ $t('sustainability.territoryEntrepreneurProgram') }}
                       <i class="fas fa-chevron-right"></i>
                     </router-link>
                     <ul class="submenu-lv-3">
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/fortalecimento-da-base-produtiva`" class="submenu-link">
-                          Inscrições - Eixo Fortalecimento da base produtiva
+                          {{ $t('sustainability.strengtheningProductive') }}
                         </router-link>
                       </li>
                       <li class="submenu-item-lv-3">
                         <router-link :to="`/page/cultura-empreendedora`" class="submenu-link">
-                          Inscrições - Eixo Cultura Empreendedora
+                          {{ $t('sustainability.entrepreneurialCulture') }}
                         </router-link>
                       </li>
                     </ul>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/infraestrutura-social`" class="submenu-link">
-                      Infraestrutura social
+                      {{ $t('sustainability.socialInfrastructure') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/programa-de-dialogo-social`" class="submenu-link">
-                      Programa de dialogo Social
+                      {{ $t('sustainability.socialDialogue') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/ideia-da-gente`" class="submenu-link">
-                      Ideia da Gente
+                      {{ $t('sustainability.peopleIdea') }}
                     </router-link>
                   </li>
                 </ul>
@@ -219,33 +265,33 @@
             <ul class="submenu">
               <li class="submenu-item">
                 <router-link :to="`/page/placas`" class="submenu-link">
-                  Placas
+                  {{ $t('products.plates') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/co-produtos`" class="submenu-link">
-                  Co-produtos
+                  {{ $t('products.coProducts') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <a class="submenu-link">
-                  Certificações
+                  {{ $t('products.certifications') }}
                   <i class="fas fa-chevron-right"></i>
                 </a>
                 <ul class="submenu-lv-2">
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/imprensa/cerqualidades`" class="submenu-link">
-                      Qualidade
+                      {{ $t('products.quality') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/imprensa/cerprodutos`" class="submenu-link">
-                      Produto
+                      {{ $t('products.product') }}
                     </router-link>
                   </li>
                   <li class="submenu-item-lv-2">
                     <router-link :to="`/page/imprensa/cermeioambientes`" class="submenu-link">
-                      Meio Ambiente
+                      {{ $t('products.environment') }}
                     </router-link>
                   </li>
                 </ul>

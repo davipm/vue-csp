@@ -131,6 +131,7 @@
 <script>
   import moment from 'moment'
   import axios from 'axios'
+  import { mapState } from 'vuex'
   export default {
     name: "AllPosts",
     data() {
@@ -156,7 +157,19 @@
       '$route'(to, from) {
         this.loading = true;
         this.getPosts(to.params.slug);
+      },
+
+      locale(val) {
+        this.$i18n.locale = val;
+        this.loading = true;
+        this.getPosts(this.$route.params.slug);
       }
+    },
+
+    computed: {
+      ...mapState([
+        'locale'
+      ])
     },
 
     methods: {
