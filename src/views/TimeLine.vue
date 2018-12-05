@@ -50,6 +50,7 @@
               </b-modal>
               <div class="col-md-6 time-content"
                    :class="`${items.color}`"
+                   v-if="index % 2 !== 0"
               >
                 <h5 class="time-title">
                   {{ items.year }}
@@ -66,6 +67,19 @@
                             background: 'url(' + items.image.url + ') no-repeat center/cover'
                           }"
                 ></figure>
+              </div>
+              <div class="col-md-6 time-content"
+                   :class="`${items.color}`"
+                   v-if="index % 2 === 0"
+              >
+                <h5 class="time-title">
+                  {{ items.year }}
+                </h5>
+                <div class="time-body">
+                  <p class="time-text">
+                    {{ items.excerpt }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
