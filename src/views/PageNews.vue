@@ -68,12 +68,7 @@
     </div>
     <!-- error -->
     <div class="container error" v-else-if="error">
-      <div  class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <ErrorAlert />
     </div>
     <!-- content -->
     <div class="container" v-else>
@@ -124,16 +119,15 @@
 
 <script>
   import axios from 'axios'
+  import ErrorAlert from '../components/ErrorAlert.vue'
+
   export default {
     name: "PageNews",
+    components: { ErrorAlert },
     data() {
       return {
         loading: true,
         error: false,
-        message: {
-          alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
-        },
         news: {},
         pageTitle: ''
       }

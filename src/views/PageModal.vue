@@ -31,12 +31,7 @@
     </div>
     <!-- error -->
     <div class="container error" v-else-if="error">
-      <div  class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <ErrorAlert />
     </div>
     <!-- page content -->
     <div class="container" v-else>
@@ -95,8 +90,11 @@
 <script>
   import axios from 'axios'
   import { mapState } from 'vuex'
+  import ErrorAlert from '../components/ErrorAlert.vue'
+
   export default {
     name: "PageModal",
+    components: { ErrorAlert },
     data() {
       return {
         loading: true,

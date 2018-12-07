@@ -47,12 +47,7 @@
         </div>
       </div>
       <!-- alert error -->
-      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <ErrorAlert v-else-if="error" />
       <!-- grid -->
       <div v-else class="row">
         <div class="section-content col-md-9 " v-for="(item, index) in post" :key="index">
@@ -91,7 +86,7 @@
               </router-link>
               <div class="card-body">
                 <time class="post-time">
-                  {{ post.date }}
+                  {{ post.date | prettyDates }}
                 </time>
                 <router-link to="#">
                   <h5 class="card-title">
@@ -117,20 +112,22 @@
 
 <script>
   import axios from 'axios'
+  import moment from 'moment'
   import ShareContent from '@/components/ShareContent.vue'
+  import ErrorAlert from '../components/ErrorAlert.vue'
   import { mapState } from 'vuex'
+
   export default {
     name: "Single",
     components: {
-      ShareContent
+      ShareContent,
+      ErrorAlert
     },
 
     data() {
       return {
         message: {
           pageTitle: 'Notícias',
-          alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
           asideMessage: 'Saiba Mais',
         },
         loading: true,
@@ -139,6 +136,14 @@
         posts: {},
         titleMeta: '',
         contentMeta: ''
+      }
+    },
+
+    filters: {
+      prettyDates( value ) {
+        if ( !value ) return '';
+        let date = moment.utc( value );
+        return date.format('DD/MM/YYYY');
       }
     },
 

@@ -1,3 +1,137 @@
+<i18n>
+  {
+    "pt_BR": {
+      "back": "Voltar",
+      "completMenu": "MENU COMPLETO",
+      "aboutCsp": {
+        "aboutCsp": "Sobre a CSP",
+        "mission": "Misão, Visão e Valores",
+        "ourStory": "Nossa História",
+        "directors": "Diretoria",
+        "visiting": "Programa de Visitas",
+        "complex": "Complexo Industrial e Portuário do Pecém",
+        "production": "Processo de produção do aço",
+        "sponsorships": "Patrocínios"
+      },
+      "sustainability": {
+        "sustainability": "Sustentabilidade",
+        "environment": "Meio Ambiente",
+        "timeLine": "Linha do tempo Sustentável",
+        "environmentalManagement": "Gestão Ambiental",
+        "preOperation": "Pré-operação",
+        "operation": "Operação",
+        "environmentalEducation": "Educação Ambiental",
+        "environmentalMonitoring": "Monitoramento Ambiental",
+        "environmentalControls": "Controles Ambientais",
+        "plants": "Plantas",
+        "relationshipCommunity": "Relação com a comunidade",
+        "ourRelationshipCommunity": "Nossa Relação com a Comunidade",
+        "territoryEntrepreneurProgram": "Programa Território Empreendedor",
+        "strengtheningProductive": "Inscrições - Eixo Fortalecimento da base produtiva",
+        "entrepreneurialCulture": "Inscrições - Eixo Cultura Empreendedora",
+        "socialInfrastructure": "Infraestrutura social",
+        "socialDialogue": "Programa de diálogo Social",
+        "peopleIdea": " Ideia da Gente"
+      },
+      "products": {
+        "products": "Produtos",
+        "plates": "Placas",
+        "coProducts": "Co-produtos",
+        "certifications": "Certificações",
+        "quality": "Qualidade",
+        "product": "Produto",
+        "environment": "Meio Ambiente"
+      },
+      "providers": {
+        "providers": "Fornecedores",
+        "beSupplier": "Seja nosso fornecedor",
+        "preRegistration": "Pré-cadastro",
+        "supplierBooklet": "Cartilha do Fornecedor",
+        "e-suppliers": "Portal e-Fornecedores",
+        "frequentlyAsked": "Dúvidas Frequentes"
+      },
+      "workWithUs": "Trabalhe Conosco",
+      "press": {
+        "press": "Imprensa",
+        "news": "Notícias",
+        "cspPodcast": "CSP Podcast",
+        "pressRoom": "Sala de Imprensa",
+        "OutInMedia": "Saiu na Mídia",
+        "pressAttache": "Acessória de Imprensa",
+        "cspNews": "CSP News",
+        "cspNewsPt": "CSP Notícias"
+      },
+      "ombudsman": "Ouvidoria",
+      "contact": "Fale Conosco"
+    },
+
+    "en": {
+      "back": "Back",
+      "completMenu": "COMPLET MENU",
+      "aboutCsp": {
+        "aboutCsp": "About CSP",
+        "mission": "Mission, Vision and Values",
+        "ourStory": "Our story",
+        "directors": "Directors",
+        "visiting": "Visiting Program",
+        "complex": "Pecém Industrial and Port Complex",
+        "production": "Steel production process",
+        "sponsorships": "Sponsorships"
+      },
+      "sustainability": {
+        "sustainability": "Sustainability",
+        "environment": "Environment",
+        "timeLine": "Sustainable Timeline",
+        "environmentalManagement": "Environmental management",
+        "preOperation": "Pre-operation",
+        "operation": "Operation",
+        "environmentalEducation": "Environmental education",
+        "environmentalMonitoring": "Environmental monitoring",
+        "environmentalControls": "Environmental Controls",
+        "plants": "Plants",
+        "relationshipCommunity": "Relationship with the community",
+        "ourRelationshipCommunity": "Our Relationship with the Community",
+        "territoryEntrepreneurProgram": "Territory Entrepreneur Program",
+        "strengtheningProductive": "Subscriptions - Axis Strengthening of the productive base",
+        "entrepreneurialCulture": "Inscriptions - Entrepreneurial Culture Axis",
+        "socialInfrastructure": "Social infrastructure",
+        "socialDialogue": "Social Dialogue Program",
+        "peopleIdea": "People's Idea"
+      },
+      "products": {
+        "products": "Products",
+        "plates": "Plates",
+        "coProducts": "Co-products",
+        "certifications": "Certifications",
+        "quality": "Quality",
+        "product": "Product",
+        "environment": "Environment"
+      },
+      "providers": {
+        "providers": "Providers",
+        "beSupplier": "Be our supplier",
+        "preRegistration": "Pre registration",
+        "supplierBooklet": "Supplier's booklet",
+        "e-suppliers": "Portal e-Suppliers",
+        "frequentlyAsked": "Frequently Asked Questions"
+      },
+      "workWithUs": "Work with us",
+      "press": {
+        "press": "Press",
+        "news": "News",
+        "cspPodcast": "CSP Podcast",
+        "pressRoom": "Press Room",
+        "OutInMedia": "Out in the Media",
+        "pressAttache": "Press Office",
+        "cspNews": "CSP News",
+        "cspNewsPt": "CSP Notícias"
+      },
+      "ombudsman": "Ombudsman",
+      "contact": "Contact us"
+    }
+  }
+</i18n>
+
 <template>
   <ul class="nav-mobile">
     <li></li>
@@ -11,55 +145,55 @@
       </label>
       <div class="menu-sidebar">
         <h6 class="menu-sidebar-title">
-          {{ menuTitle }}
+          {{ $t('completMenu') }}
         </h6>
         <ul class="menu-sidebar-content">
           <li>
             <input type="checkbox" id="sub-one" class="submenu-toggle">
             <label class="submenu-label" for="sub-one">
-              Sobre a CSP
+              {{ $t('aboutCsp.aboutCsp') }}
             </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-one">
-                  {{ menuBack }}
+                  {{ $t('back') }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
                 <router-link :to="`/page/visao-missao-e-valores`">
-                  Misão, Visão e Valores
+                  {{ $t('aboutCsp.mission') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/nossa-historia`">
-                  Nossa História
+                  {{ $t('aboutCsp.ourStory') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/diretoria`">
-                  Diretoria
+                  {{ $t('aboutCsp.directors') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/voce-na-csp`">
-                  Programa de Visitas
+                  {{ $t('aboutCsp.visiting') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/complexo-industrial-e-portuario-do-pecem`">
-                  Complexo Insdustrial e Portuário do Pecém
+                  {{ $t('aboutCsp.complex') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/processo-de-producao-do-aco`">
-                  Processo de produção do aço
+                  {{ $t('aboutCsp.production') }}
                 </router-link>
               </li>
               <li>
                 <router-link :to="`/page/patrocinios`">
-                  Patrocínios
+                  {{ $t('aboutCsp.sponsorships') }}
                 </router-link>
               </li>
             </ul>
@@ -67,83 +201,85 @@
           <li>
             <input type="checkbox" id="sub-two" class="submenu-toggle">
             <label class="submenu-label" for="sub-two">
-              Sustentabilisade
+              {{ $t('sustainability.sustainability') }}
             </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-two">
-                  {{ menuBack }}
+                  {{ $t('back') }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
                 <input type="checkbox" id="sub-three" class="submenu-toggle">
-                <label class="submenu-label" for="sub-three">Meio Ambiente</label>
+                <label class="submenu-label" for="sub-three">
+                  {{ $t('sustainability.environment') }}
+                </label>
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
                     <label class="submenu-label" for="sub-three">
-                      {{ menuBack }}
+                      {{ $t('back') }}
                     </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
                     <router-link to="/page/meio-ambiente/linha-do-tempo-sustentavel">
-                      Linha do tempo Sustentável
+                      {{ $t('sustainability.timeLine') }}
                     </router-link>
                   </li>
                   <li>
                     <input type="checkbox" id="sub-gestao-ambiental" class="submenu-toggle">
                     <label class="submenu-label" for="sub-gestao-ambiental">
-                      Gestão Ambiental
+                      {{ $t('sustainability.environmentalManagement') }}
                     </label>
                     <div class="arrow right">&#8250;</div>
                     <ul class="menu-sub">
                       <li class="menu-sub-title">
                         <label class="submenu-label" for="sub-gestao-ambiental">
-                          {{ menuBack }}
+                          {{ $t('back') }}
                         </label>
                         <div class="arrow left">&#8249;</div>
                       </li>
                       <li>
                         <router-link to="/page/pre-operacao">
-                          Pré-operação
+                          {{ $t('sustainability.preOperation') }}
                         </router-link>
                       </li>
                       <li>
                         <router-link to="/page/nossa-gestao">
-                          Operação
+                          {{ $t('sustainability.operation') }}
                         </router-link>
                       </li>
                       <li>
                         <router-link to="/page/educacao-ambiental">
-                          Educação Ambiental
+                          {{ $t('sustainability.environmentalEducation') }}
                         </router-link>
                       </li>
                     </ul>
                   </li>
                   <li>
                     <router-link :to="`/page/monitoramento-ambiental`">
-                      Monitoramento Ambiental
+                      {{ $t('sustainability.environmentalMonitoring') }}
                     </router-link>
                   </li>
                   <li>
                     <input type="checkbox" id="sub-controle-ambiental" class="submenu-toggle">
                     <label class="submenu-label" for="sub-controle-ambiental">
-                      Controles Ambientais
+                      {{ $t('sustainability.environmentalControls') }}
                     </label>
                     <div class="arrow right">&#8250;</div>
                     <ul class="menu-sub">
                       <li class="menu-sub-title">
                         <label class="submenu-label" for="sub-controle-ambiental">
-                          {{ menuBack }}
+                          {{ $t('back') }}
                         </label>
                         <div class="arrow left">&#8249;</div>
                       </li>
                       <li>
                         <router-link to="/page/controles-ambientais/plantas">
-                          Plantas
+                          {{ $t('sustainability.plants') }}
                         </router-link>
                       </li>
                     </ul>
@@ -153,19 +289,19 @@
               <li>
                 <input type="checkbox" id="sub-four" class="submenu-toggle">
                 <label class="submenu-label" for="sub-four">
-                  Relação com a Comunidade
+                  {{ $t('sustainability.relationshipCommunity') }}
                 </label>
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
                     <label class="submenu-label" for="sub-four">
-                      {{ menuBack }}
+                      {{ $t('back') }}
                     </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
                     <router-link to="/page/nossa-relacao-com-a-comunidade">
-                      Nossa Relação com a Comunidade
+                      {{ $t('sustainability.ourRelationshipCommunity') }}
                     </router-link>
                   </li>
                   <li>
@@ -174,41 +310,41 @@
                            class="submenu-toggle"
                     >
                     <label class="submenu-label" for="sub-programa-territorio-empreendedor">
-                      Programa Território Empreendedor
+                      {{ $t('sustainability.territoryEntrepreneurProgram') }}
                     </label>
                     <div class="arrow right">&#8250;</div>
                     <ul class="menu-sub">
                       <li class="menu-sub-title">
                         <label class="submenu-label" for="sub-programa-territorio-empreendedor">
-                          {{ menuBack }}
+                          {{ $t('back') }}
                         </label>
                         <div class="arrow left">&#8249;</div>
                       </li>
                       <li>
                         <router-link to="/page/fortalecimento-da-base-produtiva">
-                          Inscrições - Eixo Fortalecimento da base produtiva
+                          {{ $t('sustainability.strengtheningProductive') }}
                         </router-link>
                       </li>
                       <li>
                         <router-link to="/page/cultura-empreendedora">
-                          Inscrições - Eixo Cultura Empreendedora
+                          {{ $t('sustainability.entrepreneurialCulture') }}
                         </router-link>
                       </li>
                     </ul>
                   </li>
                   <li>
                     <router-link to="/page/infraestrutura-social">
-                      Infraestrutura social
+                      {{ $t('sustainability.socialInfrastructure') }}
                     </router-link>
                   </li>
                   <li>
                     <router-link to="/page/programa-de-dialogo-social">
-                      Programa de dialogo Social
+                      {{ $t('sustainability.socialDialogue') }}
                     </router-link>
                   </li>
                   <li>
                     <router-link to="/page/ideia-da-gente">
-                      Ideia da Gente
+                      {{ $t('sustainability.peopleIdea') }}
                     </router-link>
                   </li>
                 </ul>
@@ -218,52 +354,52 @@
           <li>
             <input type="checkbox" id="sub-produtos" class="submenu-toggle">
             <label class="submenu-label" for="sub-produtos">
-              Produtos
+              {{ $t('products.products') }}
             </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-produtos">
-                  {{ menuBack }}
+                  {{ $t('back') }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
                 <router-link to="/page/placas">
-                  Placas
+                  {{ $t('products.plates') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/co-produtos">
-                  Co-produtos
+                  {{ $t('products.coProducts') }}
                 </router-link>
               </li>
               <li>
                 <input type="checkbox" id="sub-certificacoes" class="submenu-toggle">
                 <label class="submenu-label" for="sub-certificacoes">
-                  Certificações
+                  {{ $t('products.certifications') }}
                 </label>
                 <div class="arrow right">&#8250;</div>
                 <ul class="menu-sub">
                   <li class="menu-sub-title">
                     <label class="submenu-label" for="sub-certificacoes">
-                      {{ menuBack }}
+                      {{ $t('back') }}
                     </label>
                     <div class="arrow left">&#8249;</div>
                   </li>
                   <li>
                     <router-link to="/page/imprensa/cerqualidades">
-                      Qualidade
+                      {{ $t('products.quality') }}
                     </router-link>
                   </li>
                   <li>
                     <router-link to="/page/imprensa/cerprodutos">
-                      Produto
+                      {{ $t('products.product') }}
                     </router-link>
                   </li>
                   <li>
                     <router-link to="/page/imprensa/cermeioambientes">
-                      Meio Ambiente
+                      {{ $t('products.environment') }}
                     </router-link>
                   </li>
                 </ul>
@@ -273,106 +409,106 @@
           <li>
             <input type="checkbox" id="sub-fornecedores" class="submenu-toggle">
             <label class="submenu-label" for="sub-fornecedores">
-              Fornecedores
+              {{ $t('providers.providers') }}
             </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-fornecedores">
-                  {{ menuBack }}
+                  {{ $t('back') }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
                 <router-link to="/page/seja-nosso-fornecedor">
-                  Seja nosso fornecedor
+                  {{ $t('providers.beSupplier') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/pre-cadastro">
-                  Pré-cadastro
+                  {{ $t('providers.preRegistration') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/cartilha-do-fornecedor">
-                  Cartilha do Fornecedor
+                  {{ $t('providers.supplierBooklet') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/portal-e-fornecedores">
-                  Portal e-Fornecedores
+                  {{ $t('providers.e-suppliers') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/duvidas-frequentes">
-                  Dúvidas Frequentes
+                  {{ $t('providers.frequentlyAsked') }}
                 </router-link>
               </li>
             </ul>
           </li>
           <li>
             <router-link :to="`/page/trabalhe-conosco`">
-              Trabalhe Conosco
+              {{ $t('workWithUs') }}
             </router-link>
           </li>
           <li>
             <input type="checkbox" id="sub-imprensa" class="submenu-toggle">
             <label class="submenu-label" for="sub-imprensa">
-              Imprensa
+              {{ $t('press.press') }}
             </label>
             <div class="arrow right">&#8250;</div>
             <ul class="menu-sub">
               <li class="menu-sub-title">
                 <label class="submenu-label" for="sub-imprensa">
-                  {{ menuBack }}
+                  {{ $t('back') }}
                 </label>
                 <div class="arrow left">&#8249;</div>
               </li>
               <li>
                 <router-link to="/page/categories/posts">
-                  Notícias
+                  {{ $t('press.news') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/categories/csp-podcast">
-                  CSP Podcast
+                  {{ $t('press.cspPodcast') }}
                 </router-link>
               </li>
               <li>
-                <router-link to="/">
-                  Sala de Imprensa
+                <router-link to="/page/sala-de-imprensa/login">
+                  {{ $t('press.pressRoom') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/categories/saiu-na-midia">
-                  Saiu na Midia
+                  {{ $t('press.OutInMedia') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/assessoria-de-imprensa">
-                  Acessoria de Imprensa
+                  {{ $t('press.pressAttache') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/imprensa/cspnews">
-                  CSP News
+                  {{ $t('press.cspNews') }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/page/imprensa/cspnotcias">
-                  CSP Notícias
+                  {{ $t('press.cspNewsPt') }}
                 </router-link>
               </li>
             </ul>
           </li>
           <li>
             <router-link :to="`/page/ouvidoria`">
-              Ouvidoria
+              {{ $t('ombudsman') }}
             </router-link>
           </li>
           <li>
             <router-link :to="`/page/fale-conosco`">
-              Fale Conosco
+              {{ $t('contact') }}
             </router-link>
           </li>
           <!--
@@ -419,13 +555,19 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: "MobileMenu",
-    data() {
-      return {
-        menuTitle: 'MENU COMPLETO',
-        menuBack: 'Back'
+    watch: {
+      locale(val) {
+        this.$i18n.locale = val;
       }
+    },
+
+    computed: {
+      ...mapState([
+          'locale'
+      ])
     }
   }
 </script>

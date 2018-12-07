@@ -41,11 +41,23 @@
         "environment": "Meio Ambiente"
        },
       "providers": {
-        "providers": "Fornecedores"
+        "providers": "Fornecedores",
+        "beSupplier": "Seja nosso fornecedor",
+        "preRegistration": "Pré-cadastro",
+        "supplierBooklet": "Cartilha do Fornecedor",
+        "e-suppliers": "Portal e-Fornecedores",
+        "frequentlyAsked": "Dúvidas Frequentes"
        },
       "workWithUs": "Trabalhe Conosco",
       "press": {
-        "press": "Imprensa"
+        "press": "Imprensa",
+        "news": "Notícias",
+        "cspPodcast": "CSP Podcast",
+        "pressRoom": "Sala de Imprensa",
+        "OutInMedia": "Saiu na Mídia",
+        "pressAttache": "Acessória de Imprensa",
+        "cspNews": "CSP News",
+        "cspNewsPt": "CSP Notícias"
        },
       "ombudsman": "Ouvidoria",
       "contact": "Fale Conosco"
@@ -92,11 +104,23 @@
         "environment": "Environment"
       },
       "providers": {
-        "providers": "Providers"
+        "providers": "Providers",
+        "beSupplier": "Be our supplier",
+        "preRegistration": "Pre registration",
+        "supplierBooklet": "Supplier's booklet",
+        "e-suppliers": "Portal e-Suppliers",
+        "frequentlyAsked": "Frequently Asked Questions"
       },
       "workWithUs": "Work with us",
       "press": {
-          "press": "Press"
+          "press": "Press",
+          "news": "News",
+          "cspPodcast": "CSP Podcast",
+          "pressRoom": "Press Room",
+          "OutInMedia": "Out in the Media",
+          "pressAttache": "Press Office",
+          "cspNews": "CSP News",
+          "cspNewsPt": "CSP Notícias"
       },
       "ombudsman": "Ombudsman",
       "contact": "Contact us"
@@ -305,27 +329,27 @@
             <ul class="submenu">
               <li class="submenu-item">
                 <router-link :to="`/page/seja-nosso-fornecedor`" class="submenu-link">
-                  Seja nosso fornecedor
+                  {{ $t('providers.beSupplier') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/pre-cadastro`" class="submenu-link">
-                  Pré-cadastro
+                  {{ $t('providers.preRegistration') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/cartilha-do-fornecedor`" class="submenu-link">
-                  Cartilha do Fornecedor
+                  {{ $t('providers.supplierBooklet') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/portal-e-fornecedores`" class="submenu-link">
-                  Portal e-Fornecedores
+                  {{ $t('providers.e-suppliers') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/duvidas-frequentes`" class="submenu-link">
-                  Dúvidas Frequentes
+                  {{ $t('providers.frequentlyAsked') }}
                 </router-link>
               </li>
             </ul>
@@ -342,37 +366,37 @@
             <ul class="submenu">
               <li class="submenu-item">
                 <router-link :to="`/page/categories/posts`" class="submenu-link">
-                  Notícias
+                  {{ $t('press.news') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link :to="`/page/categories/csp-podcast`" class="submenu-link">
-                  CSP Podcast
+                  {{ $t('press.cspPodcast') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link to="/page/sala-de-imprensa/login" class="submenu-link">
-                  Sala de Imprensa
+                  {{ $t('press.pressRoom') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link to="/page/categories/saiu-na-midia" class="submenu-link">
-                  Saiu na Midia
+                  {{ $t('press.OutInMedia') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link to="/page/assessoria-de-imprensa" class="submenu-link">
-                  Acessoria de Imprensa
+                  {{ $t('press.pressAttache') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link to="/page/imprensa/cspnews" class="submenu-link">
-                  CSP News
+                  {{ $t('press.cspNews') }}
                 </router-link>
               </li>
               <li class="submenu-item">
                 <router-link to="/page/imprensa/cspnotcias" class="submenu-link">
-                  CSP Notícias
+                  {{ $t('press.cspNewsPt') }}
                 </router-link>
               </li>
             </ul>

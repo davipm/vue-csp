@@ -31,12 +31,7 @@
         </div>
       </div>
       <!-- alert error -->
-      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <ErrorAlert v-else-if="error" />
       <!-- grid -->
       <div v-else class="row">
         <div class="section-page col-md-9">
@@ -78,19 +73,18 @@
 <script>
   import axios from 'axios'
   import ShareContent from '@/components/ShareContent.vue'
+  import ErrorAlert from '../components/ErrorAlert.vue'
   import { mapState } from 'vuex'
+
   export default {
     name: "Page",
     components: {
-      ShareContent
+      ShareContent,
+      ErrorAlert
     },
 
     data() {
       return {
-        message: {
-          alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
-        },
         loading: true, // show loading lines
         formLoading: false, // show form loading
         error: false,

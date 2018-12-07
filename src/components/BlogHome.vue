@@ -48,16 +48,44 @@
         </div>
       </div>
       <!-- alert error -->
-      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <ErrorAlert v-else-if="error" />
       <!-- Blog Grid -->
       <div v-else class="row">
         <div class="col-md-4" v-for="(post, index) in posts" :key="index">
-          <div class="card">
+          <div class="card" v-if="locale === 'en'">
+            <router-link :to="`/post/${post.slug}`">
+              <div class="img-content">
+                <img class="img-fluid"
+                     v-if="post.acf.featured_image"
+                     :src="post.acf.featured_image.sizes.medium_large"
+                     :alt="post.title.rendered"
+                >
+                <img class="img-fluid"
+                     v-else src="https://via.placeholder.com/300x220"
+                     alt="Image Default"
+                >
+              </div>
+            </router-link>
+            <div class="card-body">
+              <time class="post-time">
+                {{ post.date | prettyDates }}
+              </time>
+              <router-link :to="`/post/${post.slug}`">
+                <h5 class="card-title">
+                  {{ post.acf.title_en }}
+                </h5>
+              </router-link>
+              <p class="card-text"
+                 v-html="post.excerpt.rendered"
+              ></p>
+            </div>
+            <div class="card-footer">
+              <router-link :to="`/post/${post.slug}`" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+              </router-link>
+            </div>
+          </div>
+          <div class="card" v-else>
             <router-link :to="`/post/${post.slug}`">
               <div class="img-content">
                 <img class="img-fluid"
@@ -97,17 +125,19 @@
 </template>
 
 <script>
+  import ErrorAlert from './ErrorAlert.vue'
   import moment from 'moment'
   import axios from 'axios'
   import { mapState } from 'vuex'
+
   export default {
     name: "BlogHome",
+    components: {
+      ErrorAlert
+    },
+
     data() {
       return {
-        message: {
-          alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, recarregue a página novamente.',
-        },
         loading: true,
         error: false,
         posts: {}

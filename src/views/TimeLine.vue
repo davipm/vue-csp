@@ -2,19 +2,14 @@
   <section class="section time-line">
     <div class="container">
       <h3 class="page-title">
-        {{ message.pageTitle }}
+        {{ pageTitle }}
       </h3>
       <!-- loading -->
       <div class="page-loading" v-if="loading">
         <div class="pulse-loading"></div>
       </div>
       <!-- alert error -->
-      <div v-else-if="error" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ message.alert1 }}</strong> {{ message.alert2 }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <AlertError v-else-if="error" />
       <!-- carousel content -->
       <div class="page-content" v-else>
         <carousel :responsive="{ 0:{ items: 1, nav: false }, 600:{ items: 2, nav: true} }">
@@ -92,19 +87,18 @@
 <script>
   import axios from 'axios'
   import carousel from 'vue-owl-carousel'
+  import AlertError from '../components/ErrorAlert.vue'
+
   export default {
     name: "TimeLine",
     components: {
       carousel,
+      AlertError
     },
 
     data() {
       return {
-        message: {
-          pageTitle: 'Linha do tempo sustentável',
-          alert1: 'OPS!',
-          alert2: 'Algo errado aconteceu, recarregue a página novamente.'
-        },
+        pageTitle: 'Linha do tempo sustentável',
         loading: true,
         error: false,
         posts: {},
@@ -132,9 +126,9 @@
 
     metaInfo() {
       return {
-        title: this.message.pageTitle + ' | CSP',
+        title: this.pageTitle + ' | CSP',
         meta: [
-          { vmid: 'description', name: 'description', content: this.message.pageTitle },
+          { vmid: 'description', name: 'description', content: this.pageTitle },
         ]
       }
     },

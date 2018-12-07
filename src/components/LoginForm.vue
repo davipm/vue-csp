@@ -208,15 +208,14 @@
       onSubmitLogin(e) {
         e.preventDefault();
         axios
-            .post('http://localhost:1337/auth/local', {
-              identifier: this.loginForm.username,
+            .post('/jwt-auth/v1/token', {
+              username: this.loginForm.username,
               password: this.loginForm.password
             })
             .then(response => {
               // Handle success.
               this.$router.push('/page/categories/sala-de-imprensa');
-              console.log('User profile', response.data.user);
-              console.log('User token', response.data.jwt);
+              console.log('User Loged', response.data);
             })
             .catch(error => {
               // Handle error.
@@ -273,7 +272,6 @@
     font-size: 14px;
     border: none;
     background-color: #00734A;
-
     -webkit-transition: all .15s ease-in-out;
     -moz-transition: all .15s ease-in-out;
     -ms-transition: all .15s ease-in-out;
