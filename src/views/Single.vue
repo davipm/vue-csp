@@ -56,10 +56,18 @@
           <h5 class="category" v-else-if="item.categories[0] === 5">CSP Podcast</h5>
           <h5 class="category" v-else>Post</h5>
           <!-- title -->
-          <h3 class="single-title">
+          <h3 class="single-title" v-if="locale === 'en'">
+            {{ item.acf.title_en }}
+          </h3>
+          <h3 class="single-title" v-else>
             {{ item.title.rendered }}
           </h3>
           <div class="single-content"
+               v-if="locale === 'en'"
+               v-html="item.acf.content_en"
+          ></div>
+          <div class="single-content"
+               v-else
                v-html="item.content.rendered"
           ></div>
           <!-- share buttons -->
@@ -286,7 +294,6 @@
   .img-fluid {
     width: 100%;
     //height: 100%;
-
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;

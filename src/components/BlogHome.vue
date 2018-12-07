@@ -75,9 +75,9 @@
                   {{ post.acf.title_en }}
                 </h5>
               </router-link>
-              <p class="card-text"
-                 v-html="post.excerpt.rendered"
-              ></p>
+              <p class="card-text">
+                {{ post.acf.excerpt_en }}[...]
+              </p>
             </div>
             <div class="card-footer">
               <router-link :to="`/post/${post.slug}`" class="btn btn-primary">

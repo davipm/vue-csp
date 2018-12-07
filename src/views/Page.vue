@@ -36,11 +36,19 @@
       <div v-else class="row">
         <div class="section-page col-md-9">
           <!-- page title -->
-          <h2 class="page-title">
+          <h2 class="page-title" v-if="locale === 'en'">
+            {{ page.acf.title_en }}
+          </h2>
+          <h2 class="page-title" v-else>
             {{ page.title.rendered }}
           </h2>
           <!-- page content -->
           <div class="page-content"
+               v-if="locale === 'en'"
+               v-html="page.acf.content_en"
+          ></div>
+          <div class="page-content"
+               v-else
                v-html="page.content.rendered"
           ></div>
           <!-- gallery -->
