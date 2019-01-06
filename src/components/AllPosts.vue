@@ -77,10 +77,11 @@
                       <img class="img-fluid"
                            v-if="post.acf.featured_image"
                            :src="post.acf.featured_image.sizes.medium_large"
-                           alt="Card image cap"
+                           :alt="post.title.rendered"
                       >
                       <img class="img-fluid"
-                           v-else src="https://via.placeholder.com/300x220"
+                           v-else
+                           src="https://via.placeholder.com/300x220"
                            alt="Card image cap"
                       >
                     </div>
@@ -188,7 +189,6 @@
             this.pageTitle = 'Saiu na Midia';
             break
         }
-
         axios.get('/wp/v2/posts', {
           params: {
             categories: this.categories,

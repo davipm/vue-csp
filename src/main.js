@@ -13,7 +13,8 @@ import Meta from 'vue-meta'
 import i18n from './i18n'
 
 // base api request demo
-axios.defaults.baseURL = 'https://demoapi.heyholetsgo.com.br/wp-json';
+axios.defaults.baseURL = 'https://crunvik.000webhostapp.com/wp-json';
+//axios.defaults.baseURL = 'https://demoapi.heyholetsgo.com.br/wp-json';
 // base api request localhost
 //axios.defaults.baseURL = 'http://wpstudy.local/wp-json';
 

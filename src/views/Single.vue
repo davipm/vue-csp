@@ -87,7 +87,8 @@
                        :alt="post.title.rendered"
                   >
                   <img class="img-fluid"
-                       v-else src="https://via.placeholder.com/300x220"
+                       v-else
+                       src="https://via.placeholder.com/300x220"
                        alt="Image Default"
                   >
                 </div>

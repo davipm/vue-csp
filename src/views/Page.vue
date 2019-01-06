@@ -52,7 +52,9 @@
                v-html="page.content.rendered"
           ></div>
           <!-- gallery -->
-          <b-carousel v-if="page.acf.galeria" id="carousel1" class="carousel-fade"
+          <b-carousel v-if="page.acf.galeria"
+                      id="carousel1"
+                      class="carousel-fade"
                       style="text-shadow: 1px 1px 2px #333;"
                       controls
                       indicators
