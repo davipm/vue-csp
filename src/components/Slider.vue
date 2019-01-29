@@ -48,7 +48,7 @@
             })
       }
     },
-
+    
     created() {
       this.getSliders();
     }
