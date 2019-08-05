@@ -6,14 +6,16 @@
     <div class="card" v-for="(post, index) in posts" :key="index">
       <router-link :to="`/post/${post.slug}`">
         <div class="img-content">
-          <img class="img-fluid"
-               v-if="post.acf.featured_image"
-               :src="post.acf.featured_image"
-               alt="Card image cap"
+          <img 
+            class="img-fluid"
+            v-if="post.acf.featured_image"
+            :src="post.acf.featured_image"
+            :alt="post.title.rendered"
           >
-          <img class="img-fluid"
-               v-else src="https://via.placeholder.com/300x220"
-               alt="Card image cap"
+          <img 
+            class="img-fluid"
+            v-else src="https://via.placeholder.com/300x220"
+            alt="Card image cap"
           >
         </div>
       </router-link>
@@ -26,8 +28,9 @@
             {{ post.title.rendered }}
           </h5>
         </router-link>
-        <p class="card-text"
-           v-html="post.excerpt.rendered"
+        <p 
+          class="card-text"
+          v-html="post.excerpt.rendered"
         ></p>
       </div>
       <div class="card-footer">
@@ -46,6 +49,7 @@
     data() {
       return {
         asideMessage: 'Saiba Mais',
+        error: false,
         posts: {},
       }
     },
@@ -60,14 +64,18 @@
       getPosts() {
         axios.get('/wp/v2/posts', {
           params: {
-            per_page: 2
+            per_page: 2,
           }
         })
         .then(( res ) => {
           this.posts = res.data;
         })
         .catch(( res ) => {
-          // catch errors
+          this.error = true;
+          console.log('Error:', res);
+        })
+        .finally(() => {
+          console.log('Finally');
         })
       },
     },
@@ -78,6 +86,6 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

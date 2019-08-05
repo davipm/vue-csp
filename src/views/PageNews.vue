@@ -143,34 +143,31 @@
     methods: {
       getRoute( slug ) {
         axios.get(`/api/v1/${slug}`)
-            .then(( res ) => {
-              this.news = res.data;
-              if ( slug === 'cspnews' ) {
+          .then(( res ) => {
+            this.news = res.data;
+            switch (slug) {
+              case 'cspnews':
                 this.pageTitle = 'CSP News';
-              }
-
-              else if ( slug === 'cerqualidades' ) {
-                this.pageTitle = 'Certificados de Qualidade'
-              }
-
-              else if ( slug === 'cerprodutos' ) {
-                this.pageTitle = 'Certificados de Produtos'
-              }
-
-              else if ( slug === 'cermeioambientes' ) {
-                this.pageTitle = 'Certificados de Meio Ambiente'
-              }
-
-              else {
+                break;
+              case 'cerqualidades':
+                this.pageTitle = 'Certificados de Qualidade';
+                break;
+              case 'cerprodutos':
+                this.pageTitle = 'Certificados de Produtos';
+                break;
+              case 'cermeioambientes':
+                this.pageTitle = 'Certificados de Meio Ambiente';
+                break;
+              default:
                 this.pageTitle = 'CSP Notícias';
-              }
-            })
-            .catch(() => {
-              this.error = true;
-            })
-            .finally(() => {
-              this.loading = false;
-            });
+            }
+          })
+          .catch(() => {
+            this.error = true;
+          })
+          .finally(() => {
+            this.loading = false;
+          });
       }
     },
 
