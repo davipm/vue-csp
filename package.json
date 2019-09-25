@@ -5,7 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -14,6 +22,7 @@
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "popper.js": "^1.14.4",
+    "react-snap": "^1.23.0",
     "vue": "^2.5.17",
     "vue-i18n": "^8.0.0",
     "vue-meta": "^1.5.5",

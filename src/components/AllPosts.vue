@@ -109,12 +109,13 @@
             </div>
           </div>
 
-          <b-pagination size="md"
-                        align="center"
-                        :total-rows="3"
-                        v-model="currentPage"
-                        :per-page="2"
-                        @change="getPosts"
+          <b-pagination
+                  size="md"
+                  align="center"
+                  :total-rows="3"
+                  v-model="currentPage"
+                  :per-page="2"
+                  @change="getPosts"
           >
           </b-pagination>
           <br>
